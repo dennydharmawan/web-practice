@@ -12,7 +12,7 @@ module.exports = {
     '^(react/(.*)$)|^(react$)',
     '<THIRD_PARTY_MODULES>',
     '',
-    '^@([a-zA-Z]+)/(.*)$',
+    '^@([a-zA-Z-]+)/(.*)$',
     '',
     '^@/(.*)$',
     '',

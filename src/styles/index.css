@@ -118,7 +118,7 @@ https://web.dev/articles/one-line-layouts */
 }
 
 /* deconstructed pancake */
-.deconstructed-pancake-grid {
+.pancake-grid {
   --min: var(--custom-min, 15ch);
   --gap: var(--custom-gap, 1rem);
 
@@ -129,7 +129,7 @@ https://web.dev/articles/one-line-layouts */
   grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
 }
 
-.deconstructed-pancake-flexbox {
+.pancake-flexbox {
   --min: var(--custom-min, 15ch);
   --gap: var(--custom-gap, 1rem);
 
@@ -139,7 +139,7 @@ https://web.dev/articles/one-line-layouts */
   /* justify-content: center; */
 }
 
-.deconstructed-pancake-flexbox > * {
+.pancake-flexbox > * {
   flex: 1 1 var(--min);
 }
 

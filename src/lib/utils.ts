@@ -25,5 +25,7 @@ export function getRoutes(routes: RouteObject): Path[] {
 
   traverse(routes);
 
-  return paths;
+  const sortedPaths = paths.sort((a,b) => a.localeCompare(b, undefined, {numeric: true}))
+
+  return sortedPaths;
 }

@@ -9,6 +9,7 @@ export type Path =
   | `/icodethis/icodemas/day-1`
   | `/icodethis/icodemas/day-12`
   | `/icodethis/icodemas/day-13`
+  | `/icodethis/icodemas/day-2`
   | `/icodethis/icodemas/day-21`
   | `/layout/grid-container`;
 

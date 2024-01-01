@@ -60,7 +60,7 @@ function LandingPage() {
         <div className="super-centered mb-14">
           <p>Celebrate the Magic of the Season! Exclusive Christmas Challenges for 24 days.</p>
         </div>
-        <div className="deconstructed-pancake-flexbox m-auto">
+        <div className="pancake-flexbox m-auto">
           <div className="flex aspect-square w-[160px] flex-col items-center justify-center rounded-xl bg-white/30 text-white shadow-sm backdrop-blur-sm">
             <div className="text-7xl font-extrabold">
               {padNumber(weeksToDays(calculatedDuration.weeks) + calculatedDuration.days)}

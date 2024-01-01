@@ -469,7 +469,7 @@ const colors = {
     950: '#053647'
   },
   error: {
-    default: '#F04438',
+    DEFAULT: '#F04438',
     foreground: '#FFFFFF',
     25: '#FFFBFA',
     50: '#FEF3F2',

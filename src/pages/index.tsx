@@ -8,7 +8,6 @@ import { Link } from '@/router';
 type a = To & keyof Path;
 
 export default function index() {
-  // console.log(routes);
   const routeList = getRoutes(routes[0]);
 
   return (

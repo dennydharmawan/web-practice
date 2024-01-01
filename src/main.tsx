@@ -8,7 +8,6 @@ import '@/styles/index.css';
 
 import { mantineColors } from '@/lib/mantine';
 
-console.log(mantineColors);
 const theme = createTheme({
   primaryColor: 'primary',
   colors: mantineColors

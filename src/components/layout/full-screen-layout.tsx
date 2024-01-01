@@ -6,10 +6,7 @@ const FullScreenLayout = React.forwardRef<HTMLDivElement, React.HTMLAttributes<H
   ({ className, ...props }, ref) => (
     <div
       ref={ref}
-      className={cn(
-        'content-grid grid min-h-[100dvh] min-h-screen content-center justify-center  bg-slate-100',
-        className
-      )}
+      className={cn('content-grid grid min-h-[100dvh] min-h-screen bg-slate-100', className)}
       {...props}
     />
   )

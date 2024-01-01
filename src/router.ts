@@ -6,6 +6,7 @@ import { components, hooks, utils } from '@generouted/react-router/client';
 export type Path =
   | `/`
   | `/animation/card`
+  | `/animation/hamburger-menu`
   | `/icodethis/icodemas/day-1`
   | `/icodethis/icodemas/day-12`
   | `/icodethis/icodemas/day-13`

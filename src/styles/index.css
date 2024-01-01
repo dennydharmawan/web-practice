@@ -146,7 +146,8 @@ https://web.dev/articles/one-line-layouts */
 /*  super centered */
 .super-centered {
   display: grid;
-  place-content: center;
+  justify-content: center;
+  align-content: center;
 }
 
 /* container */
@@ -159,6 +160,7 @@ https://web.dev/articles/one-line-layouts */
 }
 
 /* stack layout */
+/* This smol stacked layout is a grid feature that can often replace older techniques that relied on absolute positioning */
 .stack-layout {
   display: grid;
   grid-template-areas: "stack";

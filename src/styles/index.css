@@ -50,6 +50,28 @@ html.dark {
   --background: var(--dark-background);
 }
 
+/* additional css reset */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+p {
+  max-width: 65ch;
+  text-wrap: pretty;
+}
+
+@media(prefers-reduced-motion: no-preference) {
+  :has(:target) {
+    scroll-behavior: smooth;
+    scroll-padding-top: 3rem;
+  }
+}
+
 /* sensible img reset */
 img {
   max-width: 100%;

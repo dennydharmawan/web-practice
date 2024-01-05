@@ -44,7 +44,7 @@ function LandingPage() {
 
   return (
     <>
-      <section className="content-grid super-centered relative  min-h-[100dvh] min-h-screen bg-[url('https://icodethis.com/images/iCodeMas/snow_bg.png')] bg-cover bg-center bg-no-repeat text-center text-white">
+      <section className="content-grid super-centered relative min-h-screen bg-[url('https://icodethis.com/images/iCodeMas/snow_bg.png')] bg-cover bg-center bg-no-repeat text-center text-white">
         <img
           src="https://icodethis.com/images/iCodeMas/santa.png"
           alt="snowman"

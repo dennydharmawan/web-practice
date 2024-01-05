@@ -4,7 +4,7 @@ import { IconTruckDelivery, IconUserQuestion, IconWallet } from '@tabler/icons-r
 
 function Features() {
   return (
-    <section className="content-grid super-centered relative min-h-[100dvh] min-h-screen bg-slate-700 text-slate-900">
+    <section className="content-grid super-centered relative min-h-screen bg-slate-700 text-slate-900">
       <div className="pancake-flexbox [--custom-gap:3rem]">
         <div className="flex flex-row flex-wrap gap-4 bg-blue-50 px-4 py-4">
           <div className="relative basis-12">

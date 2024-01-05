@@ -24,6 +24,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .min-h-screen {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+}
+
 :root {
   --light-background: #fff;
   --dark-background: #000;

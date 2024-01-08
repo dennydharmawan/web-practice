@@ -44,10 +44,14 @@ This repository serves as my playground for honing various aspects of web develo
 
 In my practice sessions, I explore various technologies, including but not limited to:
 
-- Frontend: HTML, CSS, JavaScript, React, Vue.js, Angular
-- Backend: Node.js, Express, Django, Flask
+- Frontend: HTML, CSS, JavaScript, React, framer
+- Other Tools: Git, VSCode, npm, pnpm, turborepo
+
+<!--
+- Frontend: HTML, CSS, JavaScript, React, framer
+- Backend: Node.js, Express.js
 - Databases: MongoDB, MySQL, PostgreSQL
-- Other Tools: Git, VSCode, npm, webpack, etc.
+- Other Tools: Git, VSCode, npm, pnpm, turborepo -->
 
 ---
 

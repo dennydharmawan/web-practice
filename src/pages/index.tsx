@@ -1,11 +1,7 @@
-import { Path, To } from 'react-router-dom';
-
 import { routes } from '@generouted/react-router';
 
 import { getRoutes } from '@/lib/utils';
 import { Link } from '@/router';
-
-type a = To & keyof Path;
 
 export default function index() {
   const routeList = getRoutes(routes[0]);

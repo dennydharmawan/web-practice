@@ -59,30 +59,12 @@ export default function HeaderLogoPage() {
                   style={{ position: isExpanded ? 'relative' : 'absolute' }}
                   variants={firstRender.current ? {} : variants}
                 >
-                  World's best engineer
+                  Seasoned Full-Stack Engineer
                 </motion.p>
               )}
             </AnimatePresence>
           </motion.div>
         </LayoutGroup>
-
-        {/*
-        <AnimatePresence>
-          {isExpanded && (
-            <motion.p
-              key="paragraph"
-              initial={false}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{
-                duration: 0.8
-              }}
-            >
-              World's best engineer
-            </motion.p>
-          )}
-        </AnimatePresence> */}
-
         <Button className="mt-6" onClick={() => setIsExpanded(!isExpanded)}>
           Animate
         </Button>

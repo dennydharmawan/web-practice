@@ -13,6 +13,7 @@ export default {
       current: 'currentColor',
       white: '#FFFFFF',
       black: '#000000',
+      paper: 'rgb(var(--background-color) / <alpha-value>)',
       ...colors
     },
     extend: {

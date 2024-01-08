@@ -9,6 +9,7 @@ export type Path =
   | `/animation/framer-motion/header-logo`
   | `/animation/framer-motion/switch`
   | `/animation/hamburger-menu`
+  | `/experiments/tailwind-theme`
   | `/experiments/vertical-align`
   | `/icodethis/icodemas/day-1`
   | `/icodethis/icodemas/day-12`

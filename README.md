@@ -1,30 +1,66 @@
-# React + TypeScript + Vite
+# Web Practice Repository
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my Web Practice repository! Here, I document my experiments, challenges, and ongoing practice to sharpen my web development skills.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Overview
 
-## Expanding the ESLint configuration
+This repository serves as my playground for honing various aspects of web development. From trying out new technologies to solving coding challenges, it's a collection of my learning journey in the world of web development.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+---
 
-- Configure the top-level `parserOptions` property like this:
+## Folder Structure
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+- **Experiments**: Contains small projects exploring new frameworks, libraries, or concepts.
+- **Challenges**: Solutions to coding challenges, algorithm problems, or mini-projects.
+- **Practice**: Code snippets, exercises, or mini-projects to reinforce specific skills.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+---
+
+## Contents
+
+### Experiments
+
+- Experiment 1: Description or link to the project.
+- Experiment 2: Description or link to the project.
+- ...
+
+### Challenges
+
+- Challenge 1: Description or link to the solution.
+- Challenge 2: Description or link to the solution.
+- ...
+
+### Practice
+
+- Practice Exercise 1: Description or link to the code snippet.
+- Practice Exercise 2: Description or link to the code snippet.
+- ...
+
+---
+
+## Technologies Used
+
+In my practice sessions, I explore various technologies, including but not limited to:
+
+- Frontend: HTML, CSS, JavaScript, React, Vue.js, Angular
+- Backend: Node.js, Express, Django, Flask
+- Databases: MongoDB, MySQL, PostgreSQL
+- Other Tools: Git, VSCode, npm, webpack, etc.
+
+---
+
+## Purpose
+
+This repository serves multiple purposes:
+
+- Documenting my progress and learning in web development.
+- Sharing my solutions and findings with the community.
+- Showcasing my versatility and adaptability with different technologies.
+
+---
+
+## Contact
+
+Let's connect! Reach out to me at [contact@dennydharmawan.com] for any questions or collaborations.

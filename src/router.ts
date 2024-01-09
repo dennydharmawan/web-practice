@@ -12,6 +12,7 @@ export type Path =
   | `/icodethis/icodemas/day-13`
   | `/icodethis/icodemas/day-2`
   | `/icodethis/icodemas/day-21`
+  | `/icodethis/testimonial-carousel`
   | `/layout/grid-container`;
 
 export type Params = {};

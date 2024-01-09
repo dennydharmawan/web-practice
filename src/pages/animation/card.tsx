@@ -32,7 +32,7 @@ export default function Card() {
   };
 
   return (
-    <div className="super-centered relative min-h-[100dvh] min-h-screen bg-[#1F1F46] text-white">
+    <div className="super-centered relative min-h-screen bg-[#1F1F46] text-white">
       <motion.div
         className="relative h-[300px] w-[640px]"
         whileHover="hover"

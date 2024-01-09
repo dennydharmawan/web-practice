@@ -19,15 +19,161 @@
 /* Add @layer to Tailwind Base to prevent preflight conflicts */
 @layer {
   @tailwind base;
+
+  @layer base {
+    html {
+      --background-color: 255 255 255;
+    }
+
+    html.dark {
+      --background-color: 0 0 0;
+    }
+  }
 }
 
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --light-background: #fff;
-  --dark-background: #000;
+@layer utilities {
+  .min-h-screen {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
 
+  /* References:
+  https://modernfontstacks.com
+  https://smolcss.dev
+  https://web.dev/articles/one-line-layouts */
+
+  /* content grid */
+  /* .content-grid {
+    --gap: clamp(1rem, 6vw, 3rem);
+    --full-width: minmax(var(--gap), 1fr);
+    --content: min(1280px, 100% - var(--gap) * 2);
+    --breakout: minmax(0, 2rem);
+    --feature: minmax(0, 5rem);
+
+    display: grid;
+    grid-template-columns:
+      [full-width-start] var(--full-width) [feature-start] var(--feature) [breakout-start] var(--breakout) [content-start] var(--content) [content-end] var(--breakout) [breakout-end] var(--feature) [feature-end] var(--full-width) [full-width-end];
+  }
+
+  .content-grid > * {
+    grid-column: content;
+  }
+
+  .breakout {
+    grid-column: breakout;
+  }
+
+  .feature {
+    grid-column: feature;
+  }
+
+  .full-width {
+    grid-column: full-width;
+  } */
+
+  .content-grid {
+    --padding-inline: var(--custom-padding-inline, clamp(1rem, 6vw, 3rem));
+    --content-max-width: var(--custom-content-max-width, 1280px);
+    --breakout-max-width: var(--custom-breakout-max-width, 1536px);
+
+    --breakout-size: calc((var(--breakout-max-width) - var(--content-max-width)) / 2);
+
+    display: grid;
+    grid-template-columns:
+      [full-width-start] minmax(var(--padding-inline), 1fr) [breakout-start] minmax(0, var(--breakout-size)) [content-start] min(100% - (var(--padding-inline) * 2), var(--content-max-width)) [content-end] minmax(0, var(--breakout-size)) [breakout-end] minmax(var(--padding-inline), 1fr) [full-width-end];
+  }
+
+  .content-grid > * {
+    grid-column: content;
+  }
+
+  .content-grid > .breakout {
+    grid-column: breakout;
+  }
+
+  .content-grid > .full-width {
+    grid-column: full-width;
+  }
+
+  /* deconstructed pancake */
+  .pancake-grid {
+    --min: var(--custom-min, 15ch);
+    --gap: var(--custom-gap, 1rem);
+
+    display: grid;
+    grid-gap: var(--gap);
+    /* min() with 100% prevents overflow
+  in extra narrow spaces */
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
+  }
+
+  .pancake-flexbox {
+    --min: var(--custom-min, 15ch);
+    --gap: var(--custom-gap, 1rem);
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap);
+    /* justify-content: center; */
+  }
+
+  .pancake-flexbox > * {
+    flex: 1 1 var(--min);
+  }
+
+  /*  super centered */
+  .super-centered {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+  }
+
+  /* container */
+  .custom-container {
+    --max: var(--custom-max, 65ch);
+    --min: var(--custom-min, 100% - 3rem);
+
+    width: min(var(--min), var(--max));
+    margin-inline: auto;
+  }
+
+  /* stack layout */
+  /* This smol stacked layout is a grid feature that can often replace older techniques that relied on absolute positioning */
+  .stack-layout {
+    display: grid;
+    grid-template-areas: "stack";
+  }
+
+  .stack-layout > * {
+    grid-area: stack;
+  }
+
+  /*
+  Example:
+  .stack-layout--items {
+    place-self: center;
+    align-self: end;
+    justify-self: start;
+    text-align: center;
+  } */
+
+  /* responsive padding */
+  .responsive-padding {
+    padding: 1.5rem clamp(1rem, 5%, 3rem);
+  }
+
+  /* sidebar */
+  .sidebar {
+    display: grid;
+    grid-template-columns: fit-content(20ch) minmax(min(50vw, 30ch), 1fr);
+  }
+
+}
+
+:root {
   /* Typography */
   --body-font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
   --heading-font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
@@ -50,6 +196,28 @@ html.dark {
   --background: var(--dark-background);
 }
 
+/* additional css reset */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+p {
+  max-width: 65ch;
+  text-wrap: pretty;
+}
+
+@media(prefers-reduced-motion: no-preference) {
+  :has(:target) {
+    scroll-behavior: smooth;
+    scroll-padding-top: 3rem;
+  }
+}
+
 /* sensible img reset */
 img {
   max-width: 100%;
@@ -58,134 +226,4 @@ img {
   font-style: italic;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-/* References:
-https://modernfontstacks.com
-https://smolcss.dev
-https://web.dev/articles/one-line-layouts */
-
-/* content grid */
-/* .content-grid {
-  --gap: clamp(1rem, 6vw, 3rem);
-  --full-width: minmax(var(--gap), 1fr);
-  --content: min(1280px, 100% - var(--gap) * 2);
-  --breakout: minmax(0, 2rem);
-  --feature: minmax(0, 5rem);
-
-  display: grid;
-  grid-template-columns:
-    [full-width-start] var(--full-width) [feature-start] var(--feature) [breakout-start] var(--breakout) [content-start] var(--content) [content-end] var(--breakout) [breakout-end] var(--feature) [feature-end] var(--full-width) [full-width-end];
-}
-
-.content-grid > * {
-  grid-column: content;
-}
-
-.breakout {
-  grid-column: breakout;
-}
-
-.feature {
-  grid-column: feature;
-}
-
-.full-width {
-  grid-column: full-width;
-} */
-.content-grid {
-  --padding-inline: var(--custom-padding-inline, clamp(1rem, 6vw, 3rem));
-  --content-max-width: var(--custom-content-max-width, 1280px);
-  --breakout-max-width: var(--custom-breakout-max-width, 1536px);
-
-  --breakout-size: calc((var(--breakout-max-width) - var(--content-max-width)) / 2);
-
-  display: grid;
-  grid-template-columns:
-    [full-width-start] minmax(var(--padding-inline), 1fr) [breakout-start] minmax(0, var(--breakout-size)) [content-start] min(100% - (var(--padding-inline) * 2), var(--content-max-width)) [content-end] minmax(0, var(--breakout-size)) [breakout-end] minmax(var(--padding-inline), 1fr) [full-width-end];
-}
-
-.content-grid > * {
-  grid-column: content;
-}
-
-.content-grid > .breakout {
-  grid-column: breakout;
-}
-
-.content-grid > .full-width {
-  grid-column: full-width;
-}
-
-/* deconstructed pancake */
-.pancake-grid {
-  --min: var(--custom-min, 15ch);
-  --gap: var(--custom-gap, 1rem);
-
-  display: grid;
-  grid-gap: var(--gap);
-  /* min() with 100% prevents overflow
-  in extra narrow spaces */
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
-}
-
-.pancake-flexbox {
-  --min: var(--custom-min, 15ch);
-  --gap: var(--custom-gap, 1rem);
-
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--gap);
-  /* justify-content: center; */
-}
-
-.pancake-flexbox > * {
-  flex: 1 1 var(--min);
-}
-
-/*  super centered */
-.super-centered {
-  display: grid;
-  justify-content: center;
-  align-content: center;
-}
-
-/* container */
-.custom-container {
-  --max: var(--custom-max, 65ch);
-  --min: var(--custom-min, 100% - 3rem);
-
-  width: min(var(--min), var(--max));
-  margin-inline: auto;
-}
-
-/* stack layout */
-/* This smol stacked layout is a grid feature that can often replace older techniques that relied on absolute positioning */
-.stack-layout {
-  display: grid;
-  grid-template-areas: "stack";
-}
-
-.stack-layout > * {
-  grid-area: stack;
-}
-
-/*
-Example:
-.stack-layout--items {
-  place-self: center;
-  align-self: end;
-  justify-self: start;
-  text-align:center;
-} */
-
-/* responsive padding */
-.responsive-padding {
-  padding: 1.5rem clamp(1rem, 5%, 3rem);
-}
-
-/* sidebar */
-.sidebar {
-  display: grid;
-  grid-template-columns: fit-content(20ch) minmax(min(50vw, 30ch), 1fr);
 }

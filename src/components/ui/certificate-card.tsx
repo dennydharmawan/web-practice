@@ -9,7 +9,7 @@ const CertificateCard = React.forwardRef<
     onMouseEnterAnimation?: any;
     onMouseLeaveAnimation?: any;
   }
->(({ className, onMouseEnterAnimation, onMouseLeaveAnimation, ...props }, ref) => {
+>(({ className, onMouseEnterAnimation, onMouseLeaveAnimation, ...props }) => {
   const [scope, animate] = useAnimate();
 
   return (

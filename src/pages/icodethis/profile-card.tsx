@@ -25,7 +25,7 @@ function calculateX(alphaDegrees: number, width: number): number {
 }
 
 export default function ProfileCardPage() {
-  const [ref, { width }] = useMeasure<HTMLImageElement>();
+  const [ref, { x, y, width, height, top, right, bottom, left }] = useMeasure<HTMLImageElement>();
   const translateY = calculateX(-11, width);
 
   const images = [

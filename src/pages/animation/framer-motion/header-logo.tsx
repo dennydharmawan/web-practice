@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { AnimatePresence, LayoutGroup, motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
 import { Button } from '@mantine/core';
 
@@ -27,44 +27,42 @@ export default function HeaderLogoPage() {
   return (
     <FullScreenLayout>
       <div className="super-centered">
-        <LayoutGroup>
-          <motion.div layout className="relative rounded bg-white p-4">
-            <a
-              href="#"
-              className="flex"
-              style={{
-                alignItems: `${isExpanded ? 'end' : 'center'}`
-              }}
-            >
-              <motion.img
+        <motion.div layout className="relative rounded bg-white p-4">
+          <a
+            href="#"
+            className="flex"
+            style={{
+              alignItems: `${isExpanded ? 'end' : 'center'}`
+            }}
+          >
+            <motion.img
+              layout
+              src="/vite.svg"
+              className="mr-3 h-9 w-9"
+              width={36}
+              height={36}
+              alt="Website Logo"
+            />
+            <motion.div layout className="flex flex-col text-xl font-bold">
+              Denny Dharmawan
+            </motion.div>
+          </a>
+          <AnimatePresence mode="popLayout">
+            {isExpanded && (
+              <motion.p
+                key="paragraph"
+                initial="initial"
+                animate="enter"
+                exit="exit"
                 layout
-                src="/vite.svg"
-                className="mr-3 h-9 w-9"
-                width={36}
-                height={36}
-                alt="Website Logo"
-              />
-              <motion.div layout className="flex flex-col text-xl font-bold">
-                Denny Dharmawan
-              </motion.div>
-            </a>
-            <AnimatePresence mode="popLayout">
-              {isExpanded && (
-                <motion.p
-                  key="paragraph"
-                  initial="initial"
-                  animate="enter"
-                  exit="exit"
-                  layout
-                  style={{ position: isExpanded ? 'relative' : 'absolute' }}
-                  variants={firstRender.current ? {} : variants}
-                >
-                  Seasoned Full-Stack Engineer
-                </motion.p>
-              )}
-            </AnimatePresence>
-          </motion.div>
-        </LayoutGroup>
+                style={{ position: isExpanded ? 'relative' : 'absolute' }}
+                variants={firstRender.current ? {} : variants}
+              >
+                Seasoned Full-Stack Engineer
+              </motion.p>
+            )}
+          </AnimatePresence>
+        </motion.div>
         <Button className="mt-6" onClick={() => setIsExpanded(!isExpanded)}>
           Animate
         </Button>

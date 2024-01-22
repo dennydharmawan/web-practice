@@ -17,6 +17,7 @@ export type Path =
   | `/icodethis/icodemas/day-2`
   | `/icodethis/icodemas/day-21`
   | `/icodethis/profile-card`
+  | `/icodethis/social-profile`
   | `/icodethis/testimonial-carousel`
   | `/layout/grid-container`;
 

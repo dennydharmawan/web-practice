@@ -11,14 +11,14 @@ export type Path =
   | `/animation/hamburger-menu`
   | `/experiments/tailwind-theme`
   | `/experiments/vertical-align`
+  | `/icodethis/426-testimonial-carousel`
+  | `/icodethis/437-music-profile`
+  | `/icodethis/445-social-profile`
   | `/icodethis/icodemas/day-1`
   | `/icodethis/icodemas/day-12`
   | `/icodethis/icodemas/day-13`
   | `/icodethis/icodemas/day-2`
   | `/icodethis/icodemas/day-21`
-  | `/icodethis/music-profile-437`
-  | `/icodethis/social-profile-445`
-  | `/icodethis/testimonial-carousel-426`
   | `/layout/grid-container`;
 
 export type Params = {};

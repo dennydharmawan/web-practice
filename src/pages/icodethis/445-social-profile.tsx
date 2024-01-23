@@ -45,7 +45,7 @@ export default function SocialProfilePage() {
       <div className="super-centered text-white">
         <motion.div
           layout
-          className="flex cursor-pointer flex-col gap-6 rounded-2xl rounded-2xl border-indigo-600 bg-indigo-600"
+          className="rounded-2xlborder-indigo-600 flex cursor-pointer flex-col gap-6 bg-indigo-600"
           initial="collapsed"
           variants={containerVariants}
           animate={isExpanded ? 'expanded' : 'collapsed'}

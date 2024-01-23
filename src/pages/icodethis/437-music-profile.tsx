@@ -25,7 +25,7 @@ function calculateX(alphaDegrees: number, width: number): number {
 }
 
 export default function MusicProfilePage() {
-  const [ref, { x, y, width, height, top, right, bottom, left }] = useMeasure<HTMLImageElement>();
+  const [ref, { width }] = useMeasure<HTMLImageElement>();
   const translateY = calculateX(-11, width);
 
   const images = [

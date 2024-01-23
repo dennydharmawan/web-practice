@@ -24,7 +24,7 @@ function calculateX(alphaDegrees: number, width: number): number {
   return (Math.tan(alphaRadians) * width) / 2;
 }
 
-export default function ProfileCardPage() {
+export default function MusicProfilePage() {
   const [ref, { x, y, width, height, top, right, bottom, left }] = useMeasure<HTMLImageElement>();
   const translateY = calculateX(-11, width);
 

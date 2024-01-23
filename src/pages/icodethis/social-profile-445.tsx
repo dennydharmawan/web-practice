@@ -6,7 +6,13 @@ import { IconMessage, IconUserPlus } from '@tabler/icons-react';
 
 import { FullScreenLayout } from '@/components/layout/full-screen-layout';
 
-export default function SocialProfile() {
+// TODO: add exit animation for the text
+// TODO: add theme switcher
+// https://codesandbox.io/p/sandbox/dark-mode-switch-framer-motion-u2h6o?file=%2Fcomponents%2FDarkModeSwitch.tsx%3A75%2C27
+// https://codepen.io/antonpamalis/pen/BKEBGX
+// https://codepen.io/sarahetter/pen/QNQPgz
+
+export default function SocialProfilePage() {
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
   const containerVariants = {
@@ -39,7 +45,7 @@ export default function SocialProfile() {
       <div className="super-centered text-white">
         <motion.div
           layout
-          className="flex cursor-pointer flex-col gap-6 rounded-2xl border-indigo-600 bg-indigo-600"
+          className="flex cursor-pointer flex-col gap-6 rounded-2xl rounded-2xl border-indigo-600 bg-indigo-600"
           initial="collapsed"
           variants={containerVariants}
           animate={isExpanded ? 'expanded' : 'collapsed'}
@@ -52,16 +58,20 @@ export default function SocialProfile() {
               src="https://api.dicebear.com/7.x/adventurer/png?seed=Cuddles"
               alt="Frances S. Cady"
               className="aspect-square w-24 object-cover"
+              width={96}
+              height={96}
             />
           ) : (
             <>
-              <div className="flex items-start gap-3">
+              <div className="flex items-center gap-3">
                 <motion.img
                   layout
                   layoutId="profile-image"
                   src="https://api.dicebear.com/7.x/adventurer/svg?seed=Cuddles"
                   alt="Frances S. Cady"
                   className="aspect-square w-24 object-cover"
+                  width={96}
+                  height={96}
                 />
                 <motion.div
                   initial="collapsed"
@@ -73,7 +83,7 @@ export default function SocialProfile() {
                   }}
                   className="flex flex-col"
                 >
-                  <h1 className="text-3xl font-bold">Denny Dharmawan</h1>
+                  <h1 className="text-2xl font-bold">Denny Dharmawan</h1>
                   <h2 className="text-md pt-1 font-semibold">Growth-Led Full-Stack Engineer</h2>
                 </motion.div>
               </div>
@@ -86,6 +96,7 @@ export default function SocialProfile() {
                 transition={{
                   delay: 2 * staggerAmountInMs
                 }}
+                className="-mt-6"
               >
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam deserunt facere sapiente
                 expedita nesciunt architecto repellendus nisi aut? Amet et dolores quam iste corrupti

@@ -13,6 +13,7 @@ export type Path =
   | `/experiments/vertical-align`
   | `/icodethis/426-testimonial-carousel`
   | `/icodethis/437-music-profile`
+  | `/icodethis/444-simple-pricing`
   | `/icodethis/445-social-profile`
   | `/icodethis/icodemas/day-1`
   | `/icodethis/icodemas/day-12`

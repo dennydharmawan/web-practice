@@ -11,9 +11,9 @@ export default function HamburgerMenu() {
         <button aria-controls="primary-navigation" aria-expanded="false">
           <svg
             className={isMenuOpen ? 'ham ham6 active' : 'ham ham6'}
+            onClick={() => setMenuOpen(!isMenuOpen)}
             viewBox="0 0 100 100"
             width="56"
-            onClick={() => setMenuOpen(!isMenuOpen)}
           >
             <path
               className="line top"

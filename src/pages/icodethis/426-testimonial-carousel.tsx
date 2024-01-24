@@ -8,7 +8,7 @@ export default function TestimonialCarouselPage() {
   return (
     <FullScreenLayout className="bg-blue-light-100 ">
       <section className="super-centered text-center">
-        <Paper shadow="xs" p="xl">
+        <Paper p="xl" shadow="xs">
           <h3 className="text-2xl font-extrabold">A word from our customers</h3>
           <h4 className="text-lg font-semibold">We've been helping businesses do their best since 2018.</h4>
           <div className="mt-12 text-white">
@@ -23,7 +23,7 @@ export default function TestimonialCarouselPage() {
           </div>
 
           <div className="mt-8">
-            <Avatar color="cyan" radius="xl" className="m-auto" size="lg">
+            <Avatar className="m-auto" color="cyan" radius="xl" size="lg">
               MK
             </Avatar>
             <h5 className="mt-2 font-bold text-slate-900">John V.Bellamy</h5>

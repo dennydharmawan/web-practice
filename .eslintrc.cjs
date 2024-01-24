@@ -9,11 +9,22 @@ module.exports = {
     'plugin:n/recommended',
     'plugin:perfectionist/recommended-natural'
   ],
-  ignorePatterns: ['!.*', 'coverage*', 'lib', 'node_modules', 'pnpm-lock.yaml', 'dist', '.eslintrc.cjs'],
+  ignorePatterns: [
+    '!.*',
+    'coverage*',
+    'lib',
+    'node_modules',
+    'pnpm-lock.yaml',
+    'dist',
+    '.eslintrc.cjs',
+    'router.ts'
+  ],
   parser: '@typescript-eslint/parser',
-  plugins: ['react-refresh'],
+  plugins: ['react-refresh', 'perfectionist', 'n'],
   rules: {
     'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
-    '@typescript-eslint/no-explicit-any': 'warning'
+    '@typescript-eslint/no-explicit-any': 'warn',
+    'perfectionist/sort-imports': 'off',
+    'n/no-missing-import': 'off'
   }
 };

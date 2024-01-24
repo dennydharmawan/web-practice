@@ -5,22 +5,22 @@ import { FullScreenLayout } from '@/components/layout/full-screen-layout';
 export default function AccordionExample() {
   const items = [
     {
+      answer:
+        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex esse ipsa veritatis iste ea maiores inventore ab qui tenetur illum mollitia in tempora sint cumque explicabo assumenda alias, nulla quia.',
       idx: 1,
-      question: 'When will my order ship?',
-      answer:
-        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex esse ipsa veritatis iste ea maiores inventore ab qui tenetur illum mollitia in tempora sint cumque explicabo assumenda alias, nulla quia.'
+      question: 'When will my order ship?'
     },
     {
+      answer:
+        'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor architecto impedit corporis repellendus, aperiam voluptatum qui, animi odit voluptates nam dolorem ratione commodi iste aliquam sit libero. Quam, doloremque maiores?',
       idx: 2,
-      question: 'What are your shipping rates',
-      answer:
-        'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor architecto impedit corporis repellendus, aperiam voluptatum qui, animi odit voluptates nam dolorem ratione commodi iste aliquam sit libero. Quam, doloremque maiores?'
+      question: 'What are your shipping rates'
     },
     {
-      idx: 3,
-      question: 'Do you offer gift wrapping?',
       answer:
-        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit molestiae quasi non reiciendis! Provident officia rem, expedita tempora quasi maiores, facilis eum voluptate minus qui cupiditate dicta eius culpa pariatur.'
+        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit molestiae quasi non reiciendis! Provident officia rem, expedita tempora quasi maiores, facilis eum voluptate minus qui cupiditate dicta eius culpa pariatur.',
+      idx: 3,
+      question: 'Do you offer gift wrapping?'
     }
   ];
 

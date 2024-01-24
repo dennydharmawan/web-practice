@@ -6,28 +6,28 @@ import { FullScreenLayout } from '@/components/layout/full-screen-layout';
 
 const products = [
   {
+    description:
+      "Perfect for adding a festive touch to any space, this miniature tree brings the magic of christmas right into your home. Crafted with care, it's delightful.",
     id: 1,
     imgUrl: 'https://icodethis.com/images/iCodeMas/tree.png',
-    title: 'Christmas Tree Decoration',
     price: 19.99,
-    description:
-      "Perfect for adding a festive touch to any space, this miniature tree brings the magic of christmas right into your home. Crafted with care, it's delightful."
+    title: 'Christmas Tree Decoration'
   },
   {
+    description:
+      "Perfect for adding a festive touch to any space, this miniature tree brings the magic of christmas right into your home. Crafted with care, it's delightful.",
     id: 2,
     imgUrl: 'https://icodethis.com/images/iCodeMas/gift.png',
-    title: 'Christmas gift',
     price: 21.55,
-    description:
-      "Perfect for adding a festive touch to any space, this miniature tree brings the magic of christmas right into your home. Crafted with care, it's delightful."
+    title: 'Christmas gift'
   },
   {
+    description:
+      "Perfect for adding a festive touch to any space, this miniature tree brings the magic of christmas right into your home. Crafted with care, it's delightful.",
     id: 3,
     imgUrl: 'https://icodethis.com/images/iCodeMas/gingerbread_cookie.png',
-    title: 'Christmas Gingerbread Cookie',
     price: 30.21,
-    description:
-      "Perfect for adding a festive touch to any space, this miniature tree brings the magic of christmas right into your home. Crafted with care, it's delightful."
+    title: 'Christmas Gingerbread Cookie'
   }
 ];
 
@@ -45,25 +45,25 @@ export default function FeatureProductsPage() {
       </section>
       <section className="pancake-flexbox breakout mt-12">
         <ActionIcon
-          color="slate.4"
-          size="auto"
           className="relative border-0 p-8"
+          color="slate.4"
           onClick={() => setActiveTab(0)}
+          size="auto"
         >
           <span className="absolute left-0 top-0 bg-blue-navy-700 px-3 py-3">New</span>
           <Image src="https://icodethis.com/images/iCodeMas/tree.png" />
         </ActionIcon>
 
-        <ActionIcon color="slate.4" size="auto" className="relative border-0" onClick={() => setActiveTab(1)}>
+        <ActionIcon className="relative border-0" color="slate.4" onClick={() => setActiveTab(1)} size="auto">
           <span className="absolute left-0 top-0 bg-error-600 px-3 py-3">-23%</span>
           <img src="https://icodethis.com/images/iCodeMas/gift.png" />
         </ActionIcon>
 
         <ActionIcon
-          color="slate.4"
-          size="auto"
           className="relative border-0 p-8"
+          color="slate.4"
           onClick={() => setActiveTab(2)}
+          size="auto"
         >
           <img src="https://icodethis.com/images/iCodeMas/gingerbread_cookie.png" />
         </ActionIcon>
@@ -79,7 +79,7 @@ export default function FeatureProductsPage() {
           <h3 className="text-lg font-bold">{products[activeTab].title}</h3>
           <h4 className="text-xl font-extrabold">${products[activeTab].price}</h4>
           <p className="mt-6 max-w-prose">{products[activeTab].description}</p>
-          <Button color="cyan.7" className="mt-auto self-start">
+          <Button className="mt-auto self-start" color="cyan.7">
             Add to cart
           </Button>
         </div>

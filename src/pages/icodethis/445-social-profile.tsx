@@ -17,12 +17,12 @@ export default function SocialProfilePage() {
 
   const containerVariants = {
     collapsed: {
-      width: '96px',
-      padding: '0px'
+      padding: '0px',
+      width: '96px'
     },
     expanded: {
-      width: '420px',
-      padding: '28px'
+      padding: '28px',
+      width: '420px'
     }
   };
 
@@ -30,11 +30,11 @@ export default function SocialProfilePage() {
     collapsed: {
       opacity: 0
     },
-    expanded: {
-      opacity: 1
-    },
     exit: {
       opacity: 0
+    },
+    expanded: {
+      opacity: 1
     }
   };
 
@@ -44,59 +44,59 @@ export default function SocialProfilePage() {
     <FullScreenLayout>
       <div className="super-centered text-white">
         <motion.div
-          layout
+          animate={isExpanded ? 'expanded' : 'collapsed'}
           className="flex cursor-pointer flex-col gap-6 rounded-2xl border-indigo-600 bg-indigo-600"
           initial="collapsed"
-          variants={containerVariants}
-          animate={isExpanded ? 'expanded' : 'collapsed'}
+          layout
           onClick={() => setIsExpanded(!isExpanded)}
+          variants={containerVariants}
         >
           {!isExpanded ? (
             <motion.img
+              alt="Frances S. Cady"
+              className="aspect-square w-24 object-cover"
+              height={96}
               layout
               layoutId="profile-image"
               src="https://api.dicebear.com/7.x/adventurer/png?seed=Cuddles"
-              alt="Frances S. Cady"
-              className="aspect-square w-24 object-cover"
               width={96}
-              height={96}
             />
           ) : (
             <>
               <div className="flex items-center gap-3">
                 <motion.img
+                  alt="Frances S. Cady"
+                  className="aspect-square w-24 object-cover"
+                  height={96}
                   layout
                   layoutId="profile-image"
                   src="https://api.dicebear.com/7.x/adventurer/svg?seed=Cuddles"
-                  alt="Frances S. Cady"
-                  className="aspect-square w-24 object-cover"
                   width={96}
-                  height={96}
                 />
                 <motion.div
-                  layout
-                  initial="collapsed"
                   animate="expanded"
-                  variants={childrenVariants}
+                  className="flex flex-col"
+                  initial="collapsed"
+                  layout
                   transition={{
                     delay: 1 * staggerAmountInMs
                   }}
-                  className="flex flex-col"
+                  variants={childrenVariants}
                 >
                   <h1 className="text-2xl font-bold">Denny Dharmawan</h1>
                   <h2 className="text-md pt-1 font-semibold">Growth-Led Full-Stack Engineer</h2>
                 </motion.div>
               </div>
               <motion.p
-                key={'paragraph'}
-                initial="collapsed"
                 animate="expanded"
+                className="-mt-6"
                 exit="exit"
-                variants={childrenVariants}
+                initial="collapsed"
+                key={'paragraph'}
                 transition={{
                   delay: 2 * staggerAmountInMs
                 }}
-                className="-mt-6"
+                variants={childrenVariants}
               >
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam deserunt facere sapiente
                 expedita nesciunt architecto repellendus nisi aut? Amet et dolores quam iste corrupti
@@ -104,14 +104,14 @@ export default function SocialProfilePage() {
               </motion.p>
 
               <motion.div
-                className="pancake-grid rounded-2xl bg-indigo-800 px-3 py-4 text-center [--custom-min:6ch]"
-                initial="collapsed"
                 animate="expanded"
+                className="pancake-grid rounded-2xl bg-indigo-800 px-3 py-4 text-center [--custom-min:6ch]"
                 exit="exit"
-                variants={childrenVariants}
+                initial="collapsed"
                 transition={{
                   delay: 3 * staggerAmountInMs
                 }}
+                variants={childrenVariants}
               >
                 <div>
                   <h3>Projects</h3>
@@ -128,28 +128,28 @@ export default function SocialProfilePage() {
               </motion.div>
 
               <motion.div
-                className="flex gap-4"
-                initial="collapsed"
                 animate="expanded"
+                className="flex gap-4"
                 exit="exit"
-                variants={childrenVariants}
+                initial="collapsed"
                 transition={{
                   delay: 4 * staggerAmountInMs
                 }}
+                variants={childrenVariants}
               >
                 <Button
-                  leftSection={<IconUserPlus size={20} />}
                   className="w-1/2 bg-gradient-to-br from-pink-300 via-red-300 to-yellow-500 text-slate-950"
+                  leftSection={<IconUserPlus size={20} />}
                   onClick={() => {}}
                 >
                   Follow
                 </Button>
 
                 <Button
-                  leftSection={<IconMessage size={20} />}
-                  variant="light"
                   className="w-1/2 bg-orange-200 text-slate-950"
+                  leftSection={<IconMessage size={20} />}
                   onClick={() => {}}
+                  variant="light"
                 >
                   Send Message
                 </Button>

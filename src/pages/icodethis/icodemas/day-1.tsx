@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { intervalToDuration, weeksToDays, type Duration } from 'date-fns';
+import { type Duration, intervalToDuration, weeksToDays } from 'date-fns';
 
 import { padNumber } from '@/lib/utils';
 
@@ -7,29 +7,29 @@ import { padNumber } from '@/lib/utils';
 
 function LandingPage() {
   const [calculatedDuration, setCalculatedDuration] = useState<Required<Duration>>({
-    years: 0,
-    weeks: 0,
     days: 0,
     hours: 0,
     minutes: 0,
     months: 0,
-    seconds: 0
+    seconds: 0,
+    weeks: 0,
+    years: 0
   });
 
   const updateCalculatedDuration = () => {
     const duration = intervalToDuration({
-      start: new Date(),
-      end: new Date('2024-12-25')
+      end: new Date('2024-12-25'),
+      start: new Date()
     });
 
     setCalculatedDuration({
-      years: duration.years || 0,
-      weeks: duration.weeks || 0,
       days: duration.days || 0,
       hours: duration.hours || 0,
       minutes: duration.minutes || 0,
       months: duration.months || 0,
-      seconds: duration.seconds || 0
+      seconds: duration.seconds || 0,
+      weeks: duration.weeks || 0,
+      years: duration.years || 0
     });
   };
 
@@ -46,14 +46,14 @@ function LandingPage() {
     <>
       <section className="content-grid super-centered relative min-h-screen bg-[url('https://icodethis.com/images/iCodeMas/snow_bg.png')] bg-cover bg-center bg-no-repeat text-center text-white">
         <img
-          src="https://icodethis.com/images/iCodeMas/santa.png"
           alt="snowman"
           className="absolute bottom-12 right-0 max-w-xs"
+          src="https://icodethis.com/images/iCodeMas/santa.png"
         />
         <img
-          src="https://icodethis.com/images/iCodeMas/snowman.png"
           alt="snowman"
           className="absolute bottom-12 left-12 max-w-[13rem]"
+          src="https://icodethis.com/images/iCodeMas/snowman.png"
         />
 
         <h1 className="mb-3 text-5xl font-bold">iCodeMas is coming to town</h1>

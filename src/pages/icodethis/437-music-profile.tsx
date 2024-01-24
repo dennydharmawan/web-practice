@@ -20,7 +20,7 @@ function toRadians(degrees: number): number {
 // Assuming α is in degrees
 function calculateX(alphaDegrees: number, width: number): number {
   // Convert degrees to radians before using Math.tan
-  let alphaRadians: number = toRadians(alphaDegrees);
+  const alphaRadians: number = toRadians(alphaDegrees);
   return (Math.tan(alphaRadians) * width) / 2;
 }
 
@@ -37,34 +37,34 @@ export default function MusicProfilePage() {
   return (
     <FullScreenLayout>
       <div className="m-auto max-w-lg">
-        <Card shadow="sm" padding="lg" radius="md" withBorder>
+        <Card padding="lg" radius="md" shadow="sm" withBorder>
           <Card.Section className="relative">
             <div className="content-grid">
               <div className="full-width relative">
                 <Image
+                  alt="Norway"
+                  className="relative"
+                  height={300}
                   ref={ref}
                   src="https://source.unsplash.com/UuzkCF-jmPY?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   width={400}
-                  height={300}
-                  alt="Norway"
-                  className="relative"
                 />
                 <div
                   className="absolute w-full bg-white"
                   style={{
-                    transform: `translateY(${translateY}px) skewY(-11deg)`,
-                    height: -1 * 2 * translateY + 'px'
+                    height: -1 * 2 * translateY + 'px',
+                    transform: `translateY(${translateY}px) skewY(-11deg)`
                   }}
                 ></div>
                 <ActionIcon
-                  variant="filled"
                   aria-label="Add new profile"
                   className="absolute bottom-0 right-0 rounded-full drop-shadow-xl"
+                  color="indigo.5"
+                  size={64}
                   style={{
                     transform: 'translateX(calc(-1 * var(--padding-inline)))'
                   }}
-                  color="indigo.5"
-                  size={64}
+                  variant="filled"
                 >
                   <IconPlus size={48} />
                 </ActionIcon>
@@ -80,7 +80,7 @@ export default function MusicProfilePage() {
                   nulla. Ut eum repellendus non autem! Alias perferendis, ipsa amet qui non itaque.
                 </p>
                 <h4 className="text-2xl font-bold uppercase text-indigo-500">Albums</h4>
-                <Carousel slideSize="70%" slidesToScroll={1} slideGap="md" loop align="start">
+                <Carousel align="start" loop slideGap="md" slideSize="70%" slidesToScroll={1}>
                   {images.map((image, index) => (
                     <Carousel.Slide key={index}>
                       <Image src={image} />

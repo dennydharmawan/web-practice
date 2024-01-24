@@ -14,8 +14,8 @@ const CertificateCard = React.forwardRef<
 
   return (
     <motion.div
-      ref={scope}
       className={cn('rounded-lg shadow-sm', className)}
+      ref={scope}
       {...props}
       onMouseEnter={() => {
         animate(scope.current, onMouseEnterAnimation);

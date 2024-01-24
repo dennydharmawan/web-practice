@@ -19,9 +19,9 @@ export default function SimplePricingPage() {
               <div className="flex h-full w-1/2 flex-col gap-6 rounded-b-3xl rounded-tl-[304px] rounded-tr-xl border-4 border-slate-950 bg-white px-6 py-6 shadow-[10px_10px_0px_rgba(0,0,0,1)]">
                 <section>
                   <img
-                    src="https://images.pexels.com/photos/3293150/pexels-photo-3293150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                     alt="beach"
                     className="mb-3 rounded-b-3xl rounded-tl-[304px] rounded-tr-xl object-cover"
+                    src="https://images.pexels.com/photos/3293150/pexels-photo-3293150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                   />
 
                   <h1 className="text-2xl font-bold text-purple-700">Coral Paradise Resort</h1>
@@ -31,15 +31,15 @@ export default function SimplePricingPage() {
                 {/* [&>ul~ul]:mt-3 */}
                 <section className="pancake-grid">
                   <List
-                    spacing="xs"
-                    size="sm"
                     center
+                    className="columns-2 font-semibold text-slate-950"
                     icon={
-                      <ThemeIcon color="purple.7" size={24} radius="xl">
+                      <ThemeIcon color="purple.7" radius="xl" size={24}>
                         <IconCircleCheck size={18} />
                       </ThemeIcon>
                     }
-                    className="columns-2 font-semibold text-slate-950"
+                    size="sm"
+                    spacing="xs"
                   >
                     <List.Item>3 night 4 days</List.Item>
                     <List.Item>4 people</List.Item>
@@ -54,9 +54,9 @@ export default function SimplePricingPage() {
 
                 <div className="flex justify-center">
                   <Button
+                    className="border-2 border-slate-950 shadow-[8px_8px_0px_rgba(0,0,0,1)]"
                     color="purple.7"
                     size="xl"
-                    className="border-2 border-slate-950 shadow-[8px_8px_0px_rgba(0,0,0,1)]"
                   >
                     Buy Now
                   </Button>
@@ -66,9 +66,9 @@ export default function SimplePricingPage() {
               <div className="flex h-full w-1/2 flex-col gap-6 rounded-b-3xl rounded-tl-xl rounded-tr-[304px] border-4 border-slate-950 bg-white px-6 py-6 shadow-[10px_10px_0px_rgba(0,0,0,1)]">
                 <section>
                   <img
-                    src="https://images.pexels.com/photos/3319815/pexels-photo-3319815.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                     alt="beach"
                     className="mb-3 rounded-b-3xl rounded-tl-xl rounded-tr-[304px] object-cover"
+                    src="https://images.pexels.com/photos/3319815/pexels-photo-3319815.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                   />
 
                   <h1 className="text-2xl font-bold text-pink-700">Sunset Sands Retreat</h1>
@@ -78,15 +78,15 @@ export default function SimplePricingPage() {
                 {/* [&>ul~ul]:mt-3 */}
                 <section className="pancake-grid">
                   <List
-                    spacing="xs"
-                    size="sm"
                     center
+                    className="columns-2 font-semibold text-slate-950"
                     icon={
-                      <ThemeIcon color="pink.7" size={24} radius="xl">
+                      <ThemeIcon color="pink.7" radius="xl" size={24}>
                         <IconCircleCheck size={18} />
                       </ThemeIcon>
                     }
-                    className="columns-2 font-semibold text-slate-950"
+                    size="sm"
+                    spacing="xs"
                   >
                     <List.Item>3 night 4 days</List.Item>
                     <List.Item>4 people</List.Item>
@@ -101,9 +101,9 @@ export default function SimplePricingPage() {
 
                 <div className="flex justify-center">
                   <Button
+                    className="border-2 border-slate-950 shadow-[8px_8px_0px_rgba(0,0,0,1)]"
                     color="pink.7"
                     size="xl"
-                    className="border-2 border-slate-950 shadow-[8px_8px_0px_rgba(0,0,0,1)]"
                   >
                     Buy Now
                   </Button>

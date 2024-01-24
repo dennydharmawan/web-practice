@@ -12,7 +12,14 @@ export function padNumber(number: number) {
   return String(number).padStart(2, '0');
 }
 
-export function getRoutes(routes: RouteObject): Path[] {
+type PageObject = {
+  path: Path;
+  challengeNumber: string;
+  title: string;
+  id: string;
+};
+
+export function getRoutes(routes: RouteObject): PageObject[] {
   const paths: Path[] = [];
 
   const traverse = (element: RouteObject) => {
@@ -25,7 +32,38 @@ export function getRoutes(routes: RouteObject): Path[] {
 
   traverse(routes);
 
-  const sortedPaths = paths.sort((a,b) => a.localeCompare(b, undefined, {numeric: true}))
+  const sortedPaths = paths.sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
 
-  return sortedPaths;
+  const pageObjects: PageObject[] = sortedPaths
+    .map((path) => ({
+      path,
+      challengeNumber: extractChallengeNumberFromPath(path),
+      title: extractTitle(path),
+      id: extractId(path)
+    }))
+    .filter((obj) => obj.challengeNumber !== '');
+
+  return pageObjects;
+}
+
+export function extractChallengeNumberFromPath(path: string): string {
+  const match = path.match(/\/icodethis\/(\d+)-[a-z-]+/);
+
+  return match ? match[1] : '';
+}
+
+export function extractTitle(path: string): string {
+  const match = path.match(/\/icodethis\/\d+-(.+)$/);
+
+  return match ? titleCase(match[1].replace(/-/g, ' ')) : ''; // Replace hyphens with spaces
+}
+
+export function extractId(path: string): string {
+  const match = path.match(/\/icodethis\/\d+-(.+)$/);
+
+  return match ? match[1].replace(/-/g, '-') : ''; // Replace hyphens with dash
+}
+
+export function titleCase(str: string): string {
+  return str.replace(/\w\S*/g, (word) => word.charAt(0).toUpperCase() + word.substr(1).toLowerCase());
 }

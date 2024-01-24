@@ -9,6 +9,7 @@ export type Path =
   | `/animation/framer-motion/header-logo`
   | `/animation/framer-motion/switch`
   | `/animation/hamburger-menu`
+  | `/experiments/content-grid`
   | `/experiments/tailwind-theme`
   | `/experiments/vertical-align`
   | `/icodethis/426-testimonial-carousel`

@@ -74,6 +74,7 @@
     grid-column: full-width;
   } */
 
+  /* content-grid make its direct children stretch full height and width*/
   .content-grid {
     --padding-inline: var(--custom-padding-inline, clamp(1rem, 6vw, 3rem));
     --content-max-width: var(--custom-content-max-width, 1280px);
@@ -105,6 +106,7 @@
 
     display: grid;
     grid-gap: var(--gap);
+
     /* min() with 100% prevents overflow
   in extra narrow spaces */
     grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));

@@ -2,25 +2,31 @@
   {
     "challengeNumber": "426",
     "id": "testimonial-carousel.tsx",
-    "path": "/icodethis/426-testimonial-carousel.tsx",
+    "path": "/icodethis/426-testimonial-carousel",
     "title": "Testimonial Carousel.tsx"
   },
   {
     "challengeNumber": "437",
     "id": "music-profile.tsx",
-    "path": "/icodethis/437-music-profile.tsx",
+    "path": "/icodethis/437-music-profile",
     "title": "Music Profile.tsx"
   },
   {
     "challengeNumber": "444",
     "id": "simple-pricing.tsx",
-    "path": "/icodethis/444-simple-pricing.tsx",
+    "path": "/icodethis/444-simple-pricing",
     "title": "Simple Pricing.tsx"
   },
   {
     "challengeNumber": "445",
     "id": "social-profile.tsx",
-    "path": "/icodethis/445-social-profile.tsx",
+    "path": "/icodethis/445-social-profile",
     "title": "Social Profile.tsx"
+  },
+  {
+    "challengeNumber": "446",
+    "id": "subcription-pricing.tsx",
+    "path": "/icodethis/446-subcription-pricing",
+    "title": "Subcription Pricing.tsx"
   }
 ]

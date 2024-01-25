@@ -16,6 +16,7 @@ export type Path =
   | `/icodethis/437-music-profile`
   | `/icodethis/444-simple-pricing`
   | `/icodethis/445-social-profile`
+  | `/icodethis/446-subcription-pricing`
   | `/icodethis/icodemas/day-1`
   | `/icodethis/icodemas/day-12`
   | `/icodethis/icodemas/day-13`

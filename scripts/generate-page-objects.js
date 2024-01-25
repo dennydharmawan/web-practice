@@ -11,7 +11,7 @@ import { extractChallengeNumberFromPath, extractId, extractTitle, writeDataToJso
     .map((path) => ({
       challengeNumber: extractChallengeNumberFromPath(path),
       id: extractId(path),
-      path: path.replace('../src/pages', ''),
+      path: path.replace('../src/pages', '').replace('.tsx', ''),
       title: extractTitle(path)
     }))
     .filter((obj) => obj.challengeNumber !== '');

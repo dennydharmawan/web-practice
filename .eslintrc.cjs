@@ -17,7 +17,8 @@ module.exports = {
     'pnpm-lock.yaml',
     'dist',
     '.eslintrc.cjs',
-    'router.ts'
+    'router.ts',
+    'tailwind.config.js'
   ],
   parser: '@typescript-eslint/parser',
   plugins: ['react-refresh', 'perfectionist', 'n'],
@@ -25,6 +26,7 @@ module.exports = {
     'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
     '@typescript-eslint/no-explicit-any': 'warn',
     'perfectionist/sort-imports': 'off',
-    'n/no-missing-import': 'off'
+    'n/no-missing-import': 'off',
+    'perfectionist/sort-named-imports': 'off'
   }
 };

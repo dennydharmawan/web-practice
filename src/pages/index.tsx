@@ -1,6 +1,7 @@
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
-import { Button, Card } from '@mantine/core';
+import { Button, Card, Image } from '@mantine/core';
 import { IconExternalLink, IconEye } from '@tabler/icons-react';
 
 import { FullScreenLayout } from '@/components/layout/full-screen-layout';
@@ -13,30 +14,36 @@ export default function index() {
         <div>
           <div className="pancake-grid items-start [--custom-gap:1.5rem] [--custom-min:320px]">
             {pageObjects.map((pageObject) => (
-              <section aria-labelledby={pageObject.id} key={pageObject.id}>
+              <motion.section
+                aria-labelledby={pageObject.id}
+                className="group"
+                key={pageObject.id}
+                whileHover={{ translateY: '-8px' }}
+              >
                 <Card
                   className="gap-4"
                   component="a"
                   href={pageObject.path}
                   padding="sm"
-                  shadow="sm"
+                  shadow="md"
                   target="_blank"
                 >
-                  {/* <Card.Section>
-                  <Image
-                    src="https://images.unsplash.com/photo-1579227114347-15d08fc37cae?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80"
-                    h={160}
-                    alt="No way!"
-                  />
-                </Card.Section> */}
+                  <Card.Section>
+                    <Image
+                      className="aspect-video object-cover"
+                      src={pageObject.img.src}
+                      srcSet={pageObject.img.srcSet}
+                    />
+                  </Card.Section>
+                  {/*
                   <div>
                     <h3 className="line-clamp-1 text-2xl font-bold text-primary" id={pageObject.id}>
                       {pageObject.title}
                     </h3>
                     <p className="text-slate-600">Challenge Number {`#${pageObject.challengeNumber}`}</p>
-                  </div>
+                  </div> */}
 
-                  <div className="pancake-flexbox mt-auto [--custom-gap:1rem] [--custom-min:160px]">
+                  <div className="pancake-flexbox [--custom-gap:1rem] [--custom-min:160px]">
                     <Button
                       component={Link}
                       leftSection={<IconEye size={20} />}
@@ -56,7 +63,7 @@ export default function index() {
                     </Button>
                   </div>
                 </Card>
-              </section>
+              </motion.section>
             ))}
           </div>
         </div>

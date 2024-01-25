@@ -15,6 +15,11 @@ export default function SubcriptionPricingPage() {
   return (
     <FullScreenLayout className="bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-rose-400 via-fuchsia-500 to-indigo-500">
       <main className="super-centered">
+        <img
+          height={100}
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+          width={100}
+        />
         <section aria-labelledby="pricing-title">
           <Card className="flex flex-col gap-8" padding="xl" radius="md" shadow="sm" withBorder>
             <div className="text-center">

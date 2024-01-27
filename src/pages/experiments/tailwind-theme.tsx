@@ -26,7 +26,7 @@ export default function TailwindThemePage() {
   return (
     <FullScreenLayout className="bg-paper/25">
       <motion.div className="super-centered">
-        <Switch checked={darkMode} onChange={toggleDarkMode} label={darkMode ? 'Dark Mode' : 'Light Mode'} />
+        <Switch checked={darkMode} label={darkMode ? 'Dark Mode' : 'Light Mode'} onChange={toggleDarkMode} />
       </motion.div>
     </FullScreenLayout>
   );

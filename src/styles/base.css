@@ -74,6 +74,7 @@
     grid-column: full-width;
   } */
 
+  /* content-grid make its direct children stretch full height and width*/
   .content-grid {
     --padding-inline: var(--custom-padding-inline, clamp(1rem, 6vw, 3rem));
     --content-max-width: var(--custom-content-max-width, 1280px);
@@ -105,6 +106,7 @@
 
     display: grid;
     grid-gap: var(--gap);
+
     /* min() with 100% prevents overflow
   in extra narrow spaces */
     grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
@@ -173,52 +175,29 @@
 
 }
 
-:root {
-  /* Typography */
-  --body-font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
-  --heading-font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
-
-  --font-size-xs: clamp(0.6rem, 0.17vw + 0.76rem, 0.7rem);
-  --font-size-sm: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem);
-  --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
-  --font-size-md: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
-  --font-size-lg: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
-  --font-size-xl: clamp(1.95rem, 1.56vw + 1.56rem, 2.81rem);
-  --font-size-2xl: clamp(2.44rem, 2.38vw + 1.85rem, 3rem);
-  --font-size-3xl: clamp(3.05rem, 3.54vw + 2.17rem, 5rem);
-}
-
-html {
-  --background: var(--light-background);
-}
-
-html.dark {
-  --background: var(--dark-background);
-}
-
 /* additional css reset */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  text-wrap: balance;
-}
-
-p {
-  max-width: 65ch;
-  text-wrap: pretty;
-}
-
-@media(prefers-reduced-motion: no-preference) {
-  :has(:target) {
-    scroll-behavior: smooth;
-    scroll-padding-top: 3rem;
-  }
-}
-
 @layer base {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-wrap: balance;
+  }
+
+  p {
+    max-width: 65ch;
+    text-wrap: pretty;
+  }
+
+  @media(prefers-reduced-motion: no-preference) {
+    :has(:target) {
+      scroll-behavior: smooth;
+      scroll-padding-top: 3rem;
+    }
+  }
 
   /* sensible img reset */
   img {

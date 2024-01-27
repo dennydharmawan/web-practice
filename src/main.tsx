@@ -4,15 +4,15 @@ import ReactDOM from 'react-dom/client';
 import { Routes } from '@generouted/react-router';
 import { createTheme, MantineProvider } from '@mantine/core';
 
+import '@/styles/base.css';
 import '@/styles/hamburger-menu.css';
-import '@/styles/index.css';
 import '@mantine/carousel/styles.css';
 
 import { mantineColors } from '@/lib/mantine';
 
 const theme = createTheme({
-  primaryColor: 'primary',
-  colors: mantineColors
+  colors: mantineColors,
+  primaryColor: 'primary'
 });
 
 ReactDOM.createRoot(document.getElementById('root')!).render(

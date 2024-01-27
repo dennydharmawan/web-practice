@@ -17,7 +17,7 @@ export default function Chat() {
           <h3 className="text-center text-slate-400">7 minutes ago</h3>
           <div className="flex gap-4">
             <Avatar>
-              <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+              <AvatarImage alt="@shadcn" src="https://github.com/shadcn.png" />
               <AvatarFallback>CN</AvatarFallback>
             </Avatar>
 
@@ -41,7 +41,7 @@ export default function Chat() {
           </div>
         </section>
         <section className="flex items-center bg-white p-4">
-          <Input type="text" placeholder="Message virtual assistant..." />
+          <Input placeholder="Message virtual assistant..." type="text" />
 
           <IconSend className=" ml-2 text-cyan-700" />
         </section>

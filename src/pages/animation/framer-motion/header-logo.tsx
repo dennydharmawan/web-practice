@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { AnimatePresence, LayoutGroup, motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
 import { Button } from '@mantine/core';
 
@@ -12,9 +12,9 @@ export default function HeaderLogoPage() {
   const firstRender = useRef(true);
 
   const variants = {
-    initial: { opacity: 0 },
     enter: { opacity: 1 },
-    exit: { opacity: 0 }
+    exit: { opacity: 0 },
+    initial: { opacity: 0 }
   };
 
   useEffect(() => {
@@ -27,44 +27,42 @@ export default function HeaderLogoPage() {
   return (
     <FullScreenLayout>
       <div className="super-centered">
-        <LayoutGroup>
-          <motion.div layout className="relative rounded bg-white p-4">
-            <a
-              href="#"
-              className="flex"
-              style={{
-                alignItems: `${isExpanded ? 'end' : 'center'}`
-              }}
-            >
-              <motion.img
+        <motion.div className="relative rounded bg-white p-4" layout>
+          <a
+            className="flex"
+            href="#"
+            style={{
+              alignItems: `${isExpanded ? 'end' : 'center'}`
+            }}
+          >
+            <motion.img
+              alt="Website Logo"
+              className="mr-3 h-9 w-9"
+              height={36}
+              layout
+              src="/vite.svg"
+              width={36}
+            />
+            <motion.div className="flex flex-col text-xl font-bold" layout>
+              Denny Dharmawan
+            </motion.div>
+          </a>
+          <AnimatePresence mode="popLayout">
+            {isExpanded && (
+              <motion.p
+                animate="enter"
+                exit="exit"
+                initial="initial"
+                key="paragraph"
                 layout
-                src="/vite.svg"
-                className="mr-3 h-9 w-9"
-                width={36}
-                height={36}
-                alt="Website Logo"
-              />
-              <motion.div layout className="flex flex-col text-xl font-bold">
-                Denny Dharmawan
-              </motion.div>
-            </a>
-            <AnimatePresence mode="popLayout">
-              {isExpanded && (
-                <motion.p
-                  key="paragraph"
-                  initial="initial"
-                  animate="enter"
-                  exit="exit"
-                  layout
-                  style={{ position: isExpanded ? 'relative' : 'absolute' }}
-                  variants={firstRender.current ? {} : variants}
-                >
-                  Seasoned Full-Stack Engineer
-                </motion.p>
-              )}
-            </AnimatePresence>
-          </motion.div>
-        </LayoutGroup>
+                style={{ position: isExpanded ? 'relative' : 'absolute' }}
+                variants={firstRender.current ? {} : variants}
+              >
+                Seasoned Full-Stack Engineer
+              </motion.p>
+            )}
+          </AnimatePresence>
+        </motion.div>
         <Button className="mt-6" onClick={() => setIsExpanded(!isExpanded)}>
           Animate
         </Button>

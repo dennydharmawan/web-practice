@@ -14,8 +14,8 @@ export default function SwitchPage() {
           style={{ justifyContent: state }}
         >
           <motion.div
-            layout
             className="h-[80px] w-[80px] rounded-full bg-white"
+            layout
             onClick={() => setState(state === 'start' ? 'end' : 'start')}
           ></motion.div>
         </div>

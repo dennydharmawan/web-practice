@@ -16,15 +16,15 @@ export default function RestaurantApp() {
             </div>
           </header>
 
-          <div className="full-width max-h-[480px] min-h-[480px] divide-y overflow-auto text-white">
+          <div className="full-width max-h-[480px] min-h-[480px] divide-y overflow-auto text-white [scrollbar-gutter:auto]">
             {menu.map((menu, idx) => (
               <div
                 key={idx}
                 className="grid grid-cols-[minmax(60px,2fr)_8fr_minmax(max-content,2fr)] items-center gap-3 px-[var(--custom-padding-inline)] py-3"
               >
                 <Image radius="md" src={menu.imageUrl} fit="cover" className="aspect-square w-full" />
-                <section className="flex flex-col gap-1 self-start">
-                  <div className="shrink-0 overflow-hidden text-ellipsis whitespace-nowrap bg-yellow-100 font-bold">
+                <section className="flex max-w-full flex-col gap-1 self-start overflow-hidden">
+                  <div className="max-w-full overflow-auto text-ellipsis whitespace-nowrap font-bold hover:cursor-pointer [&::-webkit-scrollbar-thumb]:bg-transparent [&::-webkit-scrollbar]:w-6">
                     {menu.name}
                   </div>
                   <Rating value={menu.rating} defaultValue={3} color="yellow.3" readOnly />
@@ -67,7 +67,7 @@ export default function RestaurantApp() {
 const menu = [
   {
     id: 1,
-    name: 'Milis Burgers asdasdasdasdasdasdsa',
+    name: 'Milis Burger',
     imageUrl:
       'https://images.pexels.com/photos/10922929/pexels-photo-10922929.jpeg?auto=compress&cs=tinysrgb&w=680&h=375&dpr=1',
     rating: 4,

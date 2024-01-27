@@ -31,8 +31,8 @@ export default function index() {
                   <Card.Section>
                     <Image
                       className="aspect-video object-cover"
-                      src={pageObject.img.src}
-                      srcSet={pageObject.img.srcSet}
+                      src={!pageObject.img.src}
+                      srcSet={!pageObject.img.srcSet}
                     />
                   </Card.Section>
                   {/*
@@ -57,7 +57,7 @@ export default function index() {
                       leftSection={<IconExternalLink size={20} />}
                       target="_blank"
                       to={`https://icodethis.com/challenges/${pageObject.challengeNumber}`}
-                      variant="light"
+                      variant="outline"
                     >
                       Visit Challenge
                     </Button>

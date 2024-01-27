@@ -1,3 +1,4 @@
+import { createRequire } from 'module';
 import { glob } from 'glob';
 import pMap from 'p-map';
 
@@ -9,11 +10,25 @@ import {
   writeDataToJson
 } from './utils.js';
 
+const require = createRequire(import.meta.url);
+const challenges = require('../src/data/icodethis.json');
+
 (async () => {
   const paths = await glob('../src/pages/**/*.tsx', { cwd: 'scripts' });
 
   const sortedPaths = paths
-    .filter((path) => path.includes('icodethis') && !path.includes('icodemas'))
+    .filter(
+      (path) => path.includes('icodethis') && !path.includes('icodemas') && !path.includes('restaurant-app')
+    )
+    // .filter((path) => {
+    //   const challengeNumber = extractChallengeNumberFromPath(path);
+
+    //   if (!challengeNumber) {
+    //     return false;
+    //   }
+
+    //   return !doesChallengeExist(challenges, challengeNumber);
+    // })
     .map((path) => path.replace(/\.tsx$/, ''))
     .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
 
@@ -41,5 +56,11 @@ import {
     { concurrency: 5 }
   );
 
-  await writeDataToJson(pageObjects, 'src/data/icodethis.json');
+  if (pageObjects.length > 0) {
+    const combinedPageObjects = challenges.concat(pageObjects);
+
+    await writeDataToJson(combinedPageObjects, 'src/data/icodethis.json');
+  } else {
+    console.log('No new challenges found');
+  }
 })();

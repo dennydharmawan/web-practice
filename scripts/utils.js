@@ -49,7 +49,6 @@ export async function scrapeImage(url) {
     // Wait for the image to be present in the DOM
     await page.waitForSelector('img[alt^="Challenge"]');
 
-    // // Extract the image URL based on alt attribute starting with "Challenge"
     // const src = await page.$eval('img[alt^="Challenge"]', (img) => img.src);
     // const srcSet = await page.$eval('img[alt^="Challenge"]', (img) => img.srcset);
     const imageInfo = await page.evaluate(() => {
@@ -90,4 +89,8 @@ export async function scrapeImage(url) {
     console.error('Error:', error);
     return null;
   }
+}
+
+export function doesChallengeExist(challenges, challengeNumber) {
+  return challenges.some((challenge) => challenge.challengeNumber === challengeNumber);
 }

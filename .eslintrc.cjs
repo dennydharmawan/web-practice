@@ -19,7 +19,8 @@ module.exports = {
     '.eslintrc.cjs',
     'router.ts',
     'tailwind.config.js',
-    'tailwind.color.js'
+    'tailwind.color.js',
+    'routeTree.gen.ts'
   ],
   parser: '@typescript-eslint/parser',
   plugins: ['react-refresh', 'perfectionist', 'n'],

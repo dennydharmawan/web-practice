@@ -22,7 +22,9 @@ export type Path =
   | `/icodethis/icodemas/day-13`
   | `/icodethis/icodemas/day-2`
   | `/icodethis/icodemas/day-21`
-  | `/layout/grid-container`;
+  | `/icodethis/restaurant-app`
+  | `/layout/grid-container`
+  | `/static/dice-bear-flashlight`;
 
 export type Params = {};
 

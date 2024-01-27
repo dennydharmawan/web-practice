@@ -36,6 +36,6 @@ export function titleCase(str) {
   return str.replace(/\w\S*/g, (word) => word.charAt(0).toUpperCase() + word.substr(1).toLowerCase());
 }
 
-const myVar = 'asd';
-
-export default myVar;
+export function doesChallengeExist(challenges, challengeNumber) {
+  return challenges.some((challenge) => challenge.challengeNumber === challengeNumber);
+}

@@ -1,20 +1,44 @@
+import { createRequire } from 'module';
 import { glob } from 'glob';
 
-import { extractChallengeNumberFromPath, extractId, extractTitle, writeDataToJson } from './utils.js';
+import {
+  doesChallengeExist,
+  extractChallengeNumberFromPath,
+  extractId,
+  extractTitle,
+  writeDataToJson
+} from './utils.js';
+
+const require = createRequire(import.meta.url);
+const challenges = require('../src/data/icodethis.json');
 
 (async () => {
   const paths = await glob('../src/pages/**/*.tsx', { cwd: 'scripts' });
 
-  const sortedPaths = paths.sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
+  const sortedPaths = paths
+    .filter((path) => {
+      const challengeNumber = extractChallengeNumberFromPath(path);
 
-  const pageObjects = sortedPaths
-    .map((path) => ({
-      challengeNumber: extractChallengeNumberFromPath(path),
-      id: extractId(path),
-      path: path.replace('../src/pages', '').replace('.tsx', ''),
-      title: extractTitle(path)
-    }))
-    .filter((obj) => obj.challengeNumber !== '');
+      if (!challengeNumber) {
+        return false;
+      }
 
-  await writeDataToJson(pageObjects, 'src/data/icodethis.json');
+      return !doesChallengeExist(challenges, challengeNumber);
+    })
+    .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
+
+  const pageObjects = sortedPaths.map((path) => ({
+    challengeNumber: extractChallengeNumberFromPath(path),
+    id: extractId(path),
+    path: path.replace('../src/pages', '').replace('.tsx', ''),
+    title: extractTitle(path)
+  }));
+
+  if (pageObjects.length > 0) {
+    const combinedPageObjects = challenges.concat(pageObjects);
+
+    await writeDataToJson(combinedPageObjects, 'src/data/icodethis.json');
+  } else {
+    console.log('No new challenges found');
+  }
 })();

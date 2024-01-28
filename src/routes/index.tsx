@@ -1,17 +1,13 @@
 import { motion } from 'framer-motion';
 
-import { Button, Card, Image } from '@mantine/core';
+import { Badge, Button, Card, Image } from '@mantine/core';
 import { IconExternalLink, IconEye } from '@tabler/icons-react';
 import { createFileRoute, Link } from '@tanstack/react-router';
 
 import { FullScreenLayout } from '@/components/layout/full-screen-layout';
 import pageObjects from '@/data/icodethis.json';
 
-export const Route = createFileRoute('/')({
-  component: Index
-});
-
-function Index() {
+function IndexPage() {
   const beamVariant = {
     animate: {
       x1: '-100%',
@@ -28,9 +24,9 @@ function Index() {
   };
 
   return (
-    <FullScreenLayout className="relative bg-slate-900 text-white">
+    <FullScreenLayout className="bg-background-950 relative text-white">
       {/* Grid Pattern background */}
-      <div className="full-width bg-grid-white absolute inset-0 [mask-image:linear-gradient(to_bottom,white_5%,transparent_25%)]"></div>
+      <div className="full-width absolute inset-0 bg-grid-white [mask-image:linear-gradient(to_bottom,white_5%,transparent_25%)]"></div>
 
       <main className="content-grid relative space-y-6">
         <section className="absolute pt-4">
@@ -93,29 +89,36 @@ function Index() {
               <h1 className="mb-4 max-w-2xl text-5xl font-semibold">
                 Constant Learning, Endless Exploration: One Pixel at a Time!
               </h1>
-              <p className="mb-4 max-w-2xl text-gray-300 md:text-lg lg:mb-8 lg:text-xl">
-                Welcome to my design lab, a space where I tackle UI challenges head-on, turning code into art.
-                Explore my journey through various coding challenges and witness the magic of front-end
+              <p className="mb-4 max-w-2xl text-gray-true-400 md:text-lg lg:mb-8 lg:text-xl">
+                Welcome to my training lab, a space where I tackle UI challenges head-on, turning code into
+                art. Explore my journey through various coding challenges and witness the magic of front-end
                 development.
               </p>
-              <a
-                className="mr-3 inline-flex items-center justify-center rounded-lg bg-primary-700 px-5 py-3 text-center text-base font-medium text-white hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900"
-                href="#"
-              >
-                See My Solutions
-                <svg
-                  className="-mr-1 ml-2 h-5 w-5"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
+
+              <div className="flex items-center justify-start gap-3">
+                <a
+                  className="mr-3 inline-flex items-center justify-center rounded-lg bg-[#3C70AB] px-5 py-3 text-center text-base font-medium text-white hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900"
+                  href="#"
                 >
-                  <path
-                    clip-rule="evenodd"
-                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                    fill-rule="evenodd"
-                  ></path>
-                </svg>
-              </a>
+                  See My Solutions
+                  <svg
+                    className="-mr-1 ml-2 h-5 w-5"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                      fill-rule="evenodd"
+                    ></path>
+                  </svg>
+                </a>
+
+                <Badge color="secondary.4" size="lg" variant="outline">
+                  {pageObjects.length}+ Completed Challenges
+                </Badge>
+              </div>
             </div>
             <div className="hidden lg:col-span-6 lg:mt-0 lg:flex">
               <img
@@ -126,10 +129,8 @@ function Index() {
           </div>
         </section>
 
-        <section>{pageObjects.length}+ Completed Challenges</section>
-
         <section>
-          <h2 className="mb-4 font-semibold text-primary-300">Solution Galery</h2>
+          <h2 className="mb-4 font-semibold text-secondary">Solution Galery</h2>
           <div className="pancake-grid items-start [--custom-gap:1.5rem] [--custom-min:278px]">
             {pageObjects.map((pageObject) => (
               <motion.section
@@ -139,7 +140,7 @@ function Index() {
                 whileHover={{ translateY: '-8px' }}
               >
                 <Card
-                  className="gap-4"
+                  className="gap-4 bg-[#595A4A]"
                   component="a"
                   href={pageObject.path}
                   padding="sm"
@@ -161,8 +162,10 @@ function Index() {
                     <p className="text-slate-600">Challenge Number {`#${pageObject.challengeNumber}`}</p>
                   </div> */}
 
-                  <div className="pancake-flexbox [--custom-gap:1rem] [--custom-min:112px]">
+                  <div className="pancake-flexbox  [--custom-gap:1rem] [--custom-min:112px]">
                     <Button
+                      className="text-slate-900"
+                      color="accent.2"
                       component={Link}
                       leftSection={<IconEye size={20} />}
                       target="_blank"
@@ -171,6 +174,7 @@ function Index() {
                       Solution
                     </Button>
                     <Button
+                      color="accent.2"
                       component={Link}
                       leftSection={<IconExternalLink size={20} />}
                       target="_blank"
@@ -187,53 +191,49 @@ function Index() {
         </section>
       </main>
 
-      <footer className="text-white">
-        <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+      <footer className="content-grid text-white">
+        <div className="py-6 lg:py-8">
           <div className="flex justify-between">
-            <div className="mb-6 md:mb-0">
+            <div>
               <a className="flex items-center" href="https://flowbite.com/">
                 <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
-                  Thanks for looking around.
+                  Thanks for looking around
                 </span>
               </a>
             </div>
 
-            <div className="ml-auto grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-6">
+            <div className="grid grid-cols-2 gap-8 sm:gap-6">
               <div>
-                <h2 className="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">
-                  Resources
-                </h2>
-                <ul className="font-medium text-gray-500 dark:text-gray-400">
+                <h2 className="mb-6 text-sm font-semibold uppercase text-white">Resources</h2>
+                <ul className="font-medium text-gray-true-400 dark:text-gray-400">
                   <li className="mb-4">
                     <a className="hover:underline" href="https://flowbite.com/">
                       Flowbite
                     </a>
                   </li>
                   <li>
-                    <a className="hover:underline" href="https://tailwindcss.com/">
-                      Tailwind CSS
+                    <a className="hover:underline" href="https://icodethis.com/">
+                      iCodeThis
                     </a>
                   </li>
                 </ul>
               </div>
               <div>
-                <h2 className="mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white">
-                  Follow Me
-                </h2>
-                <ul className="font-medium text-gray-500 dark:text-gray-400">
-                  <li className="mb-4">
-                    <a className="hover:underline " href="https://github.com/themesberg/flowbite">
-                      Github: https://github.com/dennydharmawan
+                <h2 className="text-White mb-6 text-sm font-semibold uppercase dark:text-white">Follow Me</h2>
+                <ul className="space-y-4 font-medium text-gray-true-400 dark:text-gray-400">
+                  <li>
+                    <a className="hover:underline" href="https://discord.gg/4eeurUVvTy">
+                      Portfolio
                     </a>
                   </li>
-                  <li className="mb-4">
-                    <a className="hover:underline" href="https://discord.gg/4eeurUVvTy">
-                      Linkedin: https://linkedin.com/in/ddharmawan
+                  <li>
+                    <a className="hover:underline " href="https://github.com/themesberg/flowbite">
+                      Github
                     </a>
                   </li>
                   <li>
                     <a className="hover:underline" href="https://discord.gg/4eeurUVvTy">
-                      Email: contact@dennydharmawan.com
+                      Linkedin
                     </a>
                   </li>
                 </ul>
@@ -243,9 +243,9 @@ function Index() {
           <hr className="my-6 border-gray-200 dark:border-gray-700 sm:mx-auto lg:my-8" />
           <div className="sm:flex sm:items-center sm:justify-between">
             <span className="text-sm text-gray-500 dark:text-gray-400 sm:text-center">
-              © 2023{' '}
+              © {new Date().getFullYear()}{' '}
               <a className="hover:underline" href="https://flowbite.com/">
-                Denny Dharmawan
+                Denny Dharmawan™
               </a>
               . All Rights Reserved.
             </span>
@@ -333,3 +333,7 @@ function Index() {
     </FullScreenLayout>
   );
 }
+
+export const Route = createFileRoute('/')({
+  component: IndexPage
+});

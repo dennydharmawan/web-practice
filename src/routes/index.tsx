@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion';
 
-import { Badge, Button, Card, Image } from '@mantine/core';
+import { Anchor, Button, Card, Image } from '@mantine/core';
 import { IconExternalLink, IconEye } from '@tabler/icons-react';
 import { createFileRoute, Link } from '@tanstack/react-router';
 
 import { FullScreenLayout } from '@/components/layout/full-screen-layout';
+import DesignShowcaseIllustration from '@/components/ui/design-showcase-illustration';
 import pageObjects from '@/data/icodethis.json';
 
 function IndexPage() {
@@ -24,13 +25,15 @@ function IndexPage() {
   };
 
   return (
-    <FullScreenLayout className="bg-background-950 relative text-white">
+    <FullScreenLayout className="relative bg-background-950 text-white">
       {/* Grid Pattern background */}
-      <div className="full-width absolute inset-0 bg-grid-white [mask-image:linear-gradient(to_bottom,white_5%,transparent_25%)]"></div>
+      <div className="full-width z-1 absolute inset-0 bg-grid-white [mask-image:linear-gradient(to_bottom,white_5%,transparent_25%)]"></div>
 
-      <main className="content-grid relative space-y-6">
-        <section className="absolute pt-4">
-          <h1 className="font-bold">Denny Dharmawan</h1>
+      <main className="content-grid relative space-y-6 [--custom-content-max-width:1320px]">
+        <section aria-labelledby="header-title" className="absolute pt-4">
+          <h1 className="font-bold" id="header-title">
+            Denny Dharmawan
+          </h1>
           <p>Growth-Led Full-Stack Engineer</p>
           {/* <motion.div
             initial={{ opacity: 0 }}
@@ -50,9 +53,9 @@ function IndexPage() {
           </motion.div> */}
         </section>
 
-        <section className="text-white">
-          <div className="mx-auto grid max-w-screen-xl py-8 lg:grid-cols-12 lg:gap-8 lg:py-16 xl:gap-0">
-            <div className="mr-auto place-self-center lg:col-span-6">
+        <section aria-labelledby="header-tagline">
+          <div className="mx-auto grid max-w-screen-xl py-12 lg:grid-cols-12 lg:gap-8 lg:py-24 xl:gap-0">
+            <div className="mr-4 place-self-center lg:col-span-5">
               <svg
                 fill="none"
                 height="68"
@@ -86,51 +89,39 @@ function IndexPage() {
                 </defs>
               </svg>
 
-              <h1 className="mb-4 max-w-2xl text-5xl font-semibold">
+              <h2 className="mb-4 max-w-2xl text-5xl font-semibold" id="header-tagline">
                 Constant Learning, Endless Exploration: One Pixel at a Time!
-              </h1>
-              <p className="mb-4 max-w-2xl text-gray-true-400 md:text-lg lg:mb-8 lg:text-xl">
+              </h2>
+              <p className="mb-4 max-w-2xl text-gray-blue-300 md:text-lg lg:mb-8 lg:text-xl">
                 Welcome to my training lab, a space where I tackle UI challenges head-on, turning code into
                 art. Explore my journey through various coding challenges and witness the magic of front-end
                 development.
               </p>
 
               <div className="flex items-center justify-start gap-3">
-                <a
-                  className="mr-3 inline-flex items-center justify-center rounded-lg bg-[#3C70AB] px-5 py-3 text-center text-base font-medium text-white hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900"
-                  href="#"
-                >
+                <Button className="bg-secondary text-slate-950" size="lg">
                   See My Solutions
-                  <svg
-                    className="-mr-1 ml-2 h-5 w-5"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      clip-rule="evenodd"
-                      d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                      fill-rule="evenodd"
-                    ></path>
-                  </svg>
-                </a>
+                  {/* <IconArrowNarrowDown className="ml-1 animate-bounce" size="32" /> */}
+                </Button>
 
-                <Badge color="secondary.4" size="lg" variant="outline">
+                {/* <Badge color="secondary.4" size="lg" variant="outline">
                   {pageObjects.length}+ Completed Challenges
-                </Badge>
+                </Badge> */}
               </div>
             </div>
-            <div className="hidden lg:col-span-6 lg:mt-0 lg:flex">
-              <img
-                alt="mockup"
-                src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png"
-              />
+            <div className="relative hidden lg:col-span-7 lg:mt-0 lg:flex">
+              <div className="absolute left-[82px] top-[-200px]">
+                <DesignShowcaseIllustration />
+              </div>
             </div>
           </div>
         </section>
 
-        <section>
-          <h2 className="mb-4 font-semibold text-secondary">Solution Galery</h2>
+        <section aria-labelledby="solution-title">
+          <h2 className="mb-4 font-semibold text-secondary" id="solution-title">
+            Solution Galery
+          </h2>
+
           <div className="pancake-grid items-start [--custom-gap:1.5rem] [--custom-min:278px]">
             {pageObjects.map((pageObject) => (
               <motion.section
@@ -205,7 +196,7 @@ function IndexPage() {
             <div className="grid grid-cols-2 gap-8 sm:gap-6">
               <div>
                 <h2 className="mb-6 text-sm font-semibold uppercase text-white">Resources</h2>
-                <ul className="font-medium text-gray-true-400 dark:text-gray-400">
+                <ul className="font-medium text-gray-blue-300 dark:text-gray-400">
                   <li className="mb-4">
                     <a className="hover:underline" href="https://flowbite.com/">
                       Flowbite
@@ -220,7 +211,7 @@ function IndexPage() {
               </div>
               <div>
                 <h2 className="text-White mb-6 text-sm font-semibold uppercase dark:text-white">Follow Me</h2>
-                <ul className="space-y-4 font-medium text-gray-true-400 dark:text-gray-400">
+                <ul className="space-y-4 font-medium text-gray-blue-300 dark:text-gray-400">
                   <li>
                     <a className="hover:underline" href="https://discord.gg/4eeurUVvTy">
                       Portfolio
@@ -329,6 +320,14 @@ function IndexPage() {
             </div>
           </div>
         </div>
+
+        <p>
+          Build with modern web technologies. Explore the source code on{' '}
+          <Anchor c="accent.2" href="https://mantine.dev/" rel="noopener noreferrer" target="_blank">
+            GitHub
+          </Anchor>{' '}
+          to discover the details.
+        </p>
       </footer>
     </FullScreenLayout>
   );

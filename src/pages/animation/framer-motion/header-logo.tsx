@@ -7,6 +7,9 @@ import { FullScreenLayout } from '@/components/layout/full-screen-layout';
 
 // complex animation by combining LayoutGroup, AnimatePresence, and first render detection
 
+// popLayout example
+// https://codesandbox.io/p/sandbox/framer-motion-animatepresence-poplayout-mode-t7qxhv
+
 export default function HeaderLogoPage() {
   const [isExpanded, setIsExpanded] = useState(true);
   const firstRender = useRef(true);

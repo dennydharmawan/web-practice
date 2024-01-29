@@ -74,7 +74,9 @@
     grid-column: full-width;
   } */
 
-  /* content-grid make its direct children stretch full height and width*/
+  /* The 'content-grid' class ensures its direct children stretch to full height by default.
+   To override this behavior for a specific direct child, use 'align-self: start;' to nullify the stretching effect.
+   */
   .content-grid {
     --padding-inline: var(--custom-padding-inline, clamp(1rem, 6vw, 3rem));
     --content-max-width: var(--custom-content-max-width, 1280px);

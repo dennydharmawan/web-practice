@@ -19,7 +19,7 @@
     "@mantine/hooks": "^7.3.2",
     "@radix-ui/react-avatar": "^1.0.4",
     "@tabler/icons-react": "^2.44.0",
-    "@tanstack/react-router": "^1.14.0",
+    "@tanstack/react-router": "^1.15.2",
     "@tsparticles/engine": "^3.0.2",
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.0.2",

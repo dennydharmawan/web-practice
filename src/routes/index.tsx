@@ -1,7 +1,8 @@
-import { motion } from 'framer-motion';
+import { createFileRoute } from '@tanstack/react-router'
 
-import { Anchor, Badge, Button, Card, Image } from '@mantine/core';
-import { IconExternalLink, IconEye } from '@tabler/icons-react';
+export const Route = createFileRoute('/')({
+  component: () => <div>Hello /!</div>
+})nBrandLinkedin, IconExternalLink, IconEye, IconMail } from '@tabler/icons-react';
 import { createFileRoute, Link } from '@tanstack/react-router';
 
 import { FullScreenLayout } from '@/components/layout/full-screen-layout';
@@ -27,14 +28,31 @@ function IndexPage() {
   return (
     <FullScreenLayout className="relative bg-background-950 text-white">
       {/* Grid Pattern background */}
-      <div className="full-width z-1 absolute inset-0 bg-grid-white [mask-image:linear-gradient(to_bottom,white_5%,transparent_25%)]"></div>
+      <div className="full-width z-1 pointer-events-none absolute inset-0 bg-grid-white [mask-image:linear-gradient(to_bottom,white_5%,transparent_25%)]"></div>
 
       <main className="content-grid relative space-y-6 [--custom-content-max-width:1320px]">
-        <section aria-labelledby="header-title" className="absolute pt-4">
-          <h1 className="font-bold" id="header-title">
-            Denny Dharmawan
-          </h1>
-          <p>Growth-Led Full-Stack Engineer</p>
+        <section
+          aria-labelledby="header-title"
+          className="absolute flex w-full items-center justify-between pt-4"
+        >
+          <div>
+            <h1 className="font-bold" id="header-title">
+              Denny Dharmawan
+            </h1>
+            <p>Growth-Led Full-Stack Engineer</p>
+          </div>
+
+          <div className="flex gap-5">
+            <ActionIcon className="text-white hover:text-indigo-300" component={Link} variant="subtle">
+              <IconBrandGithub />
+            </ActionIcon>
+            <ActionIcon className="text-white" component={Link} variant="subtle">
+              <IconBrandLinkedin />
+            </ActionIcon>
+            <ActionIcon className="text-white" component={Link} variant="subtle">
+              <IconMail />
+            </ActionIcon>
+          </div>
           {/* <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -89,33 +107,51 @@ function IndexPage() {
                 </defs>
               </svg>
 
-              <h2 className="mb-4 max-w-2xl text-5xl font-semibold" id="header-tagline">
+              <h2 className="mb-8 max-w-2xl text-5xl font-semibold" id="header-tagline">
                 Constant Learning,{' '}
                 <span className="bg-gradient-to-b from-rose-400 via-fuchsia-500 to-indigo-500  bg-clip-text text-transparent">
                   Endless Exploration:
                 </span>{' '}
                 One Pixel at a Time!
               </h2>
-              <p className="text-balance mb-4 max-w-2xl text-gray-blue-300 md:text-lg lg:mb-8 lg:text-xl">
+              <p className="mb-6 max-w-2xl text-balance text-gray-blue-300 md:text-lg lg:mb-8 lg:text-xl">
                 Welcome to my training lab, a space where I tackle UI challenges head-on, turning code into
                 art. Explore my journey through various coding challenges and witness the magic of front-end
                 development.
               </p>
 
-              <div className="flex items-center">
-                {/* <Button className="" size="lg">
-                  See My Solutions
+              <div className="flex items-center gap-8">
+                {/* <Button className="" size="md">
+                  Let's Work Together
                 </Button> */}
 
-                <Badge color="secondary.3" size="xl" variant="outline">
+                <div className="group relative w-fit transition-transform duration-300 active:scale-95">
+                  <button className="relative z-10 rounded-lg bg-gradient-to-br from-indigo-500 to-fuchsia-500 p-0.5 duration-300 group-hover:scale-110">
+                    <span className="block rounded-md bg-slate-950 px-4 py-4 text-xl font-semibold text-slate-100 duration-300 group-hover:bg-slate-950/80 group-hover:text-slate-50 group-active:bg-slate-950/90">
+                      Let's Work Together
+                    </span>
+                  </button>
+                  <span className="pointer-events-none absolute -inset-4 z-0 scale-y-[80%] transform-gpu rounded-2xl bg-gradient-to-br from-indigo-500 to-fuchsia-500 opacity-30 blur-xl transition-all duration-300 group-hover:opacity-90 group-active:opacity-50"></span>
+                </div>
+
+                <span className="me-3 flex items-center font-medium text-slate-300 dark:text-white">
+                  <span className="me-2 rounded-full bg-success-50 p-[2px]">
+                    <span className="flex h-2.5 w-2.5 flex-shrink-0 rounded-full bg-success"></span>
+                  </span>
+                  Available for Work
+                </span>
+
+                <div className="rounded-2xl bg-red-700 text-red-600" />
+
+                {/* <Badge color="secondary.3" size="xl" variant="outline">
                   {pageObjects.length}+ Completed Challenges
-                </Badge>
+                </Badge> */}
 
                 {/* <ArrowDownDoodle className="text-secondary" height={48} /> */}
               </div>
             </div>
             <div className="relative hidden lg:col-span-7 lg:mt-0 lg:flex">
-              <div className="absolute left-[82px] top-[-200px]">
+              <div className="absolute left-[82px] top-[-144px]">
                 <DesignShowcaseIllustration />
               </div>
             </div>
@@ -186,16 +222,33 @@ function IndexPage() {
           </div>
         </section>
       </main>
-
       <footer className="content-grid text-white">
         <div className="py-6 lg:py-8">
           <div className="flex justify-between">
-            <div>
-              <a className="flex items-center" href="https://flowbite.com/">
+            <div className="space-y-8">
+              <div>
+                <h1 className="text-2xl font-bold">Denny Dharmawan</h1>
+                {/* <a className="flex items-center" href="https://flowbite.com/">
                 <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
                   Thanks for looking around
                 </span>
-              </a>
+              </a> */}
+
+                <p className="max-w-[46ch] text-balance">An Indonesian based Full-Stack Engineer</p>
+              </div>
+
+              <p className="max-w-[46ch] text-balance text-gray-blue-300">
+                Build with modern web technologies. Explore the source code on{' '}
+                <Anchor
+                  c="accent.2"
+                  href="https://github.com/dennydharmawan/web-practice"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  GitHub
+                </Anchor>{' '}
+                to discover the details.
+              </p>
             </div>
 
             <div className="grid grid-cols-2 gap-8 sm:gap-6">
@@ -215,7 +268,7 @@ function IndexPage() {
                 </ul>
               </div>
               <div>
-                <h2 className="text-White mb-6 text-sm font-semibold uppercase dark:text-white">Follow Me</h2>
+                <h2 className="text-White mb-6 text-sm font-semibold uppercase dark:text-white">Socials</h2>
                 <ul className="space-y-4 font-medium text-gray-blue-300 dark:text-gray-400">
                   <li>
                     <a className="hover:underline" href="https://discord.gg/4eeurUVvTy">
@@ -238,7 +291,7 @@ function IndexPage() {
           </div>
           <hr className="my-6 border-gray-200 dark:border-gray-700 sm:mx-auto lg:my-8" />
           <div className="sm:flex sm:items-center sm:justify-between">
-            <span className="text-sm text-gray-500 dark:text-gray-400 sm:text-center">
+            <span className="text-sm text-gray-blue-300 dark:text-gray-400 sm:text-center">
               © {new Date().getFullYear()}{' '}
               <a className="hover:underline" href="https://flowbite.com/">
                 Denny Dharmawan™
@@ -325,14 +378,6 @@ function IndexPage() {
             </div>
           </div>
         </div>
-
-        <p>
-          Build with modern web technologies. Explore the source code on{' '}
-          <Anchor c="accent.2" href="https://mantine.dev/" rel="noopener noreferrer" target="_blank">
-            GitHub
-          </Anchor>{' '}
-          to discover the details.
-        </p>
       </footer>
     </FullScreenLayout>
   );

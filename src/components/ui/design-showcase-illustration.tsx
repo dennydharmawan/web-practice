@@ -55,7 +55,7 @@ export default function DesignShowcaseIllustration() {
       whileHover="hover"
     >
       <motion.div
-        className="absolute left-[-37px] top-[150px] h-28 w-44 rounded-xl bg-[radial-gradient(218.51%_281.09%_at_100%_100%,_rgba(253,_63,_51,_0.6)_0%,_rgba(76,_0,_200,_0.6)_45.83%,_rgba(76,_0,_200,_0.6)_100%)]"
+        className="absolute left-[-37px] top-[150px] h-28 w-44 rounded-xl bg-gradient-to-br from-blue-600 to-teal-300"
         variants={cardOneVariant}
       >
         <img className="h-28 w-44 max-w-full" src="https://designcode.io/images/mockups/mockup-card2.svg" />

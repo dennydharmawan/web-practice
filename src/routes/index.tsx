@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-import { Anchor, Button, Card, Image } from '@mantine/core';
+import { Anchor, Badge, Button, Card, Image } from '@mantine/core';
 import { IconExternalLink, IconEye } from '@tabler/icons-react';
 import { createFileRoute, Link } from '@tanstack/react-router';
 
@@ -54,8 +54,8 @@ function IndexPage() {
         </section>
 
         <section aria-labelledby="header-tagline">
-          <div className="mx-auto grid max-w-screen-xl py-12 lg:grid-cols-12 lg:gap-8 lg:py-24 xl:gap-0">
-            <div className="mr-4 place-self-center lg:col-span-5">
+          <div className="mx-auto grid max-w-screen-xl py-12 lg:grid-cols-12 lg:gap-8 lg:py-32 xl:gap-0">
+            <div className="mr-7 place-self-center lg:col-span-5">
               <svg
                 fill="none"
                 height="68"
@@ -90,23 +90,28 @@ function IndexPage() {
               </svg>
 
               <h2 className="mb-4 max-w-2xl text-5xl font-semibold" id="header-tagline">
-                Constant Learning, Endless Exploration: One Pixel at a Time!
+                Constant Learning,{' '}
+                <span className="bg-gradient-to-b from-rose-400 via-fuchsia-500 to-indigo-500  bg-clip-text text-transparent">
+                  Endless Exploration:
+                </span>{' '}
+                One Pixel at a Time!
               </h2>
-              <p className="mb-4 max-w-2xl text-gray-blue-300 md:text-lg lg:mb-8 lg:text-xl">
+              <p className="text-balance mb-4 max-w-2xl text-gray-blue-300 md:text-lg lg:mb-8 lg:text-xl">
                 Welcome to my training lab, a space where I tackle UI challenges head-on, turning code into
                 art. Explore my journey through various coding challenges and witness the magic of front-end
                 development.
               </p>
 
-              <div className="flex items-center justify-start gap-3">
-                <Button className="bg-secondary text-slate-950" size="lg">
+              <div className="flex items-center">
+                {/* <Button className="" size="lg">
                   See My Solutions
-                  {/* <IconArrowNarrowDown className="ml-1 animate-bounce" size="32" /> */}
-                </Button>
+                </Button> */}
 
-                {/* <Badge color="secondary.4" size="lg" variant="outline">
+                <Badge color="secondary.3" size="xl" variant="outline">
                   {pageObjects.length}+ Completed Challenges
-                </Badge> */}
+                </Badge>
+
+                {/* <ArrowDownDoodle className="text-secondary" height={48} /> */}
               </div>
             </div>
             <div className="relative hidden lg:col-span-7 lg:mt-0 lg:flex">

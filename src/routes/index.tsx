@@ -1,8 +1,7 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { motion } from 'framer-motion';
 
-export const Route = createFileRoute('/')({
-  component: () => <div>Hello /!</div>
-})nBrandLinkedin, IconExternalLink, IconEye, IconMail } from '@tabler/icons-react';
+import { ActionIcon, Anchor, Button, Card, Image } from '@mantine/core';
+import { IconBrandGithub, IconBrandLinkedin, IconExternalLink, IconEye, IconMail } from '@tabler/icons-react';
 import { createFileRoute, Link } from '@tanstack/react-router';
 
 import { FullScreenLayout } from '@/components/layout/full-screen-layout';

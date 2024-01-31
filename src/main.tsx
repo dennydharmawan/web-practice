@@ -24,7 +24,8 @@ declare module '@tanstack/react-router' {
 
 const theme = createTheme({
   colors: mantineColors,
-  primaryColor: 'primary'
+  primaryColor: 'primary',
+  primaryShade: 7
 });
 
 ReactDOM.createRoot(document.getElementById('root')!).render(

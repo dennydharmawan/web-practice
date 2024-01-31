@@ -235,7 +235,7 @@ function IndexPage() {
               </div>
             </div>
 
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-3">
               <h3 className="text-balance text-2xl font-semibold">Thanks for looking around.</h3>
               <p className="max-w-[60ch] text-gray-blue-300">
                 Built with modern web technologies. <br /> Explore the source code on{' '}
@@ -251,7 +251,7 @@ function IndexPage() {
                 to discover the details.
               </p>
 
-              <div>
+              <div className="mt-2">
                 <Button>Ready to Talk?</Button>
               </div>
             </div>

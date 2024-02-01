@@ -24,6 +24,7 @@ export type Path =
   | `/icodethis/icodemas/day-21`
   | `/icodethis/restaurant-app`
   | `/layout/grid-container`
+  | `/static/dark-overlay-hero`
   | `/static/dice-bear-flashlight`;
 
 export type Params = {};

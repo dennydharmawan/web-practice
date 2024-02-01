@@ -5,22 +5,10 @@ import '@/styles/base.css';
 import '@/styles/hamburger-menu.css';
 import '@mantine/carousel/styles.css';
 
+import { Routes } from '@generouted/react-router';
 import { createTheme, MantineProvider } from '@mantine/core';
-import { createRouter, RouterProvider } from '@tanstack/react-router';
 
 import { mantineColors } from '@/lib/mantine';
-
-import { routeTree } from './routeTree.gen';
-
-// Create a new router instance
-const router = createRouter({ defaultPreload: false, routeTree });
-
-// Register the router instance for type safety
-declare module '@tanstack/react-router' {
-  interface Register {
-    router: typeof router;
-  }
-}
 
 const theme = createTheme({
   colors: mantineColors,
@@ -31,7 +19,7 @@ const theme = createTheme({
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <MantineProvider theme={theme}>
-      <RouterProvider router={router} />
+      <Routes />
     </MantineProvider>
   </React.StrictMode>
 );

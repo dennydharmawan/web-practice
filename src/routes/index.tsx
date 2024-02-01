@@ -1,7 +1,14 @@
 import { motion } from 'framer-motion';
 
 import { ActionIcon, Anchor, Button, Card, Image } from '@mantine/core';
-import { IconBrandGithub, IconBrandLinkedin, IconExternalLink, IconEye, IconMail } from '@tabler/icons-react';
+import {
+  IconBrandGithub,
+  IconBrandLinkedin,
+  IconExternalLink,
+  IconEye,
+  IconMail,
+  IconMapPin
+} from '@tabler/icons-react';
 import { createFileRoute, Link } from '@tanstack/react-router';
 
 import { FullScreenLayout } from '@/components/layout/full-screen-layout';
@@ -25,11 +32,11 @@ function IndexPage() {
   };
 
   return (
-    <FullScreenLayout className="relative bg-background-950 text-white">
+    <FullScreenLayout className="relative text-white [--custom-content-max-width:1320px]">
       {/* Grid Pattern background */}
       <div className="full-width z-1 pointer-events-none absolute inset-0 bg-grid-white [mask-image:linear-gradient(to_bottom,white_5%,transparent_25%)]"></div>
 
-      <main className="content-grid relative space-y-6 [--custom-content-max-width:1320px]">
+      <main className="full-width content-grid relative space-y-6 bg-gray-neutral-950 ">
         <section
           aria-labelledby="header-title"
           className="absolute flex w-full items-center justify-between pt-8"
@@ -38,7 +45,7 @@ function IndexPage() {
             <h1 className="font-bold" id="header-title">
               Denny Dharmawan
             </h1>
-            <p>Full-Stack Engineer</p>
+            <p>Building Impactful Products ● Full-Stack Engineer</p>
           </div>
 
           <div className="flex gap-5">
@@ -153,9 +160,12 @@ function IndexPage() {
           </div>
         </section>
 
-        <section aria-labelledby="solution-title">
+        <section
+          aria-labelledby="solution-title"
+          className="full-width content-grid bg-gray-neutral-800 py-12"
+        >
           <h2 className="mb-4 font-semibold text-secondary" id="solution-title">
-            Solution Galery
+            Solution Gallery
           </h2>
 
           <div className="pancake-grid items-start [--custom-gap:1.5rem] [--custom-min:278px]">
@@ -220,12 +230,12 @@ function IndexPage() {
         </section>
       </main>
 
-      <footer className="full-width content-grid mt-12 bg-background-800 text-white">
-        <div className="py-6 lg:py-8">
+      <footer className="full-width content-grid bg-gray-neutral-900 text-white">
+        <div className="py-12">
           <div className="flex gap-10">
             <div className="space-y-8">
-              <div className="space-y-3 rounded-md bg-[#111827] px-8 py-6">
-                <h1 className="text-2xl font-bold">Denny Dharmawan</h1>
+              <div className="space-y-3 rounded-md bg-gray-neutral-800 px-8 py-6">
+                <h3 className="text-2xl font-bold">Denny Dharmawan</h3>
 
                 <p className="max-w-[60ch] text-pretty text-gray-blue-300">
                   A seasoned full-stack engineer from Indonesia, focused on delivering high-quality work from
@@ -251,7 +261,7 @@ function IndexPage() {
                 to discover the details.
               </p>
 
-              <div className="mt-2">
+              <div className="mt-1">
                 <Button>Ready to Talk?</Button>
               </div>
             </div>
@@ -274,29 +284,42 @@ function IndexPage() {
               </ul>
             </div>
 
-            <div>
-              <h2 className="text-White relative mb-6 text-sm font-semibold uppercase before:absolute before:-bottom-[10px] before:left-0 before:h-[3px] before:w-[15px] before:bg-secondary after:absolute after:-bottom-[10px] after:left-[25px] after:h-[3px] after:w-[40px] after:bg-secondary">
-                Contact Me
-              </h2>
-              <ul className="space-y-4 font-medium text-gray-blue-300 dark:text-gray-400">
-                <li>
-                  <a className="hover:underline" href="https://discord.gg/4eeurUVvTy">
-                    https://dennydharmawan.com
-                  </a>
-                </li>
-              </ul>
+            <div className="space-y-8">
+              <div>
+                <h2 className="text-White relative mb-6 text-sm font-semibold uppercase before:absolute before:-bottom-[10px] before:left-0 before:h-[3px] before:w-[15px] before:bg-secondary after:absolute after:-bottom-[10px] after:left-[25px] after:h-[3px] after:w-[40px] after:bg-secondary">
+                  Contact Me
+                </h2>
+                <ul className="space-y-4 font-medium text-gray-blue-300 dark:text-gray-400">
+                  <li className="flex gap-2">
+                    <IconMail className="text-secondary" />
+                    <a className="hover:underline" href="https://discord.gg/4eeurUVvTy">
+                      https://dennydharmawan.com
+                    </a>
+                  </li>
+                  <li className="flex gap-2">
+                    <IconMapPin className="text-secondary" />
+                    <p>Based in Jakarta, Indonesia</p>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h2 className="text-White relative mb-6 text-sm font-semibold uppercase before:absolute before:-bottom-[10px] before:left-0 before:h-[3px] before:w-[15px] before:bg-secondary after:absolute after:-bottom-[10px] after:left-[25px] after:h-[3px] after:w-[40px] after:bg-secondary">
+                  Socials
+                </h2>
+              </div>
             </div>
           </div>
-          <hr className="my-6 border-gray-200 dark:border-gray-700 sm:mx-auto lg:my-8" />
-          <div className="sm:flex sm:items-center sm:justify-between">
-            <span className="text-sm text-gray-blue-300 dark:text-gray-400 sm:text-center">
-              © {new Date().getFullYear()}{' '}
-              <a className="hover:underline" href="https://flowbite.com/">
-                Denny Dharmawan™
-              </a>
-              . All Rights Reserved.
-            </span>
-          </div>
+        </div>
+
+        <div className="full-width content-grid bg-gray-neutral-950 py-6">
+          <span className="text-sm text-gray-blue-300 ">
+            © {new Date().getFullYear()}{' '}
+            <a className="hover:underline" href="https://flowbite.com/">
+              Denny Dharmawan™
+            </a>
+            . All Rights Reserved.
+          </span>
         </div>
       </footer>
     </FullScreenLayout>

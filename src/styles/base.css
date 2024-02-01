@@ -81,6 +81,7 @@
     --padding-inline: var(--custom-padding-inline, clamp(1rem, 6vw, 3rem));
     --content-max-width: var(--custom-content-max-width, 1280px);
     --breakout-max-width: var(--custom-breakout-max-width, 1536px);
+    /* 1024, 1280, 1366, 1440, 1920 */
 
     --breakout-size: calc((var(--breakout-max-width) - var(--content-max-width)) / 2);
 

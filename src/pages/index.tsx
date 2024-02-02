@@ -185,7 +185,7 @@ export default function IndexPage() {
                 >
                   <Card.Section className="overflow-hidden">
                     <Image
-                      className="duration-[250ms] aspect-video object-cover transition-transform ease-out group-hover:scale-110"
+                      className="aspect-video object-cover transition-transform duration-[250ms] ease-out group-hover:scale-110"
                       src={pageObject.img.src}
                       srcSet={pageObject.img.srcSet}
                     />

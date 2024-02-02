@@ -17,7 +17,8 @@ export default function LavaOverlayHeroPage() {
           </div>
 
           <div className="col-start-4 col-end-[-1] row-start-1 row-end-2">
-            <div className="relative z-[-1] aspect-video w-full bg-[url('https://source.unsplash.com/cckf4TsHAuw')] bg-cover after:pointer-events-none after:absolute after:inset-0 after:h-full after:w-full after:bg-slate-950/50" />
+            {/* <div className="relative z-[-1] aspect-video w-full bg-[url('https://source.unsplash.com/cckf4TsHAuw')] bg-cover after:pointer-events-none after:absolute after:inset-0 after:h-full after:w-full after:bg-slate-950/50" /> */}
+            <div className="goo relative z-[-1] aspect-video w-full bg-blue-100 bg-cover after:pointer-events-none after:absolute after:inset-0 after:h-full after:w-full after:bg-slate-950/50" />
           </div>
         </div>
       </div>

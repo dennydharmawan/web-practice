@@ -25,7 +25,8 @@ export type Path =
   | `/icodethis/restaurant-app`
   | `/layout/grid-container`
   | `/static/dark-overlay-hero`
-  | `/static/dice-bear-flashlight`;
+  | `/static/dice-bear-flashlight`
+  | `/static/lava-overlay-hero`;
 
 export type Params = {};
 

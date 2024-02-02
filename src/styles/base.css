@@ -176,6 +176,44 @@
     grid-template-columns: fit-content(20ch) minmax(min(50vw, 30ch), 1fr);
   }
 
+
+
+  .goo {
+    font-size: 3rem;
+    line-height: 1.35;
+    display: inline;
+    box-decoration-break: clone;
+    background: #fff;
+    padding: 0.5rem 1rem;
+    filter: url('/goo.svg#goo');
+  }
+
+  .goo:focus {
+    outline: 0;
+  }
+
+  .bg-img-overlay {
+    --bg-img: var(--custom-bg-img, url("https://placehold.co/600x400"));
+    --bg-img-opacity: var(--custom-bg-img-opacity, .5);
+
+    display: grid;
+    place-content: center;
+    position: relative;
+    isolation: isolate;
+  }
+
+  .bg-img-overlay::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+
+    opacity: var(--bg-img-opacity);
+    background-image: var(--bg-img);
+  }
+
 }
 
 /* additional css reset */
@@ -211,5 +249,4 @@
     background-repeat: no-repeat;
     background-size: cover;
   }
-
 }

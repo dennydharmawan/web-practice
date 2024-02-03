@@ -1,0 +1,52 @@
+Denny Dharmawan
+Full-Stack Developer
+
+Leveraging Web Technologies to Deliver Business Solution
+See my projects
+
+
+Foundation of my work
+Efficiency and Reliability:
+Prioritize building efficient systems that deliver a reliable and seamless user experience.
+Optimize code for performance and ensure the overall dependability of the application.
+
+User-Centricity and Purposeful Architecture:
+Design solutions with the end-users in mind, addressing their needs and pain points.
+Create a purposeful and scalable architecture that forms a strong foundation for the project.
+
+Simplicity and Clean Code:
+Embrace simplicity in both system architecture and code, making it easy to understand.
+Prioritize clean code practices to enhance readability, maintainability, and collaboration within the development team.
+
+
+I focus on producing top-notch and impactful digital solutions
+
+
+color
+https://www.awwwards.com/inspiration/givingli-interactive-bento-grid-givingli
+
+example
+https://www.youtube.com/watch?v=WLDfFqnqbxI
+
+lava layout is pretty compatible with bento
+https://startkittemplate.webflow.io/home-pages/home-v3
+
+Interactive bento
+https://www.givingli.com
+
+
+Bento Grid Sections
+
+1. picture of my workplace
+
+2.Tech Stack Icons:
+Image: Icons representing the various technologies and languages you're proficient in.
+Copy: "My toolkit includes a diverse set of technologies – from front-end frameworks to robust backend languages."
+
+Title at top center, Icons tease
+
+3.Foundation of my work
+
+4.Carousel of cool photos?
+
+5. CTA to see my projects?

@@ -33,13 +33,13 @@ export default function IndexPage() {
   };
 
   return (
-    <FullScreenLayout className="text-white [--custom-content-max-width:1320px]">
+    <FullScreenLayout className="text-white">
       <header
         aria-labelledby="header-tagline"
-        className="full-width content-grid relative bg-gray-neutral-950"
+        className="full-width content-grid relative isolate bg-gray-neutral-950"
       >
         {/* Grid Pattern background */}
-        <div className="full-width z-1 pointer-events-none absolute inset-0 bg-grid-white [mask-image:linear-gradient(to_bottom,white_5%,transparent_40%)]"></div>
+        <div className="full-width z-1 pointer-events-none absolute inset-0 bg-grid-white [mask-image:linear-gradient(to_bottom,white_5%,transparent_40%)]" />
 
         <section
           aria-labelledby="header-title"
@@ -80,8 +80,8 @@ export default function IndexPage() {
           </div>
         </section>
 
-        <div className="mx-auto grid py-12 lg:grid-cols-12 lg:gap-8 lg:py-36 xl:gap-0">
-          <div className="mr-7 place-self-center lg:col-span-5">
+        <div className="grid py-12 lg:grid-cols-12 lg:gap-8 lg:py-36 xl:gap-0">
+          <div className="mr-7 place-self-start lg:col-span-5">
             <svg fill="none" height="68" viewBox="0 0 236 68" width="236" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M0.5 0.5H89C90.6569 0.5 92 1.84315 92 3.5V29C92 30.6569 93.3431 32 95 32H148.5C150.157 32 151.5 33.3431 151.5 35V64C151.5 65.6569 152.843 67 154.5 67H235.5"
@@ -227,7 +227,7 @@ export default function IndexPage() {
         </section>
       </main>
 
-      <footer className="full-width content-grid bg-gray-neutral-900 text-white">
+      <footer className="full-width content-grid relative bg-gray-neutral-900 text-white">
         <div className="py-12">
           <div className="flex gap-10">
             <div className="space-y-8">

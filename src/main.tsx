@@ -5,7 +5,7 @@ import '@/styles/base.css';
 import '@/styles/hamburger-menu.css';
 import '@mantine/carousel/styles.css';
 
-import { Routes } from '@generouted/react-router';
+import { Routes } from '@generouted/react-router/lazy';
 import { createTheme, MantineProvider } from '@mantine/core';
 
 import { mantineColors } from '@/lib/mantine';

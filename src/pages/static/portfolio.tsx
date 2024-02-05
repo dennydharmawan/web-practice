@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, LayoutGroup, motion, useMotionValueEvent, useScroll } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 import { FullScreenLayout } from '@/components/layout/full-screen-layout';
 import { NavListItem } from '@/components/ui/nav-list-item';
@@ -32,7 +33,7 @@ export default function PortfolioPage() {
   const navVariants = {
     compacted: {
       backdropFilter: 'blur(4px)',
-      backgroundColor: 'rgba(255, 255, 255, 0.6)',
+      backgroundColor: 'rgba(255, 255, 255, 0.75)',
       boxShadow: '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)'
     },
     expanded: { backgroundColor: 'rgba(255, 255, 255, 0)' }
@@ -45,13 +46,13 @@ export default function PortfolioPage() {
   };
 
   return (
-    <FullScreenLayout className="relative place-content-start">
-      {/* <HashLink
-        className="absolute z-[50] rounded-sm bg-slate-700 p-4 font-semibold text-white"
+    <FullScreenLayout className="relative place-content-start bg-red-100">
+      <HashLink
+        className="fixed left-[8px] top-0 z-[50] translate-y-[-120%] rounded-sm bg-slate-700 px-4 py-3 font-semibold text-white transition-all duration-200 ease-in focus:translate-y-0"
         to="#main-content"
       >
         Skip to main content
-      </HashLink> */}
+      </HashLink>
 
       <LayoutGroup>
         <motion.header
@@ -187,14 +188,53 @@ export default function PortfolioPage() {
       <main className="full-width content-grid min-h-[200vh] bg-slate-300">
         <section aria-labelledby="hero-title">
           <h1 className="mt-[120px]" id="hero-title">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, reprehenderit?
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem, iure aliquid omnis ut
+            necessitatibus libero earum quibusdam placeat, ab odit qui blanditiis suscipit fugiat illum
+            tenetur iste culpa id minima soluta temporibus sunt at vitae optio. Autem, delectus quia?
+            Molestias distinctio, dicta nulla dolore impedit sint nesciunt assumenda voluptatibus? Minima
+            illum aliquam, magni earum cum voluptas recusandae voluptatibus sit quae est omnis nobis. Itaque
+            voluptates odit praesentium distinctio ducimus, eaque cupiditate placeat labore voluptatem eius
+            numquam quidem, dicta nihil suscipit tempora delectus nemo possimus eum, sed excepturi accusamus
+            libero necessitatibus tenetur. Hic suscipit consequuntur accusantium porro facilis! Cumque
+            obcaecati, repellendus ipsum et dignissimos culpa asperiores at ullam pariatur rerum possimus
+            totam debitis porro dolores, non veniam itaque repellat, magnam beatae id. Sequi nobis doloribus
+            quod laudantium deleniti repellat, iure recusandae excepturi? Reiciendis autem iusto hic velit ea
+            nam minima dolore culpa quidem quod voluptatibus atque molestias alias, aliquid dicta quo facilis
+            iure ut sit assumenda inventore accusamus. Nihil soluta accusantium ipsum, sunt quo eaque deserunt
+            unde, error voluptatum, cupiditate dolores. Minus aperiam facilis tempore nihil explicabo fugit
+            ullam saepe? Quia autem voluptate minima ab suscipit eligendi cumque accusamus itaque aliquid quod
+            non esse reprehenderit, minus tempora? Fuga delectus asperiores at molestiae aut praesentium
+            quidem aspernatur, repudiandae deleniti molestias facere voluptates ad natus, iusto expedita
+            saepe? Dolor quam cumque optio eius libero explicabo officia ducimus quaerat cum eos in nulla sit
+            facere at soluta quis placeat, sequi tenetur id debitis perferendis repellendus non mollitia quod.
+            Quod voluptatibus assumenda illo labore maxime eius dicta fuga eos accusantium natus laudantium
+            facere cumque in expedita facilis, pariatur ullam deleniti totam mollitia excepturi cum laborum
+            sapiente. Accusamus odio cumque velit, recusandae autem corporis sunt, sint voluptatum, illum
+            totam numquam qui nesciunt asperiores alias ratione repellendus soluta perspiciatis ab tempore.
+            Eveniet neque suscipit optio doloribus nesciunt? Sit sed aut soluta consequuntur ipsa aperiam
+            atque quae at rerum, sint labore porro alias optio molestiae, cupiditate facere aliquam aspernatur
+            enim. Mollitia unde vel ea temporibus, eaque libero dolore quisquam, vero est voluptatum fuga
+            totam nobis laboriosam dolor dicta aliquid voluptas. Quidem reprehenderit quae magni aut. In, fuga
+            dolorem doloribus vitae voluptas porro, repudiandae quidem officiis vero vel rerum excepturi
+            sapiente reprehenderit dolore consectetur omnis ad minima quod sequi, fugiat voluptatum!
+            Perferendis, illum magni beatae id iure laudantium cum laborum nemo officia facere mollitia.
+            Quisquam quibusdam animi vitae magnam, voluptates obcaecati, voluptate ad eum ullam, reprehenderit
+            vero! Provident repellendus soluta voluptate sed maxime quis consequuntur corporis fugiat omnis,
+            numquam atque sint praesentium, labore vitae eum, magni minus? Quia dolorum inventore numquam in
+            tempore, quis deleniti a nulla illo facilis eum! Quam vitae, laborum quo praesentium dolore
+            recusandae nam corrupti, enim facilis repellat voluptate a. Culpa quis ut illum nisi fugit!
+            Nesciunt autem debitis, architecto repudiandae eveniet, explicabo quaerat deleniti eligendi harum
+            dolore recusandae excepturi dolorem, aspernatur odit repellat quod iste alias. Mollitia qui
+            similique cupiditate vel suscipit excepturi fugiat velit odio, aperiam fuga magnam animi explicabo
+            accusantium repellat doloribus nam repudiandae fugit hic earum culpa delectus recusandae porro
+            nostrum.
           </h1>
 
-          <p className=" mt-[360px]" id="main-content">
+          <div className="mt-20 font-semibold" id="main-content">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum natus impedit voluptatem maiores
             inventore, nostrum quasi. Vel, modi ducimus minima ut rem ipsa natus velit. Molestias velit rerum
             vitae animi!asdasdas
-          </p>
+          </div>
         </section>
       </main>
       <footer></footer>

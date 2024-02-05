@@ -40,31 +40,33 @@ export default function HeaderLogoPage() {
           >
             <motion.img
               alt="Website Logo"
-              className="mr-3 h-9 w-9"
+              className="mr-3 h-9 w-9 justify-start"
               height={36}
               layout
               src="/vite.svg"
               width={36}
             />
-            <motion.div className="flex flex-col text-xl font-bold" layout>
-              Denny Dharmawan
-            </motion.div>
+            <div className="flex flex-col">
+              <motion.div className="flex flex-col text-xl font-bold" layout>
+                Denny Dharmawan
+              </motion.div>
+              <AnimatePresence mode="popLayout">
+                {isExpanded && (
+                  <motion.p
+                    animate="enter"
+                    exit="exit"
+                    initial="initial"
+                    key="paragraph"
+                    layout
+                    style={{ position: isExpanded ? 'relative' : 'absolute' }}
+                    variants={firstRender.current ? {} : variants}
+                  >
+                    Full-Stack Engineer
+                  </motion.p>
+                )}
+              </AnimatePresence>
+            </div>
           </a>
-          <AnimatePresence mode="popLayout">
-            {isExpanded && (
-              <motion.p
-                animate="enter"
-                exit="exit"
-                initial="initial"
-                key="paragraph"
-                layout
-                style={{ position: isExpanded ? 'relative' : 'absolute' }}
-                variants={firstRender.current ? {} : variants}
-              >
-                Seasoned Full-Stack Engineer
-              </motion.p>
-            )}
-          </AnimatePresence>
         </motion.div>
         <Button className="mt-6" onClick={() => setIsExpanded(!isExpanded)}>
           Animate

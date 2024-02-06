@@ -3,6 +3,9 @@ import { AnimatePresence, LayoutGroup, motion, useMotionValueEvent, useScroll } 
 import { useLocation } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 
+import { ActionIcon, Button } from '@mantine/core';
+import { IconArrowUpRight, IconDownload } from '@tabler/icons-react';
+
 import { FullScreenLayout } from '@/components/layout/full-screen-layout';
 import { NavListItem } from '@/components/ui/nav-list-item';
 
@@ -36,7 +39,11 @@ export default function PortfolioPage() {
       backgroundColor: 'rgba(255, 255, 255, 0.75)',
       boxShadow: '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)'
     },
-    expanded: { backgroundColor: 'rgba(255, 255, 255, 0)' }
+    expanded: {
+      backdropFilter: 'blur(0px)',
+      backgroundColor: 'rgba(255, 255, 255, 0)',
+      boxShadow: '0 1px 3px 0 rgb(0 0 0 / 0), 0 1px 2px -1px rgb(0 0 0 / 0)'
+    }
   };
 
   const titleVariants = {
@@ -46,7 +53,7 @@ export default function PortfolioPage() {
   };
 
   return (
-    <FullScreenLayout className="relative place-content-start bg-red-100">
+    <FullScreenLayout className="relative place-content-start">
       <HashLink
         className="fixed left-[8px] top-0 z-[50] translate-y-[-120%] rounded-sm bg-slate-700 px-4 py-3 font-semibold text-white transition-all duration-200 ease-in focus:translate-y-0"
         to="#main-content"
@@ -57,13 +64,13 @@ export default function PortfolioPage() {
       <LayoutGroup>
         <motion.header
           animate={isOverTheFold ? 'compacted' : 'expanded'}
-          className="full-width content-grid fixed top-0 w-full bg-transparent"
+          className="full-width content-grid fixed top-0 z-50 w-full bg-transparent"
           initial="expanded"
           layout
           variants={navVariants}
         >
           <nav className="py-3">
-            <div className="flex max-w-screen-xl flex-wrap items-center justify-between">
+            <div className="flex max-w-screen-xl flex-wrap items-center gap-12">
               <a className="flex items-center" href="#">
                 <motion.img
                   alt="Website Logo"
@@ -128,6 +135,7 @@ export default function PortfolioPage() {
                   </svg>
                 </button>
               </div>
+
               <div
                 className="hidden w-full items-center justify-between lg:order-1 lg:flex lg:w-auto"
                 id="mobile-menu"
@@ -185,56 +193,68 @@ export default function PortfolioPage() {
         </motion.header>
       </LayoutGroup>
 
-      <main className="full-width content-grid min-h-[200vh] bg-slate-300">
-        <section aria-labelledby="hero-title">
-          <h1 className="mt-[120px]" id="hero-title">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem, iure aliquid omnis ut
-            necessitatibus libero earum quibusdam placeat, ab odit qui blanditiis suscipit fugiat illum
-            tenetur iste culpa id minima soluta temporibus sunt at vitae optio. Autem, delectus quia?
-            Molestias distinctio, dicta nulla dolore impedit sint nesciunt assumenda voluptatibus? Minima
-            illum aliquam, magni earum cum voluptas recusandae voluptatibus sit quae est omnis nobis. Itaque
-            voluptates odit praesentium distinctio ducimus, eaque cupiditate placeat labore voluptatem eius
-            numquam quidem, dicta nihil suscipit tempora delectus nemo possimus eum, sed excepturi accusamus
-            libero necessitatibus tenetur. Hic suscipit consequuntur accusantium porro facilis! Cumque
-            obcaecati, repellendus ipsum et dignissimos culpa asperiores at ullam pariatur rerum possimus
-            totam debitis porro dolores, non veniam itaque repellat, magnam beatae id. Sequi nobis doloribus
-            quod laudantium deleniti repellat, iure recusandae excepturi? Reiciendis autem iusto hic velit ea
-            nam minima dolore culpa quidem quod voluptatibus atque molestias alias, aliquid dicta quo facilis
-            iure ut sit assumenda inventore accusamus. Nihil soluta accusantium ipsum, sunt quo eaque deserunt
-            unde, error voluptatum, cupiditate dolores. Minus aperiam facilis tempore nihil explicabo fugit
-            ullam saepe? Quia autem voluptate minima ab suscipit eligendi cumque accusamus itaque aliquid quod
-            non esse reprehenderit, minus tempora? Fuga delectus asperiores at molestiae aut praesentium
-            quidem aspernatur, repudiandae deleniti molestias facere voluptates ad natus, iusto expedita
-            saepe? Dolor quam cumque optio eius libero explicabo officia ducimus quaerat cum eos in nulla sit
-            facere at soluta quis placeat, sequi tenetur id debitis perferendis repellendus non mollitia quod.
-            Quod voluptatibus assumenda illo labore maxime eius dicta fuga eos accusantium natus laudantium
-            facere cumque in expedita facilis, pariatur ullam deleniti totam mollitia excepturi cum laborum
-            sapiente. Accusamus odio cumque velit, recusandae autem corporis sunt, sint voluptatum, illum
-            totam numquam qui nesciunt asperiores alias ratione repellendus soluta perspiciatis ab tempore.
-            Eveniet neque suscipit optio doloribus nesciunt? Sit sed aut soluta consequuntur ipsa aperiam
-            atque quae at rerum, sint labore porro alias optio molestiae, cupiditate facere aliquam aspernatur
-            enim. Mollitia unde vel ea temporibus, eaque libero dolore quisquam, vero est voluptatum fuga
-            totam nobis laboriosam dolor dicta aliquid voluptas. Quidem reprehenderit quae magni aut. In, fuga
-            dolorem doloribus vitae voluptas porro, repudiandae quidem officiis vero vel rerum excepturi
-            sapiente reprehenderit dolore consectetur omnis ad minima quod sequi, fugiat voluptatum!
-            Perferendis, illum magni beatae id iure laudantium cum laborum nemo officia facere mollitia.
-            Quisquam quibusdam animi vitae magnam, voluptates obcaecati, voluptate ad eum ullam, reprehenderit
-            vero! Provident repellendus soluta voluptate sed maxime quis consequuntur corporis fugiat omnis,
-            numquam atque sint praesentium, labore vitae eum, magni minus? Quia dolorum inventore numquam in
-            tempore, quis deleniti a nulla illo facilis eum! Quam vitae, laborum quo praesentium dolore
-            recusandae nam corrupti, enim facilis repellat voluptate a. Culpa quis ut illum nisi fugit!
-            Nesciunt autem debitis, architecto repudiandae eveniet, explicabo quaerat deleniti eligendi harum
-            dolore recusandae excepturi dolorem, aspernatur odit repellat quod iste alias. Mollitia qui
-            similique cupiditate vel suscipit excepturi fugiat velit odio, aperiam fuga magnam animi explicabo
-            accusantium repellat doloribus nam repudiandae fugit hic earum culpa delectus recusandae porro
-            nostrum.
-          </h1>
+      <main className="full-width content-grid min-h-[200vh] bg-white">
+        <section aria-labelledby="hero-title" className="relative">
+          <div className="absolute right-0 top-0 h-[199px] w-[228px]  bg-[url('/portfolio/bauhaus-corner.svg')] bg-cover" />
 
-          <div className="mt-20 font-semibold" id="main-content">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum natus impedit voluptatem maiores
-            inventore, nostrum quasi. Vel, modi ducimus minima ut rem ipsa natus velit. Molestias velit rerum
-            vitae animi!asdasdas
-          </div>
+          <div className="mt-[calc(120px+64px)]" id="fixed-nav-spacer" />
+
+          <section aria-labelledby="hero-title" className="space-y-8">
+            <div className="flex flex-wrap items-center gap-10">
+              <div className="h-[155px] w-[152px] bg-[url('/portfolio/bauhaus-header.svg')] bg-cover" />
+              <h1 className="max-w-[20ch] text-6xl font-semibold tracking-wide" id="hero-title">
+                Building exceptional and impactful web solutions.
+              </h1>
+            </div>
+
+            <div className="flex flex-wrap items-start gap-7">
+              <div className="ml-[52px] mt-3 h-[6px] w-[51px] bg-[#3FB8D2]"></div>
+              <div className="space-y-6">
+                <p className="max-w-[35ch] text-xl text-slate-600" id="main-content">
+                  I solve business problems with elegant code, creating efficient solutions that not only look
+                  great but also function flawlessly.
+                </p>
+
+                <div className="space-x-5">
+                  <Button size="lg">Explore My Work</Button>
+                  <Button leftSection={<IconDownload />} size="lg" variant="light">
+                    Resume
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section className="mt-[120px] grid grid-cols-12 grid-rows-2 gap-4" title="bento-grid">
+            <article className="stack-layout isolate col-span-6 cursor-pointer overflow-hidden rounded-l-3xl rounded-tr-3xl">
+              <img
+                alt="workspace-illustration"
+                className="z-[-1] object-cover transition-transform duration-300 hover:scale-105"
+                src="/portfolio/workspace-illustration.png"
+              />
+
+              <h3 className="mx-auto mt-[20%] text-2xl font-semibold text-slate-600">About Me</h3>
+              {/* bg-[url('/portfolio/lava-mask.svg')] */}
+              <div className="grid h-[96px] w-[96px] translate-y-[1px] place-content-end self-end justify-self-end overflow-hidden bg-[url('/portfolio/lava-mask.svg')] bg-cover bg-no-repeat">
+                <ActionIcon className="-translate-y-[1px]" radius={'50%'} size={72}>
+                  <IconArrowUpRight size={36} />
+                </ActionIcon>
+              </div>
+            </article>
+
+            <article className="col-span-6 max-h-[416px] cursor-pointer overflow-auto rounded-3xl bg-[#B8CEDC]"></article>
+
+            <article className="col-span-12 cursor-pointer rounded-3xl bg-slate-700 px-4 py-3 text-white"></article>
+
+            <article className="col-span-4 aspect-square cursor-pointer rounded-3xl bg-[#C3B2E7] px-4 py-3"></article>
+
+            <article className="col-span-4 cursor-pointer rounded-3xl bg-[#F9A474] px-4 py-3 text-white"></article>
+
+            <div className="col-span-4 grid grid-rows-2 gap-4">
+              <article className="cursor-pointer rounded-3xl bg-[#C9DA8F]"></article>
+              <article className="cursor-pointer rounded-3xl bg-[#F682A5]"></article>
+            </div>
+          </section>
         </section>
       </main>
       <footer></footer>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { type Duration, intervalToDuration, weeksToDays } from 'date-fns';
+import { intervalToDuration, weeksToDays, type Duration } from 'date-fns';
 
 import { padNumber } from '@/lib/utils';
 

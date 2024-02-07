@@ -9,15 +9,17 @@ import { IconArrowUpRight, IconBrandGithubFilled, IconDownload, IconMailFilled }
 import { FullScreenLayout } from '@/components/layout/full-screen-layout';
 import { NavListItem } from '@/components/ui/nav-list-item';
 import { SocialIcon } from '@/components/ui/social-icon';
+import { cn } from '@/lib/utils';
 
 export default function PortfolioPage() {
   const navbarCollapseThreshold = 80;
-  const [hoveredLink, setHoveredLink] = useState<null | string>(null);
-  const location = useLocation();
-  const firstRender = useRef(true);
-
   const { scrollY } = useScroll();
   const [isOverTheFold, setIsOverTheFold] = useState<boolean>(false);
+  const firstRender = useRef(true);
+
+  const location = useLocation();
+  const [hoveredLink, setHoveredLink] = useState<null | string>(null);
+  const [isSelected, setIsSelected] = useState<boolean>(false);
 
   useEffect(() => {
     if (firstRender.current) {
@@ -261,32 +263,40 @@ export default function PortfolioPage() {
           </section>
 
           <section className="mt-[120px] grid grid-cols-12 grid-rows-2 gap-4" title="bento-grid">
-            <article className="stack-layout group isolate col-span-6 cursor-pointer">
-              <div className="overflow-hidden rounded-l-3xl rounded-tr-3xl">
-                <img
-                  alt="workspace-illustration"
-                  className="z-[-1] object-cover transition-transform duration-300 group-hover:scale-105"
-                  src="/portfolio/workspace-illustration.png"
-                />
-              </div>
-
-              <div className="mx-auto mt-[15%] place-self-start rounded-lg border border-white bg-white bg-opacity-50 px-3 py-2 backdrop-blur-md transition-transform duration-300 group-hover:scale-125">
-                <h3 className="bg-slate-600 bg-clip-text text-2xl font-semibold text-transparent transition-all duration-300 group-hover:bg-gradient-to-br group-hover:from-pink-600 group-hover:via-purple-600 group-hover:to-indigo-600">
-                  About Me
-                </h3>
-              </div>
-
-              <div className="grid h-[96px] w-[96px] translate-y-[1px] place-content-end self-end justify-self-end overflow-hidden bg-[url('/portfolio/lava-mask.svg')] bg-cover bg-no-repeat">
-                <ActionIcon className="-translate-y-[1px]" radius={'50%'} size={72}>
-                  <IconArrowUpRight
-                    className="transition-transform duration-300 group-hover:scale-125"
-                    size={36}
+            <div className="col-span-6">
+              <motion.article
+                className={cn('group relative isolate cursor-pointer', {
+                  'fixed inset-0 z-40 m-auto flex h-[80vh] w-1/2 cursor-pointer flex-col flex-wrap items-start justify-center rounded-lg bg-red-100':
+                    isSelected
+                })}
+                layout
+                onClick={() => setIsSelected(!isSelected)}
+              >
+                <div className="stack-layout place-content-start overflow-hidden rounded-3xl">
+                  <img
+                    alt="workspace-illustration"
+                    className="z-[-1] object-cover transition-transform duration-300 group-hover:scale-105"
+                    src="/portfolio/workspace-illustration.png"
                   />
-                </ActionIcon>
-              </div>
-            </article>
+                  <div className="mx-auto mt-[15%] place-self-start rounded-lg border border-white bg-white bg-opacity-50 px-3 py-2 backdrop-blur-md transition-transform duration-300 group-hover:scale-125">
+                    <h3 className="bg-slate-600 bg-clip-text text-2xl font-semibold text-transparent transition-all duration-300 group-hover:bg-gradient-to-br group-hover:from-pink-600 group-hover:via-purple-600 group-hover:to-indigo-600">
+                      About Me
+                    </h3>
+                  </div>
 
-            <article className="col-span-6 max-h-[416px] cursor-pointer overflow-auto rounded-3xl bg-[#B8CEDC]"></article>
+                  <div className="grid h-[96px] w-[96px] translate-y-[1px] place-content-end self-end justify-self-end overflow-hidden bg-[url('/portfolio/lava-mask.svg')] bg-cover bg-no-repeat">
+                    <ActionIcon className="-translate-y-[1px]" radius={'50%'} size={72}>
+                      <IconArrowUpRight
+                        className="transition-transform duration-300 group-hover:scale-125"
+                        size={36}
+                      />
+                    </ActionIcon>
+                  </div>
+                </div>
+              </motion.article>
+            </div>
+
+            <article className="col-span-6 min-h-[421px] cursor-pointer overflow-auto rounded-3xl bg-[#B8CEDC]"></article>
 
             <article className="col-span-12 cursor-pointer rounded-3xl bg-slate-700 px-4 py-3 text-white"></article>
 

@@ -1,13 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, LayoutGroup, motion, useMotionValueEvent, useScroll } from 'framer-motion';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 
 import { ActionIcon, Button } from '@mantine/core';
-import { IconArrowUpRight, IconDownload } from '@tabler/icons-react';
+import { IconArrowUpRight, IconBrandGithubFilled, IconDownload, IconMailFilled } from '@tabler/icons-react';
 
 import { FullScreenLayout } from '@/components/layout/full-screen-layout';
 import { NavListItem } from '@/components/ui/nav-list-item';
+import { SocialIcon } from '@/components/ui/social-icon';
 
 export default function PortfolioPage() {
   const navbarCollapseThreshold = 80;
@@ -193,7 +194,7 @@ export default function PortfolioPage() {
         </motion.header>
       </LayoutGroup>
 
-      <main className="full-width content-grid min-h-[200vh] bg-white">
+      <main className="full-width content-grid bg-white">
         <section aria-labelledby="hero-title" className="relative">
           <div className="absolute right-0 top-0 h-[199px] w-[228px]  bg-[url('/portfolio/bauhaus-corner.svg')] bg-cover" />
 
@@ -207,8 +208,42 @@ export default function PortfolioPage() {
               </h1>
             </div>
 
-            <div className="flex flex-wrap items-start gap-7">
-              <div className="ml-[52px] mt-3 h-[6px] w-[51px] bg-[#3FB8D2]"></div>
+            <div className="flex flex-wrap items-start gap-8">
+              <div className="justify flex flex-col items-center justify-between self-stretch pl-[48px]">
+                <div className="mt-3 h-[6px] w-[51px] bg-[#3FB8D2]"></div>
+
+                <SocialIcon>
+                  <Link target="_blank" to="https://linkedin.com/in/ddharmawan">
+                    <svg
+                      aria-hidden="true"
+                      className="h-[28px] w-[28px] text-current dark:text-white"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        clip-rule="evenodd"
+                        d="M12.5 8.8v1.7a3.7 3.7 0 0 1 3.3-1.7c3.5 0 4.2 2.2 4.2 5v5.7h-3.2v-5c0-1.3-.2-2.8-2.1-2.8-1.9 0-2.2 1.3-2.2 2.6v5.2H9.3V8.8h3.2ZM7.2 6.1a1.6 1.6 0 0 1-2 1.6 1.6 1.6 0 0 1-1-2.2A1.6 1.6 0 0 1 6.6 5c.3.3.5.7.5 1.1Z"
+                        fill-rule="evenodd"
+                      />
+                      <path d="M7.2 8.8H4v10.7h3.2V8.8Z" />
+                    </svg>
+                  </Link>
+                </SocialIcon>
+
+                <SocialIcon>
+                  <Link target="_blank" to="https://github.com/dennydharmawan">
+                    <IconBrandGithubFilled size={28} />
+                  </Link>
+                </SocialIcon>
+
+                <SocialIcon>
+                  <Link to="mailto:contact@dennydharmawan.com">
+                    <IconMailFilled size={28} />
+                  </Link>
+                </SocialIcon>
+              </div>
+
               <div className="space-y-6">
                 <p className="max-w-[35ch] text-xl text-slate-600" id="main-content">
                   I solve business problems with elegant code, creating efficient solutions that not only look
@@ -226,18 +261,27 @@ export default function PortfolioPage() {
           </section>
 
           <section className="mt-[120px] grid grid-cols-12 grid-rows-2 gap-4" title="bento-grid">
-            <article className="stack-layout isolate col-span-6 cursor-pointer overflow-hidden rounded-l-3xl rounded-tr-3xl">
-              <img
-                alt="workspace-illustration"
-                className="z-[-1] object-cover transition-transform duration-300 hover:scale-105"
-                src="/portfolio/workspace-illustration.png"
-              />
+            <article className="stack-layout group isolate col-span-6 cursor-pointer">
+              <div className="overflow-hidden rounded-l-3xl rounded-tr-3xl">
+                <img
+                  alt="workspace-illustration"
+                  className="z-[-1] object-cover transition-transform duration-300 group-hover:scale-105"
+                  src="/portfolio/workspace-illustration.png"
+                />
+              </div>
 
-              <h3 className="mx-auto mt-[20%] text-2xl font-semibold text-slate-600">About Me</h3>
-              {/* bg-[url('/portfolio/lava-mask.svg')] */}
+              <div className="mx-auto mt-[15%] place-self-start rounded-lg border border-white bg-white bg-opacity-50 px-3 py-2 backdrop-blur-md transition-transform duration-300 group-hover:scale-125">
+                <h3 className="bg-slate-600 bg-clip-text text-2xl font-semibold text-transparent transition-all duration-300 group-hover:bg-gradient-to-br group-hover:from-pink-600 group-hover:via-purple-600 group-hover:to-indigo-600">
+                  About Me
+                </h3>
+              </div>
+
               <div className="grid h-[96px] w-[96px] translate-y-[1px] place-content-end self-end justify-self-end overflow-hidden bg-[url('/portfolio/lava-mask.svg')] bg-cover bg-no-repeat">
                 <ActionIcon className="-translate-y-[1px]" radius={'50%'} size={72}>
-                  <IconArrowUpRight size={36} />
+                  <IconArrowUpRight
+                    className="transition-transform duration-300 group-hover:scale-125"
+                    size={36}
+                  />
                 </ActionIcon>
               </div>
             </article>

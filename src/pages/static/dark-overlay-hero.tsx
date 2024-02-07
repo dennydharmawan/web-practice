@@ -4,13 +4,16 @@ import { FullScreenLayout } from '@/components/layout/full-screen-layout';
 export default function DarkOverlayHero() {
   return (
     <FullScreenLayout>
-      <header className="full-width content-grid bg-gray-neutral-900">
+      {/*     mask-image: linear-gradient(to top, rgba(0, 0, 0, 1.0) 0%, transparent 100%); */}
+
+      {/* [mask-image:radial-gradient(ellipse_at_center,rgba(0,0,0,1.0)_40%,transparent_50%)] [mask-position:center] */}
+      <header className="full-width content-grid place-content-center bg-gray-neutral-900">
         <div
-          className="stack-layout self-start"
+          className="stack-layout self-start "
           style={{
-            maskImage: "url('/blur-rectangle.svg')",
-            maskPosition: 'center center',
-            maskSize: '100% 180%'
+            WebkitMaskImage: "url('/blur-rectangle.svg')",
+            WebkitMaskPosition: 'center center',
+            WebkitMaskSize: '100% 100%'
           }}
         >
           {/* <div className="relative z-10 aspect-video w-full bg-[url('https://source.unsplash.com/O453M2Liufs')] bg-cover after:pointer-events-none after:absolute after:inset-0 after:h-full after:w-full after:bg-slate-950/50" /> */}

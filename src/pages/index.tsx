@@ -259,7 +259,7 @@ export default function IndexPage() {
               </p>
 
               <div className="mt-1">
-                <Button leftSection={<IconMessages />}>Ready to Talk?</Button>
+                <Button leftSection={<IconMessages />}>Wanna Talk?</Button>
               </div>
             </div>
 

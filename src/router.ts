@@ -26,7 +26,9 @@ export type Path =
   | `/layout/grid-container`
   | `/static/dark-overlay-hero`
   | `/static/dice-bear-flashlight`
-  | `/static/lava-overlay-hero`;
+  | `/static/lava-overlay-hero`
+  | `/static/portfolio`
+  | `/static/spotlight-card`;
 
 export type Params = {};
 

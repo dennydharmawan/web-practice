@@ -5,7 +5,7 @@ Leveraging Web Technologies to Deliver Business Solution
 See my projects
 
 
-Foundation of my work
+Foundation of my work / I strive to live by my work values.
 Efficiency and Reliability:
 Prioritize building efficient systems that deliver a reliable and seamless user experience.
 Optimize code for performance and ensure the overall dependability of the application.
@@ -28,18 +28,29 @@ https://www.awwwards.com/inspiration/givingli-interactive-bento-grid-givingli
 example
 https://www.youtube.com/watch?v=WLDfFqnqbxI
 
+header
+https://www.pinterest.com/pin/123075002311188017/
+https://dribbble.com/shots/19626493-MyT-Web-Design?utm_source=Clipboard_Shot&utm_campaign=mrstudio&utm_content=MyT+Web+Design&utm_medium=Social_Share&utm_source=Pinterest_Shot&utm_campaign=mrstudio&utm_content=MyT+Web+Design&utm_medium=Social_Share
+
+https://dribbble.com/shots/23493621-Xpace-Website
+
+
 lava layout is pretty compatible with bento
 https://startkittemplate.webflow.io/home-pages/home-v3
 
 Interactive bento
 https://www.givingli.com
+https://liam.is/?ref=godly
 
 
 Bento Grid Sections
 
 1. picture of my workplace
 
-2.Tech Stack Icons:
+2.Tech Stack Icons: I specialize in Javascript ecosystem
+
+Whether it's building dynamic user interfaces or crafting robust back-end logic, I leverage my deep understanding of the JavaScript ecosystem to deliver meaningful results.
+infinite carousel
 Image: Icons representing the various technologies and languages you're proficient in.
 Copy: "My toolkit includes a diverse set of technologies – from front-end frameworks to robust backend languages."
 
@@ -50,3 +61,62 @@ Title at top center, Icons tease
 4.Carousel of cool photos?
 
 5. CTA to see my projects?
+
+6. Responsive Design
+Desktop. Tablet. Mobile. your app everywhere
+
+–
+Hello – I'm a full-stack engineer
+Creator of high-quality and impactful web solutions.
+I transform innovative ideas into powerful business solutions by leveraging web technologies.
+
+
+As a full-stack engineer,
+I leverage web technologies to deliver business solutions – Working on both the front-end and back-end components.
+
+As a full-stack developer with a passion for user experience, I thrive on crafting intuitive interfaces that are both beautiful and efficient. I bring enthusiasm, expertise, and a collaborative spirit to every project.
+
+
+========
+Projects Showcase: Highlight specific projects you've worked on, providing details about the technologies used, your role, and the problem solved. This section could include case studies or portfolio pieces with links to live demos or GitHub repositories.
+
+Testimonials: Share testimonials or recommendations from clients, colleagues, or employers to showcase your skills and professionalism.
+
+Skills & Expertise: Provide a comprehensive list of your technical skills and expertise, including programming languages, frameworks, tools, and technologies you're proficient in.
+
+Education & Certifications: Detail your educational background, degrees, certifications, and relevant courses or training programs you've completed.
+
+Work Experience: Provide an overview of your professional work experience, highlighting key roles, responsibilities, and achievements.
+
+Blog or Articles: If you enjoy writing or have insights to share, consider adding a blog section where you can publish articles, tutorials, or industry insights related to web development or technology.
+
+Side Projects or Contributions: Showcase any side projects, open-source contributions, or community involvement that demonstrate your passion for technology and continuous learning.
+
+Contact Information: Make it easy for visitors to get in touch with you by including your contact information, such as email address, LinkedIn profile, or a contact form.
+
+Remember to prioritize sections that best represent your skills, experience, and values
+
+
+1. About me
+2. tech stack
+3. Work value
+4. Sample of my work/Project showcase (https://dribbble.com/shots/23034436-Web-Design-Agency-Website)
+--https://dribbble.com/shots/22214484-E-commerce-Website-Design-landing-page-webpage-website-designer
+
+5. dont know yet
+
+
+https://dribbble.com/shots/22850030-Travel-Website-Design-Tourism-landing-web-page-site-designer
+6. Random personal stuff/images
+7. CTA for training lab (side project or contributions)
+
+
+add arrow that pulse on button hover
+add white overlay on about me text
+add social icons on header
+
+last two articles have left and right image
+showing location jakarta and local time
+CTA for training lab
+
+https://www.wallpaperflare.com/monument-architecture-building-indonesia-jakarta-pusat-wallpaper-gneabhttps://www.wallpaperflare.com/monument-architecture-building-indonesia-jakarta-pusat-wallpaper-gneab

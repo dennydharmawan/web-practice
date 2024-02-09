@@ -27,7 +27,8 @@ export type Path =
   | `/static/dark-overlay-hero`
   | `/static/dice-bear-flashlight`
   | `/static/lava-overlay-hero`
-  | `/static/portfolio`;
+  | `/static/portfolio`
+  | `/static/spotlight-card`;
 
 export type Params = {};
 

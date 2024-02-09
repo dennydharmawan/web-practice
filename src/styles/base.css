@@ -235,11 +235,16 @@
     text-wrap: pretty;
   }
 
-  @media(prefers-reduced-motion: no-preference) {
+  /* @media(prefers-reduced-motion: no-preference) {
     :has(:target) {
-      scroll-behavior: smooth;
-      scroll-padding-top: 3rem;
+      scroll-behavior: smooth !important;
+      scroll-padding-top: calc(64px + 3rem);
     }
+  } */
+
+  html {
+    scroll-behavior: smooth !important;
+    scroll-padding-top: calc(64px + 3rem);
   }
 
   /* sensible img reset */

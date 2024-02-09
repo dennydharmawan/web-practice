@@ -102,9 +102,9 @@ export default function IndexPage() {
                   }}
                   variants={beamVariant}
                 >
-                  <stop stop-color="#2EB9DF" stop-opacity="0"></stop>
-                  <stop stop-color="#2EB9DF"></stop>
-                  <stop offset="1" stop-color="#9E00FF" stop-opacity="0"></stop>
+                  <stop stopColor="#2EB9DF" stopOpacity="0"></stop>
+                  <stop stopColor="#2EB9DF"></stop>
+                  <stop offset="1" stopColor="#9E00FF" stopOpacity="0"></stop>
                 </motion.linearGradient>
               </defs>
             </svg>
@@ -175,14 +175,7 @@ export default function IndexPage() {
                   translateY: '-8px'
                 }}
               >
-                <Card
-                  className="gap-4 bg-[#595A4A]"
-                  component={Link}
-                  padding="sm"
-                  shadow="md"
-                  target="_blank"
-                  to={pageObject.path}
-                >
+                <Card className="gap-4 bg-[#595A4A]" padding="sm" shadow="md">
                   <Card.Section className="overflow-hidden">
                     <Image
                       className="aspect-video object-cover transition-transform duration-[250ms] ease-out group-hover:scale-110"

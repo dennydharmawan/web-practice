@@ -9,21 +9,23 @@ const CertificateCard = React.forwardRef<
     onMouseEnterAnimation?: any;
     onMouseLeaveAnimation?: any;
   }
->(({ className, onMouseEnterAnimation, onMouseLeaveAnimation, ...props }) => {
+>(({ className, onMouseEnterAnimation, onMouseLeaveAnimation, ...props }, ref) => {
   const [scope, animate] = useAnimate();
 
   return (
-    <motion.div
-      className={cn('rounded-lg shadow-sm', className)}
-      ref={scope}
-      {...props}
-      onMouseEnter={() => {
-        animate(scope.current, onMouseEnterAnimation);
-      }}
-      onMouseLeave={() => {
-        animate(scope.current, onMouseLeaveAnimation);
-      }}
-    />
+    <div ref={ref}>
+      <motion.div
+        className={cn('rounded-lg shadow-sm', className)}
+        ref={scope}
+        {...props}
+        onMouseEnter={() => {
+          animate(scope.current, onMouseEnterAnimation);
+        }}
+        onMouseLeave={() => {
+          animate(scope.current, onMouseLeaveAnimation);
+        }}
+      />
+    </div>
   );
 });
 

@@ -5,7 +5,7 @@ import { components, hooks, utils } from '@generouted/react-router/client';
 
 export type Path =
   | `/`
-  | `/animation/card`
+  | `/animation/framer-motion/card`
   | `/animation/framer-motion/header-logo`
   | `/animation/framer-motion/switch`
   | `/animation/hamburger-menu`

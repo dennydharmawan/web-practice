@@ -105,7 +105,7 @@
   /* deconstructed pancake */
   .pancake-grid {
     --pancake-grid-gap: 1rem;
-    --pancake-grid-min: 15ch;
+    --pancake-grid-min: 5000px;
 
     display: grid;
     grid-gap: var(--pancake-grid-gap);

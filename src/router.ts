@@ -9,7 +9,6 @@ export type Path =
   | `/animation/framer-motion/header-logo`
   | `/animation/framer-motion/switch`
   | `/animation/hamburger-menu`
-  | `/experiments/content-grid`
   | `/experiments/kitchen-sink`
   | `/experiments/tailwind-theme`
   | `/experiments/vertical-align`
@@ -25,7 +24,9 @@ export type Path =
   | `/icodethis/icodemas/day-21`
   | `/icodethis/restaurant-app`
   | `/layout/aside-hack`
+  | `/layout/content-grid`
   | `/layout/grid-container`
+  | `/layout/pancake-layout`
   | `/static/dark-overlay-hero`
   | `/static/dice-bear-flashlight`
   | `/static/lava-overlay-hero`

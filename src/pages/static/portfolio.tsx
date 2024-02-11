@@ -319,7 +319,7 @@ export default function PortfolioPage() {
                       </div>
                     </Portal>
 
-                    <>
+                    <div>
                       <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus tempore corporis
                         atque repudiandae architecto quas eligendi hic, vitae ipsa consequatur quaerat? Animi
@@ -339,7 +339,7 @@ export default function PortfolioPage() {
                         src="/portfolio/workspace-illustration.png"
                       />
                       <Button onClick={() => alert('asdasd')}>asd</Button>
-                    </>
+                    </div>
                   </div>
                 )}
               </motion.article>

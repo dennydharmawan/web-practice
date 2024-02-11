@@ -98,18 +98,16 @@ Remember to prioritize sections that best represent your skills, experience, and
 
 
 1. About me
+zoom in image animation
 2. tech stack
+scrolling skew multiple icons, different direction
 3. Work value
 4. Sample of my work/Project showcase (https://dribbble.com/shots/23034436-Web-Design-Agency-Website)
 --https://dribbble.com/shots/22214484-E-commerce-Website-Design-landing-page-webpage-website-designer
-
 5. dont know yet
-
-
 https://dribbble.com/shots/22850030-Travel-Website-Design-Tourism-landing-web-page-site-designer
-6. Random personal stuff/images
+6. Random personal stuff/images (carousel)
 7. CTA for training lab (side project or contributions)
-
 
 add arrow that pulse on button hover
 add white overlay on about me text
@@ -120,3 +118,5 @@ showing location jakarta and local time
 CTA for training lab
 
 https://www.wallpaperflare.com/monument-architecture-building-indonesia-jakarta-pusat-wallpaper-gneabhttps://www.wallpaperflare.com/monument-architecture-building-indonesia-jakarta-pusat-wallpaper-gneab
+
+

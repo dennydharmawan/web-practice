@@ -105,7 +105,7 @@ export default function SocialProfilePage() {
 
               <motion.div
                 animate="expanded"
-                className="pancake-grid rounded-2xl bg-indigo-800 px-3 py-4 text-center [--custom-min:6ch]"
+                className="pancake-grid rounded-2xl bg-indigo-800 px-3 py-4 text-center [--pancake-grid-min:5ch]"
                 exit="exit"
                 initial="collapsed"
                 transition={{

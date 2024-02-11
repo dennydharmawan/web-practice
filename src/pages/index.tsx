@@ -165,7 +165,7 @@ export default function IndexPage() {
             Solution Gallery
           </h2>
 
-          <div className="pancake-grid items-start [--custom-gap:1.5rem] [--custom-min:278px]">
+          <div className="pancake-grid items-start [--pancake-grid-gap:1.5rem] [--pancake-grid-min:278px]">
             {pageObjects.map((pageObject) => (
               <motion.section
                 aria-labelledby={pageObject.id}
@@ -191,7 +191,7 @@ export default function IndexPage() {
                     <p className="text-slate-600">Challenge Number {`#${pageObject.challengeNumber}`}</p>
                   </div> */}
 
-                  <div className="pancake-flexbox  [--custom-gap:1rem] [--custom-min:112px]">
+                  <div className="pancake-flexbox  [--pancake-flexbox-gap:1rem] [--pancake-flexbox-min:112px]">
                     <Button
                       className="text-slate-900"
                       color="accent.2"

@@ -10,6 +10,7 @@ export type Path =
   | `/animation/framer-motion/switch`
   | `/animation/hamburger-menu`
   | `/experiments/content-grid`
+  | `/experiments/kitchen-sink`
   | `/experiments/tailwind-theme`
   | `/experiments/vertical-align`
   | `/icodethis/426-testimonial-carousel`
@@ -23,6 +24,7 @@ export type Path =
   | `/icodethis/icodemas/day-2`
   | `/icodethis/icodemas/day-21`
   | `/icodethis/restaurant-app`
+  | `/layout/aside-hack`
   | `/layout/grid-container`
   | `/static/dark-overlay-hero`
   | `/static/dice-bear-flashlight`

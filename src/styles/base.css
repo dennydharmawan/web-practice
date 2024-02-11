@@ -104,29 +104,29 @@
 
   /* deconstructed pancake */
   .pancake-grid {
-    --min: var(--custom-min, 15ch);
-    --gap: var(--custom-gap, 1rem);
+    --pancake-grid-gap: 1rem;
+    --pancake-grid-min: 15ch;
 
     display: grid;
-    grid-gap: var(--gap);
+    grid-gap: var(--pancake-grid-gap);
 
     /* min() with 100% prevents overflow
   in extra narrow spaces */
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--pancake-grid-min)), 1fr));
   }
 
   .pancake-flexbox {
-    --min: var(--custom-min, 15ch);
-    --gap: var(--custom-gap, 1rem);
+    --pancake-flexbox-gap: 1rem;
+    --pancake-flexbox-min: 15ch;
 
     display: flex;
     flex-wrap: wrap;
-    gap: var(--gap);
+    gap: var(--pancake-flexbox-gap);
     /* justify-content: center; */
   }
 
   .pancake-flexbox > * {
-    flex: 1 1 var(--min);
+    flex: 1 1 var(--pancake-flexbox-min);
   }
 
   /*  super centered */
@@ -137,11 +137,11 @@
   }
 
   /* container */
-  .custom-container {
-    --max: var(--custom-max, 65ch);
-    --min: var(--custom-min, 100% - 3rem);
+  .wrapper {
+    --wrapper-content-max-width: 65ch;
+    --wrapper-padding-inline: 2rem;
 
-    width: min(var(--min), var(--max));
+    width: min(var(--wrapper-content-max-width), 100% - (var(--wrapper-padding-inline) * 2));
     margin-inline: auto;
   }
 

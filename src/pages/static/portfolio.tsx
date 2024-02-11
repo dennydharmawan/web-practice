@@ -3,8 +3,8 @@ import { AnimatePresence, LayoutGroup, motion, useMotionValueEvent, useScroll } 
 import { Link, useLocation } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 
-import { ActionIcon, Button } from '@mantine/core';
-import { IconArrowUpRight, IconBrandGithubFilled, IconDownload, IconMailFilled } from '@tabler/icons-react';
+import { Button, Overlay, Portal } from '@mantine/core';
+import { IconBrandGithubFilled, IconDownload, IconMailFilled } from '@tabler/icons-react';
 
 import { FullScreenLayout } from '@/components/layout/full-screen-layout';
 import { NavListItem } from '@/components/ui/nav-list-item';
@@ -224,9 +224,9 @@ export default function PortfolioPage() {
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        clip-rule="evenodd"
+                        clipRule="evenodd"
                         d="M12.5 8.8v1.7a3.7 3.7 0 0 1 3.3-1.7c3.5 0 4.2 2.2 4.2 5v5.7h-3.2v-5c0-1.3-.2-2.8-2.1-2.8-1.9 0-2.2 1.3-2.2 2.6v5.2H9.3V8.8h3.2ZM7.2 6.1a1.6 1.6 0 0 1-2 1.6 1.6 1.6 0 0 1-1-2.2A1.6 1.6 0 0 1 6.6 5c.3.3.5.7.5 1.1Z"
-                        fill-rule="evenodd"
+                        fillRule="evenodd"
                       />
                       <path d="M7.2 8.8H4v10.7h3.2V8.8Z" />
                     </svg>
@@ -265,34 +265,83 @@ export default function PortfolioPage() {
           <section className="mt-[120px] grid grid-cols-12 grid-rows-2 gap-4" title="bento-grid">
             <div className="col-span-6">
               <motion.article
-                className={cn('group relative isolate cursor-pointer', {
-                  'fixed inset-0 z-40 m-auto flex h-[80vh] w-1/2 cursor-pointer flex-col flex-wrap items-start justify-center rounded-lg bg-red-100':
+                className={cn('relative isolate cursor-pointer', {
+                  'fixed inset-0 z-[1000] m-auto flex max-h-[80vh] w-1/2 cursor-pointer flex-wrap items-start overflow-auto rounded-3xl bg-red-100 px-8 py-6':
                     isSelected
                 })}
                 layout
-                onClick={() => setIsSelected(!isSelected)}
+                layoutId="asd"
+                onClick={() => {
+                  setIsSelected(!isSelected);
+                }}
               >
-                <div className="stack-layout place-content-start overflow-hidden rounded-3xl">
-                  <img
-                    alt="workspace-illustration"
-                    className="z-[-1] object-cover transition-transform duration-300 group-hover:scale-105"
-                    src="/portfolio/workspace-illustration.png"
-                  />
-                  <div className="mx-auto mt-[15%] place-self-start rounded-lg border border-white bg-white bg-opacity-50 px-3 py-2 backdrop-blur-md transition-transform duration-300 group-hover:scale-125">
-                    <h3 className="bg-slate-600 bg-clip-text text-2xl font-semibold text-transparent transition-all duration-300 group-hover:bg-gradient-to-br group-hover:from-pink-600 group-hover:via-purple-600 group-hover:to-indigo-600">
-                      About Me
-                    </h3>
-                  </div>
+                {!isSelected && (
+                  <div className="stack-layout place-content-start overflow-hidden rounded-3xl">
+                    {/* <div className="transition-transform duration-300 group-hover:scale-105"> */}
+                    <motion.img
+                      alt="workspace-illustration"
+                      className="z-[-1] object-cover"
+                      layoutId="workplace-illustration"
+                      src="/portfolio/workspace-illustration.png"
+                    />
+                    {/* </div> */}
 
-                  <div className="grid h-[96px] w-[96px] translate-y-[1px] place-content-end self-end justify-self-end overflow-hidden bg-[url('/portfolio/lava-mask.svg')] bg-cover bg-no-repeat">
-                    <ActionIcon className="-translate-y-[1px]" radius={'50%'} size={72}>
-                      <IconArrowUpRight
-                        className="transition-transform duration-300 group-hover:scale-125"
-                        size={36}
-                      />
-                    </ActionIcon>
+                    <div className="mx-auto mt-[15%] place-self-start rounded-lg border border-white bg-white bg-opacity-50 px-3 py-2 backdrop-blur-md transition-transform duration-300 group-hover:scale-125">
+                      <h3 className="bg-slate-600 bg-clip-text text-2xl font-semibold text-transparent transition-all duration-300 group-hover:bg-gradient-to-br group-hover:from-pink-600 group-hover:via-purple-600 group-hover:to-indigo-600">
+                        About Me
+                      </h3>
+                    </div>
+
+                    {/* <div className="grid h-[96px] w-[96px] translate-y-[1px] place-content-end self-end justify-self-end overflow-hidden bg-[url('/portfolio/lava-mask.svg')] bg-cover bg-no-repeat">
+                      <ActionIcon className="-translate-y-[1px]" radius={'50%'} size={72}>
+                        <IconArrowUpRight
+                          className="transition-transform duration-300 group-hover:scale-125"
+                          size={36}
+                        />
+                      </ActionIcon>
+                    </div> */}
                   </div>
-                </div>
+                )}
+
+                {isSelected && (
+                  <div onClick={(event) => event.stopPropagation()}>
+                    <Portal>
+                      <div className="fixed left-0 top-0 z-[999] h-full w-full">
+                        <Overlay
+                          backgroundOpacity={0.75}
+                          color="slate.7"
+                          onClick={() => {
+                            if (isSelected) {
+                              setIsSelected(false);
+                            }
+                          }}
+                        />
+                      </div>
+                    </Portal>
+
+                    <>
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus tempore corporis
+                        atque repudiandae architecto quas eligendi hic, vitae ipsa consequatur quaerat? Animi
+                        nam assumenda obcaecati est non, veniam at ipsum dicta, saepe tempora eveniet impedit
+                        odio illum nulla, aperiam eaque nihil laboriosam eos itaque asperiores provident.
+                        Atque et eligendi culpa. Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                        Porro nisi optio nostrum voluptates corporis officia quod mollitia velit possimus!
+                        Officiis, natus! Facilis itaque ipsam in tenetur nisi iste excepturi error. Lorem
+                        ipsum, dolor sit amet consectetur adipisicing elit. Eos, velit Lorem ipsum dolor sit,
+                        amet consectetur adipisicing elit. Magnam, explicabo.
+                      </p>
+                      <motion.img
+                        alt="workspace-illustration"
+                        className="m-auto w-1/2 rounded-3xl"
+                        layout
+                        layoutId="workplace-illustration"
+                        src="/portfolio/workspace-illustration.png"
+                      />
+                      <Button onClick={() => alert('asdasd')}>asd</Button>
+                    </>
+                  </div>
+                )}
               </motion.article>
             </div>
 

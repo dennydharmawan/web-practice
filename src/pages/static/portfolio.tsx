@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { AnimatePresence, LayoutGroup, motion, useMotionValueEvent, useScroll } from 'framer-motion';
+import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 
@@ -30,8 +30,10 @@ export default function PortfolioPage() {
 
   useMotionValueEvent(scrollY, 'change', (latestY) => {
     if (latestY > navbarCollapseThreshold) {
+      console.log('asd');
       setIsOverTheFold(true);
     } else {
+      console.log('asd2');
       setIsOverTheFold(false);
     }
   });
@@ -64,137 +66,135 @@ export default function PortfolioPage() {
         Skip to main content
       </HashLink>
 
-      <LayoutGroup>
-        <motion.header
-          animate={isOverTheFold ? 'compacted' : 'expanded'}
-          className="full-width content-grid fixed top-0 z-50 w-full bg-transparent"
-          initial="expanded"
-          layout
-          variants={navVariants}
-        >
-          <nav className="py-3">
-            <div className="flex max-w-screen-xl flex-wrap items-center gap-12">
-              <a className="flex items-center" href="#">
-                <motion.img
-                  alt="Website Logo"
-                  className="my-[1px] mr-3 h-9"
-                  height={36}
-                  layout
-                  src="/portfolio/logo.svg"
-                  width={36}
-                />
-                <div className="self-center whitespace-nowrap">
-                  <motion.h1 className="text-xl font-semibold" layout>
-                    Denny Dharmawan
-                  </motion.h1>
-                  <AnimatePresence mode="popLayout">
-                    {!isOverTheFold && (
-                      <motion.p
-                        animate="enter"
-                        className="text-purple-heart-700 text-sm font-semibold leading-tight tracking-wide"
-                        exit="exit"
-                        initial="initial"
-                        layout
-                        variants={firstRender.current ? {} : titleVariants}
-                      >
-                        Full-Stack Engineer
-                      </motion.p>
-                    )}
-                  </AnimatePresence>
-                </div>
-              </a>
-              <div className="flex items-center lg:order-2">
-                <button
-                  aria-controls="mobile-menu"
-                  aria-expanded="false"
-                  className="ml-1 inline-flex items-center rounded-lg p-2 text-sm text-slate-600 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-slate-200 dark:text-slate-400 dark:hover:bg-slate-700 dark:focus:ring-slate-600 lg:hidden"
-                  data-collapse-toggle="mobile-menu"
-                  type="button"
-                >
-                  <span className="sr-only">Open main menu</span>
-                  <svg
-                    className="h-6 w-6"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      clipRule="evenodd"
-                      d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                      fillRule="evenodd"
-                    ></path>
-                  </svg>
-                  <svg
-                    className="hidden h-6 w-6"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      clipRule="evenodd"
-                      d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                      fillRule="evenodd"
-                    ></path>
-                  </svg>
-                </button>
+      <motion.header
+        animate={isOverTheFold ? 'compacted' : 'expanded'}
+        className="full-width content-grid fixed left-0 top-0 z-50 w-full bg-transparent"
+        initial="expanded"
+        layout
+        variants={navVariants}
+      >
+        <nav className="py-3">
+          <div className="flex max-w-screen-xl flex-wrap items-center gap-12">
+            <a className="flex items-center" href="#">
+              <motion.img
+                alt="Website Logo"
+                className="my-[1px] mr-3 h-9"
+                height={36}
+                layout
+                src="/portfolio/logo.svg"
+                width={36}
+              />
+              <div className="self-center whitespace-nowrap">
+                <motion.h1 className="text-xl font-semibold" layout>
+                  Denny Dharmawan
+                </motion.h1>
+                <AnimatePresence mode="popLayout">
+                  {!isOverTheFold && (
+                    <motion.p
+                      animate="enter"
+                      className="text-purple-heart-700 text-sm font-semibold leading-tight tracking-wide"
+                      exit="exit"
+                      initial="initial"
+                      layout
+                      variants={firstRender.current ? {} : titleVariants}
+                    >
+                      Full-Stack Engineer
+                    </motion.p>
+                  )}
+                </AnimatePresence>
               </div>
-
-              <div
-                className="hidden w-full items-center justify-between lg:order-1 lg:flex lg:w-auto"
-                id="mobile-menu"
+            </a>
+            <div className="flex items-center lg:order-2">
+              <button
+                aria-controls="mobile-menu"
+                aria-expanded="false"
+                className="ml-1 inline-flex items-center rounded-lg p-2 text-sm text-slate-600 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-slate-200 dark:text-slate-400 dark:hover:bg-slate-700 dark:focus:ring-slate-600 lg:hidden"
+                data-collapse-toggle="mobile-menu"
+                type="button"
               >
-                <ul
-                  className="mt-4 flex flex-col font-medium lg:mt-0 lg:flex-row lg:space-x-6"
-                  onMouseLeave={() => setHoveredLink(null)}
+                <span className="sr-only">Open main menu</span>
+                <svg
+                  className="h-6 w-6"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <NavListItem
-                    isAnchorActive={location.hash === ''}
-                    isHovered={hoveredLink === 'Home'}
-                    onMouseOver={() => setHoveredLink('Home')}
-                    to="#"
-                  >
-                    Home
-                  </NavListItem>
-                  <NavListItem
-                    isAnchorActive={location.hash === '#projects'}
-                    isHovered={hoveredLink === 'Projects'}
-                    onMouseOver={() => setHoveredLink('Projects')}
-                    to="#projects"
-                  >
-                    Projects
-                  </NavListItem>
-                  <NavListItem
-                    isAnchorActive={location.hash === '#experience'}
-                    isHovered={hoveredLink === 'Experience'}
-                    onMouseOver={() => setHoveredLink('Experience')}
-                    to="#experience"
-                  >
-                    Experience
-                  </NavListItem>
-                  <NavListItem
-                    isAnchorActive={location.hash === '#contact'}
-                    isHovered={hoveredLink === 'Contact'}
-                    onMouseOver={() => setHoveredLink('Contact')}
-                    to="#contact"
-                  >
-                    Contact
-                  </NavListItem>
-
-                  <div className="w-[1px] self-stretch bg-slate-400"></div>
-
-                  <NavListItem
-                    isHovered={hoveredLink === 'Training Lab'}
-                    onMouseOver={() => setHoveredLink('Training Lab')}
-                    to="https://training-lab.dennydharmawan.com"
-                  >
-                    Training Lab
-                  </NavListItem>
-                </ul>
-              </div>
+                  <path
+                    clipRule="evenodd"
+                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                    fillRule="evenodd"
+                  ></path>
+                </svg>
+                <svg
+                  className="hidden h-6 w-6"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    clipRule="evenodd"
+                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                    fillRule="evenodd"
+                  ></path>
+                </svg>
+              </button>
             </div>
-          </nav>
-        </motion.header>
-      </LayoutGroup>
+
+            <div
+              className="hidden w-full items-center justify-between lg:order-1 lg:flex lg:w-auto"
+              id="mobile-menu"
+            >
+              <ul
+                className="mt-4 flex flex-col font-medium lg:mt-0 lg:flex-row lg:space-x-6"
+                onMouseLeave={() => setHoveredLink(null)}
+              >
+                <NavListItem
+                  isAnchorActive={location.hash === ''}
+                  isHovered={hoveredLink === 'Home'}
+                  onMouseOver={() => setHoveredLink('Home')}
+                  to="#"
+                >
+                  Home
+                </NavListItem>
+                <NavListItem
+                  isAnchorActive={location.hash === '#projects'}
+                  isHovered={hoveredLink === 'Projects'}
+                  onMouseOver={() => setHoveredLink('Projects')}
+                  to="#projects"
+                >
+                  Projects
+                </NavListItem>
+                <NavListItem
+                  isAnchorActive={location.hash === '#experience'}
+                  isHovered={hoveredLink === 'Experience'}
+                  onMouseOver={() => setHoveredLink('Experience')}
+                  to="#experience"
+                >
+                  Experience
+                </NavListItem>
+                <NavListItem
+                  isAnchorActive={location.hash === '#contact'}
+                  isHovered={hoveredLink === 'Contact'}
+                  onMouseOver={() => setHoveredLink('Contact')}
+                  to="#contact"
+                >
+                  Contact
+                </NavListItem>
+
+                <div className="w-[1px] self-stretch bg-slate-400"></div>
+
+                <NavListItem
+                  isHovered={hoveredLink === 'Training Lab'}
+                  onMouseOver={() => setHoveredLink('Training Lab')}
+                  to="https://training-lab.dennydharmawan.com"
+                >
+                  Training Lab
+                </NavListItem>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </motion.header>
 
       <main className="full-width content-grid bg-white">
         <section aria-labelledby="hero-title" className="relative">
@@ -262,29 +262,31 @@ export default function PortfolioPage() {
             </div>
           </section>
 
-          <section className="mt-[120px] grid grid-cols-12 grid-rows-2 gap-4" title="bento-grid">
+          <section
+            className="mt-[120px] grid grid-cols-12 grid-rows-[repeat(3,minmax(422px,1fr))] gap-4"
+            title="bento-grid"
+          >
             <div className="col-span-6">
               <motion.article
-                className={cn('relative isolate cursor-pointer', {
-                  'fixed inset-0 z-[1000] m-auto flex max-h-[80vh] w-1/2 cursor-pointer flex-wrap items-start overflow-auto rounded-3xl bg-red-100 px-8 py-6':
+                className={cn('group relative isolate cursor-pointer rounded-3xl bg-yellow-300', {
+                  'fixed inset-0 z-[1000] m-auto flex max-h-[80vh] w-1/2 cursor-pointer flex-wrap items-start overflow-auto px-8 py-6':
                     isSelected
                 })}
                 layout
-                layoutId="asd"
                 onClick={() => {
                   setIsSelected(!isSelected);
                 }}
               >
                 {!isSelected && (
                   <div className="stack-layout place-content-start overflow-hidden rounded-3xl">
-                    {/* <div className="transition-transform duration-300 group-hover:scale-105"> */}
-                    <motion.img
-                      alt="workspace-illustration"
-                      className="z-[-1] object-cover"
-                      layoutId="workplace-illustration"
-                      src="/portfolio/workspace-illustration.png"
-                    />
-                    {/* </div> */}
+                    <div className="transition-transform duration-300 group-hover:scale-105">
+                      <motion.img
+                        alt="workspace-illustration"
+                        className="z-[-1] object-cover"
+                        layoutId="workplace-illustration"
+                        src="/portfolio/workspace-illustration.png"
+                      />
+                    </div>
 
                     <div className="mx-auto mt-[15%] place-self-start rounded-lg border border-white bg-white bg-opacity-50 px-3 py-2 backdrop-blur-md transition-transform duration-300 group-hover:scale-125">
                       <h3 className="bg-slate-600 bg-clip-text text-2xl font-semibold text-transparent transition-all duration-300 group-hover:bg-gradient-to-br group-hover:from-pink-600 group-hover:via-purple-600 group-hover:to-indigo-600">
@@ -345,11 +347,15 @@ export default function PortfolioPage() {
               </motion.article>
             </div>
 
-            <article className="col-span-6 min-h-[421px] cursor-pointer overflow-auto rounded-3xl bg-[#B8CEDC]"></article>
+            <article className="col-span-6 cursor-pointer rounded-3xl bg-[#B8CEDC] px-4 py-3 text-white">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur delectus, laudantium
+              recusandae deleniti nesciunt deserunt dolores suscipit harum, libero aliquid non dignissimos
+              voluptas iusto magnam velit cupiditate aspernatur dolorem reprehenderit?
+            </article>
 
             <article className="col-span-12 cursor-pointer rounded-3xl bg-slate-700 px-4 py-3 text-white"></article>
 
-            <article className="col-span-4 aspect-square cursor-pointer rounded-3xl bg-[#C3B2E7] px-4 py-3"></article>
+            <article className="col-span-4 cursor-pointer rounded-3xl bg-[#C3B2E7] px-4 py-3"></article>
 
             <article className="col-span-4 cursor-pointer rounded-3xl bg-[#F9A474] px-4 py-3 text-white"></article>
 

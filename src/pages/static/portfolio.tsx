@@ -16,6 +16,7 @@ export default function PortfolioPage() {
   const { scrollY } = useScroll();
   const [isOverTheFold, setIsOverTheFold] = useState<boolean>(false);
   const firstRender = useRef(true);
+  const divRef = useRef<HTMLElement>(null);
 
   const location = useLocation();
   const [hoveredLink, setHoveredLink] = useState<null | string>(null);
@@ -30,10 +31,8 @@ export default function PortfolioPage() {
 
   useMotionValueEvent(scrollY, 'change', (latestY) => {
     if (latestY > navbarCollapseThreshold) {
-      console.log('asd');
       setIsOverTheFold(true);
     } else {
-      console.log('asd2');
       setIsOverTheFold(false);
     }
   });
@@ -92,7 +91,7 @@ export default function PortfolioPage() {
                   {!isOverTheFold && (
                     <motion.p
                       animate="enter"
-                      className="text-purple-heart-700 text-sm font-semibold leading-tight tracking-wide"
+                      className="text-sm font-semibold leading-tight tracking-wide text-primary-700"
                       exit="exit"
                       initial="initial"
                       layout
@@ -247,9 +246,11 @@ export default function PortfolioPage() {
               </div>
 
               <div className="space-y-6">
-                <p className="max-w-[35ch] text-xl text-slate-600" id="main-content">
+                <p className="max-w-[60ch] text-balance text-xl text-slate-600" id="main-content">
                   I solve business problems with elegant code, creating efficient solutions that not only look
-                  great but also function flawlessly.
+                  great but also function flawlessly. With a keen eye for detail and a passion for innovation,
+                  I tackle every project with creativity and precision, ensuring that each solution not only
+                  meets but exceeds expectations.
                 </p>
 
                 <div className="space-x-5">
@@ -262,36 +263,37 @@ export default function PortfolioPage() {
             </div>
           </section>
 
-          <section
-            className="mt-[120px] grid grid-cols-12 grid-rows-[repeat(3,minmax(422px,1fr))] gap-4"
-            title="bento-grid"
-          >
+          <section className="mt-[120px] grid grid-cols-12 grid-rows-[repeat(3,minmax(424px,1fr))] gap-4">
             <div className="col-span-6">
               <motion.article
-                className={cn('group relative isolate cursor-pointer rounded-3xl bg-yellow-300', {
-                  'fixed inset-0 z-[1000] m-auto flex max-h-[80vh] w-1/2 cursor-pointer flex-wrap items-start overflow-auto px-8 py-6':
-                    isSelected
-                })}
+                className={cn(
+                  'group relative isolate cursor-pointer rounded-3xl bg-[#F6F1C4] text-cyan-950',
+                  {
+                    'fixed inset-0 z-[1000] m-auto flex max-h-[80vh] w-[calc(2*32px+65ch)] cursor-pointer flex-wrap items-start overflow-auto p-8':
+                      isSelected
+                  }
+                )}
                 layout
                 onClick={() => {
                   setIsSelected(!isSelected);
                 }}
+                ref={divRef}
               >
                 {!isSelected && (
                   <div className="stack-layout place-content-start overflow-hidden rounded-3xl">
                     <div className="transition-transform duration-300 group-hover:scale-105">
                       <motion.img
                         alt="workspace-illustration"
-                        className="z-[-1] object-cover"
+                        className="z-[-1] w-full rounded-3xl object-cover"
                         layoutId="workplace-illustration"
                         src="/portfolio/workspace-illustration.png"
                       />
                     </div>
 
                     <div className="mx-auto mt-[15%] place-self-start rounded-lg border border-white bg-white bg-opacity-50 px-3 py-2 backdrop-blur-md transition-transform duration-300 group-hover:scale-125">
-                      <h3 className="bg-slate-600 bg-clip-text text-2xl font-semibold text-transparent transition-all duration-300 group-hover:bg-gradient-to-br group-hover:from-pink-600 group-hover:via-purple-600 group-hover:to-indigo-600">
+                      <motion.h3 className="text-2xl font-semibold text-slate-600" layoutId="about-me-header">
                         About Me
-                      </h3>
+                      </motion.h3>
                     </div>
 
                     {/* <div className="grid h-[96px] w-[96px] translate-y-[1px] place-content-end self-end justify-self-end overflow-hidden bg-[url('/portfolio/lava-mask.svg')] bg-cover bg-no-repeat">
@@ -321,26 +323,64 @@ export default function PortfolioPage() {
                       </div>
                     </Portal>
 
-                    <div>
+                    <div className="space-y-5">
+                      <div className="grid grid-cols-12 gap-8">
+                        <div className="col-span-6 flex flex-col">
+                          <img className="mb-auto w-full bg-cover" src="/portfolio/bauhaus-underline.svg" />
+
+                          <motion.h3 className="text-3xl font-semibold">About Me</motion.h3>
+                          {/* <h4 className="text-3xl font-semibold">Denny Dharmawan</h4> */}
+                        </div>
+
+                        <div className="col-span-6">
+                          <motion.img
+                            alt="workspace-illustration"
+                            className="w-full rounded-3xl object-cover"
+                            layoutId="workplace-illustration"
+                            src="/portfolio/workspace-illustration.png"
+                          />
+                        </div>
+                      </div>
+
                       <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus tempore corporis
-                        atque repudiandae architecto quas eligendi hic, vitae ipsa consequatur quaerat? Animi
-                        nam assumenda obcaecati est non, veniam at ipsum dicta, saepe tempora eveniet impedit
-                        odio illum nulla, aperiam eaque nihil laboriosam eos itaque asperiores provident.
-                        Atque et eligendi culpa. Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                        Porro nisi optio nostrum voluptates corporis officia quod mollitia velit possimus!
-                        Officiis, natus! Facilis itaque ipsam in tenetur nisi iste excepturi error. Lorem
-                        ipsum, dolor sit amet consectetur adipisicing elit. Eos, velit Lorem ipsum dolor sit,
-                        amet consectetur adipisicing elit. Magnam, explicabo.
+                        Welcome to my digital realm! I'm a passionate full-stack developer driven by a
+                        relentless pursuit of excellence in crafting impactful web solutions. With over{' '}
+                        <span id="yearsOfExperience">{new Date().getFullYear() - 2019}</span> years of
+                        experience, I've honed my skills to seamlessly blend creativity with code, delivering
+                        efficient, elegant, and user-centric solutions.
                       </p>
-                      <motion.img
-                        alt="workspace-illustration"
-                        className="m-auto w-1/2 rounded-3xl"
-                        layout
-                        layoutId="workplace-illustration"
-                        src="/portfolio/workspace-illustration.png"
-                      />
-                      <Button onClick={() => alert('asdasd')}>asd</Button>
+
+                      <p>
+                        My journey in web development began with a fascination for problem-solving and a love
+                        for innovative technologies. Specializing in JavaScript and proficient across the
+                        entire stack, I thrive on transforming complex ideas into intuitive and impactful
+                        digital experiences.
+                      </p>
+
+                      <p>
+                        Beyond just lines of code, I bring a unique blend of creativity and precision to every
+                        project I undertake. Whether it's optimizing performance, enhancing user experience,
+                        or solving intricate business challenges, I'm dedicated to delivering results that
+                        exceed expectations.
+                      </p>
+
+                      {/* <p>
+                        Driven by a passion for continuous learning and growth, I stay at the forefront of
+                        industry trends and technologies. From startups to established enterprises, I've
+                        collaborated with a diverse range of clients, each experience shaping my skills and
+                        approach.
+                      </p>
+
+                      <p>
+                        When I'm not immersed in the digital world, you'll find me exploring new technologies,
+                        experimenting with creative projects, or sharing knowledge with the developer
+                        community.
+                      </p>
+
+                      <p>
+                        Let's embark on this exciting journey together, where innovation meets impact, and
+                        possibilities are limitless. Reach out, and let's turn your ideas into reality.
+                      </p> */}
                     </div>
                   </div>
                 )}
@@ -353,7 +393,11 @@ export default function PortfolioPage() {
               voluptas iusto magnam velit cupiditate aspernatur dolorem reprehenderit?
             </article>
 
-            <article className="col-span-12 cursor-pointer rounded-3xl bg-slate-700 px-4 py-3 text-white"></article>
+            <article className="col-span-12 cursor-pointer rounded-3xl bg-slate-700 px-4 py-3 text-white">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae quam id eaque corporis
+              culpa autem, omnis repellat eius quo quas non a recusandae consequuntur similique aperiam et
+              ducimus amet quidem?
+            </article>
 
             <article className="col-span-4 cursor-pointer rounded-3xl bg-[#C3B2E7] px-4 py-3"></article>
 

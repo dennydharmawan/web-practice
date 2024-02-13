@@ -3,8 +3,8 @@ import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'framer-
 import { Link, useLocation } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 
-import { Button, Overlay, Portal } from '@mantine/core';
-import { IconBrandGithubFilled, IconDownload, IconMailFilled } from '@tabler/icons-react';
+import { ActionIcon, Button, Overlay, Portal } from '@mantine/core';
+import { IconArrowUpRight, IconBrandGithubFilled, IconDownload, IconMailFilled } from '@tabler/icons-react';
 
 import { FullScreenLayout } from '@/components/layout/full-screen-layout';
 import { NavListItem } from '@/components/ui/nav-list-item';
@@ -37,7 +37,7 @@ export default function PortfolioPage() {
     }
   });
 
-  const navVariants = {
+  const navVariant = {
     compacted: {
       backdropFilter: 'blur(4px)',
       backgroundColor: 'rgba(255, 255, 255, 0.75)',
@@ -56,6 +56,16 @@ export default function PortfolioPage() {
     initial: { opacity: 0 }
   };
 
+  const bentoOverlayVariant = {
+    enter: {
+      opacity: 1,
+      transition: {
+        delay: 0.3
+      }
+    },
+    initial: { opacity: firstRender.current ? 1 : 0 }
+  };
+
   return (
     <FullScreenLayout className="relative place-content-start">
       <HashLink
@@ -70,7 +80,7 @@ export default function PortfolioPage() {
         className="full-width content-grid fixed left-0 top-0 z-50 w-full bg-transparent"
         initial="expanded"
         layout
-        variants={navVariants}
+        variants={navVariant}
       >
         <nav className="py-3">
           <div className="flex max-w-screen-xl flex-wrap items-center gap-12">
@@ -280,31 +290,33 @@ export default function PortfolioPage() {
                 ref={divRef}
               >
                 {!isSelected && (
-                  <div className="stack-layout place-content-start overflow-hidden rounded-3xl">
-                    <div className="transition-transform duration-300 group-hover:scale-105">
-                      <motion.img
-                        alt="workspace-illustration"
-                        className="z-[-1] w-full rounded-3xl object-cover"
-                        layoutId="workplace-illustration"
-                        src="/portfolio/workspace-illustration.png"
-                      />
-                    </div>
+                  <>
+                    <motion.div animate="enter" initial="initial" variants={bentoOverlayVariant}>
+                      <div className="absolute left-1/2 top-1/4 -translate-x-1/2 rounded-lg bg-slate-900 bg-opacity-50 px-3 py-2 shadow-sm backdrop-blur-md transition-transform duration-300 group-hover:scale-125">
+                        <h3 className="text-xl font-semibold text-white">About Me</h3>
+                      </div>
 
-                    <div className="mx-auto mt-[15%] place-self-start rounded-lg border border-white bg-white bg-opacity-50 px-3 py-2 backdrop-blur-md transition-transform duration-300 group-hover:scale-125">
-                      <motion.h3 className="text-2xl font-semibold text-slate-600" layoutId="about-me-header">
-                        About Me
-                      </motion.h3>
-                    </div>
+                      <div className="absolute bottom-0 right-0 grid h-[96px] w-[96px] translate-y-[1px] place-content-end justify-self-end overflow-hidden bg-[url('/portfolio/lava-mask.svg')] bg-cover bg-no-repeat">
+                        <ActionIcon className="-translate-y-[1px]" radius={'50%'} size={72}>
+                          <IconArrowUpRight
+                            className="transition-transform duration-300 group-hover:scale-125"
+                            size={36}
+                          />
+                        </ActionIcon>
+                      </div>
+                    </motion.div>
 
-                    {/* <div className="grid h-[96px] w-[96px] translate-y-[1px] place-content-end self-end justify-self-end overflow-hidden bg-[url('/portfolio/lava-mask.svg')] bg-cover bg-no-repeat">
-                      <ActionIcon className="-translate-y-[1px]" radius={'50%'} size={72}>
-                        <IconArrowUpRight
-                          className="transition-transform duration-300 group-hover:scale-125"
-                          size={36}
+                    <div className="stack-layout relative z-[-1] place-content-start overflow-hidden rounded-3xl">
+                      <div className="transition-transform duration-300 group-hover:scale-105">
+                        <motion.img
+                          alt="workspace-illustration"
+                          className="w-full rounded-3xl object-cover"
+                          layoutId="workplace-illustration"
+                          src="/portfolio/workspace-illustration.png"
                         />
-                      </ActionIcon>
-                    </div> */}
-                  </div>
+                      </div>
+                    </div>
+                  </>
                 )}
 
                 {isSelected && (
@@ -328,8 +340,10 @@ export default function PortfolioPage() {
                         <div className="col-span-6 flex flex-col">
                           <img className="mb-auto w-full bg-cover" src="/portfolio/bauhaus-underline.svg" />
 
-                          <motion.h3 className="text-3xl font-semibold">About Me</motion.h3>
-                          {/* <h4 className="text-3xl font-semibold">Denny Dharmawan</h4> */}
+                          {/* I'm denny dharmawan. A fullstack enginer from Indonesia */}
+
+                          <div>Hello 👋, my name is</div>
+                          <motion.h3 className="text-3xl font-semibold">Denny Dharmawan</motion.h3>
                         </div>
 
                         <div className="col-span-6">
@@ -364,7 +378,7 @@ export default function PortfolioPage() {
                         exceed expectations.
                       </p>
 
-                      {/* <p>
+                      <p>
                         Driven by a passion for continuous learning and growth, I stay at the forefront of
                         industry trends and technologies. From startups to established enterprises, I've
                         collaborated with a diverse range of clients, each experience shaping my skills and
@@ -380,7 +394,7 @@ export default function PortfolioPage() {
                       <p>
                         Let's embark on this exciting journey together, where innovation meets impact, and
                         possibilities are limitless. Reach out, and let's turn your ideas into reality.
-                      </p> */}
+                      </p>
                     </div>
                   </div>
                 )}

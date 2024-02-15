@@ -275,19 +275,19 @@ export default function PortfolioPage() {
           </section>
 
           {/* lighten('var(--mantine-color-gray-4)', 0.74); */}
-          <section className="mt-[120px] grid grid-cols-12 grid-rows-[repeat(3,424px)] gap-4 [&>*]:overflow-auto">
+          <section className="mt-[120px] grid grid-cols-12 grid-rows-[repeat(3,424px)] gap-4">
             <div className="col-span-6 flex">
               <div
-                className={cn('flex', {
+                className={cn('z-40 flex', {
                   'fixed left-1/2 top-1/2 z-[1000] -translate-x-1/2 -translate-y-1/2': isSelected
                 })}
                 onClick={(event) => event.stopPropagation()}
               >
                 <motion.article
                   className={cn(
-                    'group relative isolate flex cursor-pointer rounded-3xl bg-yellow-100 text-yellow-950',
+                    'group relative isolate flex cursor-pointer overflow-auto rounded-3xl bg-yellow-100 text-yellow-950',
                     {
-                      'flex max-h-[80vh] w-[calc(2*32px+65ch)] cursor-auto flex-wrap items-start overflow-auto p-8':
+                      'flex max-h-[80vh] w-[calc(2*32px+65ch)] cursor-auto flex-wrap items-start p-8':
                         isSelected
                     }
                   )}

@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 
@@ -87,7 +87,7 @@ export default function PortfolioPage() {
             <a className="flex items-center" href="#">
               <motion.img
                 alt="Website Logo"
-                className="my-[1px] mr-3 h-9"
+                className="mr-3 h-9"
                 height={36}
                 layout
                 src="/portfolio/logo.svg"
@@ -99,7 +99,7 @@ export default function PortfolioPage() {
                 </motion.h1>
                 <AnimatePresence mode="popLayout">
                   {!isOverTheFold && (
-                    <motion.p
+                    <motion.div
                       animate="enter"
                       className="text-sm font-semibold leading-tight tracking-wide text-primary-700"
                       exit="exit"
@@ -108,7 +108,7 @@ export default function PortfolioPage() {
                       variants={firstRender.current ? {} : titleVariants}
                     >
                       Full-Stack Engineer
-                    </motion.p>
+                    </motion.div>
                   )}
                 </AnimatePresence>
               </div>
@@ -195,6 +195,7 @@ export default function PortfolioPage() {
                 <NavListItem
                   isHovered={hoveredLink === 'Training Lab'}
                   onMouseOver={() => setHoveredLink('Training Lab')}
+                  target="_blank"
                   to="https://training-lab.dennydharmawan.com"
                 >
                   Training Lab
@@ -214,9 +215,9 @@ export default function PortfolioPage() {
           <section aria-labelledby="hero-title" className="space-y-8">
             <div className="flex flex-wrap items-center gap-10">
               <div className="h-[155px] w-[152px] bg-[url('/portfolio/bauhaus-header.svg')] bg-cover" />
-              <h1 className="max-w-[20ch] text-6xl font-semibold tracking-wide" id="hero-title">
+              <h2 className="max-w-[25ch] text-balance text-6xl font-bold tracking-wide" id="hero-title">
                 Building exceptional and impactful web solutions.
-              </h1>
+              </h2>
             </div>
 
             <div className="flex flex-wrap items-start gap-8">
@@ -256,7 +257,7 @@ export default function PortfolioPage() {
               </div>
 
               <div className="space-y-6">
-                <p className="max-w-[60ch] text-balance text-xl text-slate-600" id="main-content">
+                <p className="max-w-[60ch] text-pretty text-xl text-slate-600" id="main-content">
                   I solve business problems with elegant code, creating efficient solutions that not only look
                   great but also function flawlessly. With a keen eye for detail and a passion for innovation,
                   I tackle every project with creativity and precision, ensuring that each solution not only
@@ -275,78 +276,45 @@ export default function PortfolioPage() {
 
           <section className="mt-[120px] grid grid-cols-12 grid-rows-[repeat(3,minmax(424px,1fr))] gap-4">
             <div className="col-span-6">
-              <motion.article
-                className={cn(
-                  'group relative isolate cursor-pointer rounded-3xl bg-[#F6F1C4] text-cyan-950',
-                  {
-                    'fixed inset-0 z-[1000] m-auto flex max-h-[80vh] w-[calc(2*32px+65ch)] cursor-pointer flex-wrap items-start overflow-auto p-8':
-                      isSelected
-                  }
-                )}
-                layout
-                onClick={() => {
-                  setIsSelected(!isSelected);
-                }}
-                ref={divRef}
+              <div
+                className={cn({
+                  'fixed left-1/2 top-1/2 z-[1000] -translate-x-1/2 -translate-y-1/2': isSelected
+                })}
+                onClick={(event) => event.stopPropagation()}
               >
-                {!isSelected && (
-                  <>
-                    <motion.div animate="enter" initial="initial" variants={bentoOverlayVariant}>
-                      <div className="absolute left-1/2 top-1/4 -translate-x-1/2 rounded-lg bg-slate-900 bg-opacity-50 px-3 py-2 shadow-sm backdrop-blur-md transition-transform duration-300 group-hover:scale-125">
-                        <h3 className="text-xl font-semibold text-white">About Me</h3>
-                      </div>
-
-                      <div className="absolute bottom-0 right-0 grid h-[96px] w-[96px] translate-y-[1px] place-content-end justify-self-end overflow-hidden bg-[url('/portfolio/lava-mask.svg')] bg-cover bg-no-repeat">
-                        <ActionIcon className="-translate-y-[1px]" radius={'50%'} size={72}>
-                          <IconArrowUpRight
-                            className="transition-transform duration-300 group-hover:scale-125"
-                            size={36}
-                          />
-                        </ActionIcon>
-                      </div>
-                    </motion.div>
-
-                    <div className="stack-layout relative z-[-1] place-content-start overflow-hidden rounded-3xl">
-                      <div className="transition-transform duration-300 group-hover:scale-105">
-                        <motion.img
-                          alt="workspace-illustration"
-                          className="w-full rounded-3xl object-cover"
-                          layoutId="workplace-illustration"
-                          src="/portfolio/workspace-illustration.png"
-                        />
-                      </div>
-                    </div>
-                  </>
-                )}
-
-                {isSelected && (
-                  <div onClick={(event) => event.stopPropagation()}>
-                    <Portal>
-                      <div className="fixed left-0 top-0 z-[999] h-full w-full">
-                        <Overlay
-                          backgroundOpacity={0.75}
-                          color="slate.7"
-                          onClick={() => {
-                            if (isSelected) {
-                              setIsSelected(false);
-                            }
-                          }}
-                        />
-                      </div>
-                    </Portal>
-
-                    <div className="space-y-5">
-                      <div className="grid grid-cols-12 gap-8">
-                        <div className="col-span-6 flex flex-col">
-                          <img className="mb-auto w-full bg-cover" src="/portfolio/bauhaus-underline.svg" />
-
-                          {/* I'm denny dharmawan. A fullstack enginer from Indonesia */}
-
-                          <div>Hello 👋, my name is</div>
-                          <motion.h3 className="text-3xl font-semibold">Denny Dharmawan</motion.h3>
+                <motion.article
+                  className={cn(
+                    'group relative isolate cursor-pointer rounded-3xl bg-yellow-100 text-yellow-950',
+                    {
+                      'flex max-h-[80vh] w-[calc(2*32px+65ch)] cursor-auto flex-wrap items-start overflow-auto p-8':
+                        isSelected
+                    }
+                  )}
+                  layout
+                  onClick={() => {
+                    setIsSelected(!isSelected);
+                  }}
+                  ref={divRef}
+                >
+                  {!isSelected && (
+                    <>
+                      <motion.div animate="enter" initial="initial" variants={bentoOverlayVariant}>
+                        <div className="absolute left-1/2 top-1/4 -translate-x-1/2 rounded-lg bg-slate-900 bg-opacity-40 px-3 py-2 shadow-sm backdrop-blur-md transition-transform duration-300 group-hover:scale-125">
+                          <h3 className="text-xl font-semibold text-white">About Me</h3>
                         </div>
 
-                        <div className="col-span-6">
+                        <div className="absolute bottom-0 right-0 grid h-[96px] w-[96px]  place-content-end justify-self-end overflow-hidden bg-[url('/portfolio/lava-mask.svg')] bg-cover bg-no-repeat">
+                          <ActionIcon className="" radius={'50%'} size={72}>
+                            <IconArrowUpRight
+                              className="transition-transform duration-300 group-hover:scale-125"
+                              size={36}
+                            />
+                          </ActionIcon>
+                        </div>
+                      </motion.div>
+
+                      <div className="stack-layout relative z-[-1] place-content-start overflow-hidden rounded-3xl">
+                        <div className="transition-transform duration-300 group-hover:scale-105">
                           <motion.img
                             alt="workspace-illustration"
                             className="w-full rounded-3xl object-cover"
@@ -355,56 +323,104 @@ export default function PortfolioPage() {
                           />
                         </div>
                       </div>
+                    </>
+                  )}
 
-                      <p>
-                        Welcome to my digital realm! I'm a passionate full-stack developer driven by a
-                        relentless pursuit of excellence in crafting impactful web solutions. With over{' '}
-                        <span id="yearsOfExperience">{new Date().getFullYear() - 2019}</span> years of
-                        experience, I've honed my skills to seamlessly blend creativity with code, delivering
-                        efficient, elegant, and user-centric solutions.
-                      </p>
+                  {isSelected && (
+                    <>
+                      <Portal>
+                        <div className="fixed left-0 top-0 z-[999] h-full w-full">
+                          <Overlay
+                            backgroundOpacity={0.75}
+                            className="cursor-pointer"
+                            color="slate.7"
+                            onClick={() => {
+                              if (isSelected) {
+                                setIsSelected(false);
+                              }
+                            }}
+                          />
+                        </div>
+                      </Portal>
 
-                      <p>
-                        My journey in web development began with a fascination for problem-solving and a love
-                        for innovative technologies. Specializing in JavaScript and proficient across the
-                        entire stack, I thrive on transforming complex ideas into intuitive and impactful
-                        digital experiences.
-                      </p>
+                      <div className="space-y-7">
+                        <div className="grid grid-cols-12 gap-8">
+                          <div className="col-span-6 flex flex-col">
+                            <img className="mb-auto w-full bg-cover" src="/portfolio/bauhaus-underline.svg" />
 
-                      <p>
-                        Beyond just lines of code, I bring a unique blend of creativity and precision to every
-                        project I undertake. Whether it's optimizing performance, enhancing user experience,
-                        or solving intricate business challenges, I'm dedicated to delivering results that
-                        exceed expectations.
-                      </p>
+                            <div>Hello 👋, my name is</div>
+                            <motion.h3 className="text-3xl font-semibold">Denny Dharmawan</motion.h3>
+                          </div>
 
-                      <p>
-                        Driven by a passion for continuous learning and growth, I stay at the forefront of
-                        industry trends and technologies. From startups to established enterprises, I've
-                        collaborated with a diverse range of clients, each experience shaping my skills and
-                        approach.
-                      </p>
+                          <div className="col-span-6">
+                            <motion.img
+                              alt="workspace-illustration"
+                              className="w-full rounded-xl object-cover"
+                              layoutId="workplace-illustration"
+                              src="/portfolio/workspace-illustration.png"
+                            />
+                          </div>
+                        </div>
 
-                      <p>
-                        When I'm not immersed in the digital world, you'll find me exploring new technologies,
-                        experimenting with creative projects, or sharing knowledge with the developer
-                        community.
-                      </p>
+                        <p>
+                          Welcome to my digital realm! I'm a seasoned full-stack developer driven by a
+                          relentless pursuit of excellence in crafting impactful web solutions. With over{' '}
+                          <span id="yearsOfExperience">{new Date().getFullYear() - 2019}</span> years of
+                          experience, I have honed my skills through hands-on experience in building complex
+                          web applications, collaborating with cross-functional teams, and ensuring high
+                          performance and security standards, particularly in the fintech sector.
+                        </p>
 
-                      <p>
-                        Let's embark on this exciting journey together, where innovation meets impact, and
-                        possibilities are limitless. Reach out, and let's turn your ideas into reality.
-                      </p>
-                    </div>
-                  </div>
-                )}
-              </motion.article>
+                        <p>
+                          My journey in web development began with a fascination for problem-solving and a
+                          love for innovative technologies. Specializing in JavaScript and proficient across
+                          the entire stack, I thrive on transforming business goals into intuitive and
+                          impactful digital experiences.
+                        </p>
+
+                        <p>
+                          Beyond just lines of code, I bring a unique blend of creativity and precision to
+                          every project I undertake. Whether it's optimizing performance, enhancing user
+                          experience, or solving intricate business challenges, I'm dedicated to delivering
+                          results that exceed expectations.
+                        </p>
+
+                        <p>
+                          Driven by a passion for continuous learning and growth, I remain at the forefront of
+                          industry trends and technologies by constantly exploring new technologies, embarking
+                          on creative projects, and immersing myself in insightful web development podcasts.
+                          From startups to established enterprises, I've collaborated with a diverse range of
+                          clients, each experience shaping my skills and approach.
+                        </p>
+
+                        <p>
+                          Interested to see my work? Check out my sample projects to witness my skills in
+                          action.
+                        </p>
+                      </div>
+                    </>
+                  )}
+                </motion.article>
+              </div>
             </div>
 
-            <article className="col-span-6 cursor-pointer rounded-3xl bg-[#B8CEDC] px-4 py-3 text-white">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur delectus, laudantium
-              recusandae deleniti nesciunt deserunt dolores suscipit harum, libero aliquid non dignissimos
-              voluptas iusto magnam velit cupiditate aspernatur dolorem reprehenderit?
+            <article className="col-span-6 cursor-pointer rounded-3xl bg-[#7158DA] px-6 py-6 text-white">
+              <div className="grid grid-cols-12 gap-6">
+                <div className="col-span-7">
+
+                  <h3 className="text-3xl font-semibold">My Tech Stack</h3>
+
+                  <p className="mt-6 text-balance">
+                    Whether it's building dynamic user interfaces or crafting robust back-end logic, I
+                    leverage my deep understanding of the JavaScript ecosystem to consistently deliver
+                    top-notch results.
+                  </p>
+                </div>
+
+                <div className="col-span-5">a</div>
+              </div>
+              {/* #EE2A52 #FC773F */}
+              {/* frontend backend */}
             </article>
 
             <article className="col-span-12 cursor-pointer rounded-3xl bg-slate-700 px-4 py-3 text-white">

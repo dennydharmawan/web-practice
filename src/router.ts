@@ -31,7 +31,8 @@ export type Path =
   | `/static/dice-bear-flashlight`
   | `/static/lava-overlay-hero`
   | `/static/portfolio`
-  | `/static/spotlight-card`;
+  | `/static/spotlight-card`
+  | `/static/transparent-gradient`;
 
 export type Params = {};
 

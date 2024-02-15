@@ -48,6 +48,7 @@ Bento Grid Sections
 1. picture of my workplace
 
 2.Tech Stack Icons: I specialize in Javascript ecosystem
+https://dribbble.com/shots/23129986-Mr-Digital-Agency-Website-Design
 
 Whether it's building dynamic user interfaces or crafting robust back-end logic, I leverage my deep understanding of the JavaScript ecosystem to deliver meaningful results.
 infinite carousel

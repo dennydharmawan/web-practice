@@ -27,8 +27,8 @@ const NavListItem = React.forwardRef<HTMLAnchorElement, NavListItemProps>(
 
         <NavLink
           className={cn(
-            'lg:hover:text-purple-heart-700 block border-b border-slate-100 px-3 py-3 tracking-wide text-slate-700 transition-colors lg:border-0 lg:p-0 lg:hover:bg-transparent',
-            { 'text-purple-700': isAnchorActive },
+            'block border-b border-slate-100 px-3 py-3 tracking-wide text-slate-700 transition-colors lg:border-0 lg:p-0 lg:hover:bg-transparent lg:hover:text-primary-700',
+            { 'text-primary-700': isAnchorActive },
             className
           )}
           ref={ref}

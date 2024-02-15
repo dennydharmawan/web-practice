@@ -1,9 +1,9 @@
-import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
+import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 
-import { ActionIcon, Button, Overlay, Portal } from '@mantine/core';
+import { ActionIcon, Button, Card, Overlay, Portal } from '@mantine/core';
 import { IconArrowUpRight, IconBrandGithubFilled, IconDownload, IconMailFilled } from '@tabler/icons-react';
 
 import { FullScreenLayout } from '@/components/layout/full-screen-layout';
@@ -274,17 +274,18 @@ export default function PortfolioPage() {
             </div>
           </section>
 
-          <section className="mt-[120px] grid grid-cols-12 grid-rows-[repeat(3,minmax(424px,1fr))] gap-4">
-            <div className="col-span-6">
+          {/* lighten('var(--mantine-color-gray-4)', 0.74); */}
+          <section className="mt-[120px] grid grid-cols-12 grid-rows-[repeat(3,424px)] gap-4 [&>*]:overflow-auto">
+            <div className="col-span-6 flex">
               <div
-                className={cn({
+                className={cn('flex', {
                   'fixed left-1/2 top-1/2 z-[1000] -translate-x-1/2 -translate-y-1/2': isSelected
                 })}
                 onClick={(event) => event.stopPropagation()}
               >
                 <motion.article
                   className={cn(
-                    'group relative isolate cursor-pointer rounded-3xl bg-yellow-100 text-yellow-950',
+                    'group relative isolate flex cursor-pointer rounded-3xl bg-yellow-100 text-yellow-950',
                     {
                       'flex max-h-[80vh] w-[calc(2*32px+65ch)] cursor-auto flex-wrap items-start overflow-auto p-8':
                         isSelected
@@ -313,13 +314,15 @@ export default function PortfolioPage() {
                         </div>
                       </motion.div>
 
-                      <div className="stack-layout relative z-[-1] place-content-start overflow-hidden rounded-3xl">
+                      <div className="stack-layout relative z-[-1] place-content-stretch overflow-hidden rounded-3xl">
                         <div className="transition-transform duration-300 group-hover:scale-105">
                           <motion.img
                             alt="workspace-illustration"
-                            className="w-full rounded-3xl object-cover"
+                            className="min-h-full rounded-3xl object-cover"
+                            height={1200}
                             layoutId="workplace-illustration"
                             src="/portfolio/workspace-illustration.png"
+                            width={1800}
                           />
                         </div>
                       </div>
@@ -355,7 +358,7 @@ export default function PortfolioPage() {
                           <div className="col-span-6">
                             <motion.img
                               alt="workspace-illustration"
-                              className="w-full rounded-xl object-cover"
+                              className="min-h-full rounded-xl object-cover"
                               layoutId="workplace-illustration"
                               src="/portfolio/workspace-illustration.png"
                             />
@@ -404,20 +407,48 @@ export default function PortfolioPage() {
               </div>
             </div>
 
-            <article className="col-span-6 cursor-pointer rounded-3xl bg-[#7158DA] px-6 py-6 text-white">
-              <div className="grid grid-cols-12 gap-6">
-                <div className="col-span-7">
+            <article className="z-10 col-span-6 flex cursor-pointer rounded-3xl bg-[#7158DA] text-white">
+              <div className="grid grid-cols-12">
+                <div className="col-span-7 flex flex-col gap-6 px-10  py-8">
+                  <div className="relative">
+                    <img
+                      className="relative aspect-video place-self-center rounded-xl object-cover"
+                      height={720}
+                      src="/portfolio/notes.png"
+                      width={1080}
+                    />
+                    <div className="pointer-events-none absolute inset-0 h-full w-full rounded-xl bg-slate-900/20"></div>
 
+                    <div className="absolute -left-6 top-1/4 rounded-md bg-red-600 px-3 py-1 shadow-lg">
+                      front-end
+                    </div>
+
+                    <div className="absolute -right-10 top-2/4 rounded-md bg-orange-600 px-3 py-1 shadow-lg">
+                      back-end
+                    </div>
+                  </div>
                   <h3 className="text-3xl font-semibold">My Tech Stack</h3>
 
-                  <p className="mt-6 text-balance">
-                    Whether it's building dynamic user interfaces or crafting robust back-end logic, I
-                    leverage my deep understanding of the JavaScript ecosystem to consistently deliver
-                    top-notch results.
+                  <p className="text-balance">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, modi.
+                    {/* Whether building dynamic user interfaces or crafting robust back-end logic, I leverage my
+                    deep understanding of the JavaScript ecosystem to consistently deliver top-notch results. */}
                   </p>
                 </div>
 
-                <div className="col-span-5">a</div>
+                <div className="col-span-5 flex justify-center overflow-hidden ">
+                  <div className="relative h-full bg-slate-200 p-6">
+                    <div className="flex flex-col gap-3 transition-transform duration-300 ease-out hover:translate-y-[-15%]">
+                      <Card className="aspect-square w-[96px] flex-shrink-0 flex-grow-0 bg-slate-800"></Card>
+                      <Card className="aspect-square w-[96px] flex-shrink-0 flex-grow-0 bg-slate-800"></Card>
+                      <Card className="aspect-square w-[96px] flex-shrink-0 flex-grow-0 bg-slate-800"></Card>
+                      <Card className="aspect-square w-[96px] flex-shrink-0 flex-grow-0 bg-slate-800"></Card>
+                      <Card className="aspect-square w-[96px] flex-shrink-0 flex-grow-0 bg-slate-800"></Card>
+                    </div>
+
+                    <div className="pointer-events-none absolute inset-0 mx-4 scale-y-110 blur [background-image:linear-gradient(to_bottom,transparent_90%,white_100%)]"></div>
+                  </div>
+                </div>
               </div>
               {/* #EE2A52 #FC773F */}
               {/* frontend backend */}

@@ -14,6 +14,7 @@ export type Path =
   | `/experiments/vertical-align`
   | `/icodethis/426-testimonial-carousel`
   | `/icodethis/437-music-profile`
+  | `/icodethis/443-restaurant-app`
   | `/icodethis/444-simple-pricing`
   | `/icodethis/445-social-profile`
   | `/icodethis/446-subcription-pricing`
@@ -22,7 +23,6 @@ export type Path =
   | `/icodethis/icodemas/day-13`
   | `/icodethis/icodemas/day-2`
   | `/icodethis/icodemas/day-21`
-  | `/icodethis/restaurant-app`
   | `/layout/aside-hack`
   | `/layout/content-grid`
   | `/layout/grid-container`

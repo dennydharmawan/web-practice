@@ -300,8 +300,8 @@ export default function PortfolioPage() {
                   {!isSelected && (
                     <>
                       <motion.div animate="enter" initial="initial" variants={bentoOverlayVariant}>
-                        <div className="absolute left-1/2 top-1/4 -translate-x-1/2 rounded-lg bg-slate-900 bg-opacity-40 px-3 py-2 shadow-sm backdrop-blur-md transition-transform duration-300 group-hover:scale-125">
-                          <h3 className="text-xl font-semibold text-white">About Me</h3>
+                        <div className="absolute left-1/2 top-1/4 -translate-x-1/2 rounded-lg bg-slate-900/50 px-3 py-1 shadow-sm backdrop-blur-md transition-transform duration-300 group-hover:scale-125">
+                          <h3 className="text-lg font-semibold text-white">About Me</h3>
                         </div>
 
                         <div className="absolute bottom-0 right-0 grid h-[96px] w-[96px]  place-content-end justify-self-end overflow-hidden bg-[url('/portfolio/lava-mask.svg')] bg-cover bg-no-repeat">
@@ -407,38 +407,43 @@ export default function PortfolioPage() {
               </div>
             </div>
 
-            <article className="z-10 col-span-6 flex cursor-pointer rounded-3xl bg-[#7158DA] text-white">
+            <article className="col-span-6 flex cursor-pointer rounded-3xl bg-[#7024FC] text-white">
               <div className="grid grid-cols-12">
-                <div className="col-span-7 flex flex-col gap-6 px-10  py-8">
+                <div className="col-span-7 flex flex-col py-8 pl-10 pr-8">
                   <div className="relative">
-                    <img
-                      className="relative aspect-video place-self-center rounded-xl object-cover"
-                      height={720}
-                      src="/portfolio/notes.png"
-                      width={1080}
-                    />
-                    <div className="pointer-events-none absolute inset-0 h-full w-full rounded-xl bg-slate-900/20"></div>
+                    <div className="tucked-photo">
+                      <img
+                        className="relative aspect-video place-self-center object-cover [--p:8px]"
+                        height={720}
+                        src="/portfolio/notes.png"
+                        width={1080}
+                      />
+                    </div>
 
-                    <div className="absolute -left-6 top-1/4 rounded-md bg-red-600 px-3 py-1 shadow-lg">
+                    {/* <div className="pointer-events-none absolute inset-0 h-full w-full rounded-xl bg-slate-900/30"></div> */}
+
+                    <div className="absolute -left-2 top-1/3 rounded-md bg-red-600 px-3 py-1 shadow-lg">
                       front-end
                     </div>
 
-                    <div className="absolute -right-10 top-2/4 rounded-md bg-orange-600 px-3 py-1 shadow-lg">
+                    <div className="absolute -right-7 top-2/4 rounded-md bg-orange-600 px-3 py-1 shadow-lg">
                       back-end
                     </div>
                   </div>
-                  <h3 className="text-3xl font-semibold">My Tech Stack</h3>
 
-                  <p className="text-balance">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, modi.
-                    {/* Whether building dynamic user interfaces or crafting robust back-end logic, I leverage my
-                    deep understanding of the JavaScript ecosystem to consistently deliver top-notch results. */}
-                  </p>
+                  <div className="mt-3 flex flex-col gap-3">
+                    <h3 className="text-3xl font-semibold">My Tech Stack</h3>
+
+                    <p className="text-pretty">
+                      I leverage my deep understanding of the JavaScript ecosystem whether I'm building
+                      dynamic user interfaces or crafting robust back-end logic.
+                    </p>
+                  </div>
                 </div>
 
-                <div className="col-span-5 flex justify-center overflow-hidden ">
-                  <div className="relative h-full bg-slate-200 p-6">
-                    <div className="flex flex-col gap-3 transition-transform duration-300 ease-out hover:translate-y-[-15%]">
+                <div className="col-span-5 flex justify-center">
+                  <div className="relative h-[424px] -translate-y-12 overflow-hidden rounded-xl bg-slate-300/70 p-6 shadow-md backdrop-blur-sm">
+                    <div className="flex flex-col gap-3 transition-transform duration-300 ease-out hover:translate-y-[-152px]">
                       <Card className="aspect-square w-[96px] flex-shrink-0 flex-grow-0 bg-slate-800"></Card>
                       <Card className="aspect-square w-[96px] flex-shrink-0 flex-grow-0 bg-slate-800"></Card>
                       <Card className="aspect-square w-[96px] flex-shrink-0 flex-grow-0 bg-slate-800"></Card>
@@ -446,12 +451,10 @@ export default function PortfolioPage() {
                       <Card className="aspect-square w-[96px] flex-shrink-0 flex-grow-0 bg-slate-800"></Card>
                     </div>
 
-                    <div className="pointer-events-none absolute inset-0 mx-4 scale-y-110 blur [background-image:linear-gradient(to_bottom,transparent_90%,white_100%)]"></div>
+                    <div className="pointer-events-none absolute inset-0 z-50 mx-4 scale-y-110 blur [background-image:linear-gradient(to_bottom,transparent_90%,white_100%)]"></div>
                   </div>
                 </div>
               </div>
-              {/* #EE2A52 #FC773F */}
-              {/* frontend backend */}
             </article>
 
             <article className="col-span-12 cursor-pointer rounded-3xl bg-slate-700 px-4 py-3 text-white">
@@ -460,9 +463,35 @@ export default function PortfolioPage() {
               ducimus amet quidem?
             </article>
 
-            <article className="col-span-4 cursor-pointer rounded-3xl bg-[#C3B2E7] px-4 py-3"></article>
+            <article className="col-span-4 cursor-pointer overflow-hidden rounded-3xl border-4 border-purple-400 bg-[#0E4E70] text-white">
+              <div className="space-y-3 px-8 py-6">
+                <h1 className="text-3xl font-semibold">Training Lab</h1>
+                <p>
+                  Embracing personal growth, I continually challenge myself with small projects showcased on
+                  my training lab. Explore it to witness my skills in action.
+                </p>
+              </div>
 
-            <article className="col-span-4 cursor-pointer rounded-3xl bg-[#F9A474] px-4 py-3 text-white"></article>
+              <div className="relative mt-1 h-[320px] w-[280px] rounded-tr-xl border bg-white shadow-md">
+                <div className="group absolute right-0 top-[4rem] h-[134px] w-[86px] overflow-hidden bg-red-100 transition-transform duration-300 ease-out hover:-translate-y-6">
+                  <img
+                    className="absolute bottom-0 h-[159px] w-[102px] bg-cover transition-transform duration-300 ease-out group-hover:translate-y-6"
+                    height={159}
+                    src="https://www.relume.io/__assets/6177739448baa66404ce1d9c/658e3d870f2f680e3eb336fb_Mockup%20Image%202.png"
+                    width={102}
+                  />
+                </div>
+
+                <div className="absolute -left-[112px] bottom-[72px] h-[111px] w-[258px] overflow-hidden bg-red-100">
+                  <img
+                    className="h-[111px] w-[258px] bg-cover"
+                    src="https://source.unsplash.com/400x300/?beach"
+                  />
+                </div>
+              </div>
+            </article>
+
+            <article className="col-span-4 cursor-pointer rounded-3xl bg-[#F65C39] px-4 py-3 text-white"></article>
 
             <div className="col-span-4 grid grid-rows-2 gap-4">
               <article className="cursor-pointer rounded-3xl bg-[#C9DA8F]"></article>

@@ -111,6 +111,11 @@ https://dribbble.com/shots/22850030-Travel-Website-Design-Tourism-landing-web-pa
 6. Random personal stuff/images (carousel)
 7. CTA for training lab (side project or contributions)
 
+card hover animation
+https://www.youtube.com/watch?v=DCRcFf39SYo&t=1912s
+https://www.relume.io/#wireframes-section
+https://piccalil.li/blog/reality-check-3-building-out-a-layered-hero-grid-layout-from-dribbble/?utm_source=convertkit&utm_medium=email&utm_campaign=Happy+accidents%2C+unfamiliar+patterns%2C+trouble+with+semantic+HTML%2C+and+more%20-%2012918841
+
 add arrow that pulse on button hover
 add white overlay on about me text
 add social icons on header

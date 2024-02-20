@@ -1,4 +1,3 @@
-import { createRequire } from 'module';
 import { glob } from 'glob';
 import pMap from 'p-map';
 
@@ -10,8 +9,8 @@ import {
   writeDataToJson
 } from './utils.js';
 
-const require = createRequire(import.meta.url);
-const challenges = require('../src/data/icodethis.json');
+// const require = createRequire(import.meta.url);
+// const challenges = require('../src/data/icodethis.json');
 
 (async () => {
   const paths = await glob('../src/pages/**/*.tsx', { cwd: 'scripts' });
@@ -32,6 +31,7 @@ const challenges = require('../src/data/icodethis.json');
     .map((path) => path.replace(/\.tsx$/, ''))
     .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
 
+  console.log(sortedPaths);
   const pageObjects = await pMap(
     sortedPaths,
     async (path) => {
@@ -57,9 +57,10 @@ const challenges = require('../src/data/icodethis.json');
   );
 
   if (pageObjects.length > 0) {
-    const combinedPageObjects = challenges.concat(pageObjects);
+    // const combinedPageObjects = challenges.concat(pageObjects);
 
-    await writeDataToJson(combinedPageObjects, 'src/data/icodethis.json');
+    console.log(pageObjects);
+    await writeDataToJson(pageObjects, 'src/data/icodethis.json');
   } else {
     console.log('No new challenges found');
   }

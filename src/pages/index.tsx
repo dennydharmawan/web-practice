@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 import { ActionIcon, Anchor, Button, Card, Image } from '@mantine/core';
 import {
@@ -46,16 +47,17 @@ export default function IndexPage() {
           className="absolute top-6 flex w-full items-center justify-between"
         >
           <div>
-            <h1 className="font-bold" id="header-title">
+            <h1 className="text-2xl font-bold" id="header-title">
               Denny Dharmawan
             </h1>
-            <p>Building Impactful Products ● Full-Stack Engineer</p>
+            <p className="text-sm text-slate-100">Building Impactful Web Solutions ● Full-Stack Engineer</p>
           </div>
 
           <div className="flex gap-5">
             <ActionIcon
               className="text-white hover:text-indigo-300"
               component={Link}
+              target="_blank"
               to="https://github.com/dennydharmawan"
               variant="subtle"
             >
@@ -64,6 +66,7 @@ export default function IndexPage() {
             <ActionIcon
               className="text-white"
               component={Link}
+              target="_blank"
               to="https://linkedin.com/in/ddharmawan"
               variant="subtle"
             >
@@ -116,14 +119,16 @@ export default function IndexPage() {
               </span>{' '}
               One Pixel at a Time!
             </h2>
-            <p className="mb-6 max-w-2xl text-balance text-gray-blue-300 md:text-lg lg:mb-8 lg:text-xl">
-              Welcome to my training lab, a space where I tackle UI challenges head-on, turning code into art.
-              Explore my journey through various coding challenges and witness the magic of front-end
-              development.
+            <p className="mb-6 max-w-2xl text-pretty text-gray-blue-300 md:text-lg lg:mb-8 lg:text-xl">
+              Welcome to my training lab, a dedicated platform where I tackle bite-sized UI challenges
+              head-on. Here, you can explore my solutions to these mini projects, gaining a glimpse into my
+              problem-solving skills, design sensibilities, and my overall technical prowess.
             </p>
 
             <div className="flex items-center gap-8">
-              <Button size="xl">Browse My Solutions</Button>
+              <Button component={HashLink} size="xl" to="#solution-title">
+                Browse My Solutions
+              </Button>
 
               {/* <div className="group relative w-fit transition-transform duration-300 active:scale-95">
                   <button className="relative z-10 rounded-lg bg-gradient-to-br from-indigo-500 to-fuchsia-500 p-0.5 duration-300 group-hover:scale-110">
@@ -238,7 +243,7 @@ export default function IndexPage() {
             <div className="flex flex-col gap-3">
               <h3 className="text-balance text-2xl font-semibold">Thanks for looking around.</h3>
               <p className="max-w-[60ch] text-gray-blue-300">
-                Built with modern web technologies. <br /> Explore the source code on{' '}
+                This website is built with modern web technologies. Explore the source code on{' '}
                 <Anchor
                   c="cyan.4"
                   href="https://github.com/dennydharmawan/web-practice"
@@ -248,11 +253,18 @@ export default function IndexPage() {
                 >
                   Github
                 </Anchor>{' '}
-                to discover the details.
+                to discover more details.
               </p>
 
               <div className="mt-1">
-                <Button leftSection={<IconMessages />}>Wanna Talk?</Button>
+                <Button
+                  component={Link}
+                  leftSection={<IconMessages />}
+                  target="_blank"
+                  to="mailto:contact@dennydharmawan.com"
+                >
+                  Wanna Talk?
+                </Button>
               </div>
             </div>
 

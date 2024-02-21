@@ -233,9 +233,9 @@ export default function IndexPage() {
                 <h3 className="text-2xl font-bold">Denny Dharmawan</h3>
 
                 <p className="max-w-[60ch] text-pretty text-gray-blue-300">
-                  A seasoned full-stack engineer from Indonesia, focused on delivering high-quality work from
-                  concept through to completion. When I'm not coding, you'll find me at the gym or catching
-                  the latest action movies at the cinema.
+                  A seasoned full-stack engineer focused on delivering high-quality work from concept through
+                  to completion. When I'm not coding, you'll find me at the gym or catching the latest action
+                  movies at the cinema.
                 </p>
               </div>
             </div>
@@ -274,7 +274,7 @@ export default function IndexPage() {
               </h2>
               <ul className="space-y-4 font-medium text-gray-blue-300 dark:text-gray-400">
                 <li>
-                  <a className="hover:underline" href="https://icodethis.com/">
+                  <a className="hover:underline" href="https://dennydharmawan.com">
                     Portfolio
                   </a>
                 </li>

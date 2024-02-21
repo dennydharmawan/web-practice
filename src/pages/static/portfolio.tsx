@@ -210,7 +210,7 @@ export default function PortfolioPage() {
         <section aria-labelledby="hero-title" className="relative">
           <div className="absolute right-0 top-0 h-[199px] w-[228px]  bg-[url('/portfolio/bauhaus-corner.svg')] bg-cover" />
 
-          <div className="mt-[calc(120px+64px)]" id="fixed-nav-spacer" />
+          <div className="mt-[calc(132px+64px)]" id="fixed-nav-spacer" />
 
           <section aria-labelledby="hero-title" className="space-y-8">
             <div className="flex flex-wrap items-center gap-10">
@@ -407,7 +407,7 @@ export default function PortfolioPage() {
               </div>
             </div>
 
-            <article className="col-span-6 flex cursor-pointer rounded-3xl bg-[#7024FC] text-white">
+            <article className="col-span-6 flex cursor-pointer rounded-3xl bg-[#7158DA] text-white">
               <div className="grid grid-cols-12">
                 <div className="col-span-7 flex flex-col py-8 pl-10 pr-8">
                   <div className="relative">
@@ -422,7 +422,7 @@ export default function PortfolioPage() {
 
                     {/* <div className="pointer-events-none absolute inset-0 h-full w-full rounded-xl bg-slate-900/30"></div> */}
 
-                    <div className="absolute -left-2 top-1/3 rounded-md bg-red-600 px-3 py-1 shadow-lg">
+                    <div className="absolute -left-2 top-1/3 rounded-md bg-rose-600 px-3 py-1 shadow-lg">
                       front-end
                     </div>
 
@@ -457,22 +457,32 @@ export default function PortfolioPage() {
               </div>
             </article>
 
-            <article className="col-span-12 cursor-pointer rounded-3xl bg-slate-700 px-4 py-3 text-white">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae quam id eaque corporis
-              culpa autem, omnis repellat eius quo quas non a recusandae consequuntur similique aperiam et
-              ducimus amet quidem?
+            <article className="col-span-9 flex cursor-pointer rounded-3xl bg-[#515161] px-10 py-8 text-white">
+              <div className="grid grid-cols-12">
+                <div className="col-span-5 flex flex-col gap-3">
+                  <h3 className="text-3xl font-semibold">I strive to live by my work values.</h3>
+                  {/* Foundation of my work / I strive to live by my work values. */}
+                  <p className="text-pretty">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero quibusdam incidunt commodi
+                    rem esse excepturi quod, eos error molestiae. Labore incidunt accusamus porro repellat
+                    distinctio? Non distinctio voluptatibus dolorem facere.
+                  </p>
+                </div>
+              </div>
             </article>
 
-            <article className="col-span-4 cursor-pointer overflow-hidden rounded-3xl border-4 border-purple-400 bg-[#0E4E70] text-white">
-              <div className="space-y-3 px-8 py-6">
+            <article className="col-span-3 cursor-pointer rounded-3xl bg-[#7A6060] px-4 py-3 text-white"></article>
+
+            <article className="col-span-4 cursor-pointer overflow-hidden rounded-3xl bg-[#B06F45] text-white">
+              <div className="space-y-3 px-10 py-8">
                 <h1 className="text-3xl font-semibold">Training Lab</h1>
-                <p>
+                <p className="text-pretty">
                   Embracing personal growth, I continually challenge myself with small projects showcased on
                   my training lab. Explore it to witness my skills in action.
                 </p>
               </div>
 
-              <div className="relative mt-1 h-[320px] w-[280px] rounded-tr-xl border bg-white shadow-md">
+              <div className="relative mt-1 h-[320px] w-[280px] rounded-tr-xl border bg-[#E8E8EA] shadow-md">
                 <div className="group absolute right-0 top-[4rem] h-[134px] w-[86px] overflow-hidden bg-red-100 transition-transform duration-300 ease-out hover:-translate-y-6">
                   <img
                     className="absolute bottom-0 h-[159px] w-[102px] bg-cover transition-transform duration-300 ease-out group-hover:translate-y-6"
@@ -491,12 +501,12 @@ export default function PortfolioPage() {
               </div>
             </article>
 
-            <article className="col-span-4 cursor-pointer rounded-3xl bg-[#F65C39] px-4 py-3 text-white"></article>
+            <article className="col-span-8 cursor-pointer rounded-3xl bg-[#E8E8EA] px-4 py-3 text-white"></article>
 
-            <div className="col-span-4 grid grid-rows-2 gap-4">
+            {/* <div className="col-span-4 grid grid-rows-2 gap-4">
               <article className="cursor-pointer rounded-3xl bg-[#C9DA8F]"></article>
               <article className="cursor-pointer rounded-3xl bg-[#F682A5]"></article>
-            </div>
+            </div> */}
           </section>
         </section>
       </main>

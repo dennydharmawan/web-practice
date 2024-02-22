@@ -4,7 +4,13 @@ import { Link, useLocation } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 
 import { ActionIcon, Button, Card, Overlay, Portal } from '@mantine/core';
-import { IconArrowUpRight, IconBrandGithubFilled, IconDownload, IconMailFilled } from '@tabler/icons-react';
+import {
+  IconArrowBigRightLineFilled,
+  IconArrowUpRight,
+  IconBrandGithubFilled,
+  IconDownload,
+  IconMailFilled
+} from '@tabler/icons-react';
 
 import { FullScreenLayout } from '@/components/layout/full-screen-layout';
 import { NavListItem } from '@/components/ui/nav-list-item';
@@ -66,6 +72,24 @@ export default function PortfolioPage() {
     initial: { opacity: firstRender.current ? 1 : 0 }
   };
 
+  const mountainBackgroundVariant = {
+    hover: {
+      clipPath: 'inset(0 40% 0 40%)'
+    },
+    initial: {
+      clipPath: 'inset(0 0% 0 0%)'
+    }
+  };
+
+  const paragraphVariant = {
+    hover: {
+      backgroundColor: 'rgba(255, 255, 255, 0)'
+    },
+    initial: {
+      backgroundColor: 'rgba(255, 255, 255, 0.5)'
+    }
+  };
+
   return (
     <FullScreenLayout className="relative place-content-start">
       <HashLink
@@ -84,7 +108,7 @@ export default function PortfolioPage() {
       >
         <nav className="py-3">
           <div className="flex max-w-screen-xl flex-wrap items-center gap-12">
-            <a className="flex items-center" href="#">
+            <HashLink className="flex items-center" to="#">
               <motion.img
                 alt="Website Logo"
                 className="mr-3 h-9"
@@ -112,7 +136,7 @@ export default function PortfolioPage() {
                   )}
                 </AnimatePresence>
               </div>
-            </a>
+            </HashLink>
             <div className="flex items-center lg:order-2">
               <button
                 aria-controls="mobile-menu"
@@ -265,7 +289,9 @@ export default function PortfolioPage() {
                 </p>
 
                 <div className="space-x-5">
-                  <Button size="lg">Explore My Work</Button>
+                  <Button rightSection={<IconArrowBigRightLineFilled />} size="lg">
+                    Explore My Work
+                  </Button>
                   <Button leftSection={<IconDownload />} size="lg" variant="light">
                     Resume
                   </Button>
@@ -275,7 +301,7 @@ export default function PortfolioPage() {
           </section>
 
           {/* lighten('var(--mantine-color-gray-4)', 0.74); */}
-          <section className="mt-[120px] grid grid-cols-12 grid-rows-[repeat(3,424px)] gap-4">
+          <section className="grid grid-cols-12 grid-rows-[repeat(3,432px)] gap-4 py-[132px]">
             <div className="col-span-6 flex">
               <div
                 className={cn('z-40 flex', {
@@ -285,7 +311,7 @@ export default function PortfolioPage() {
               >
                 <motion.article
                   className={cn(
-                    'group relative isolate flex cursor-pointer overflow-auto rounded-3xl bg-yellow-100 text-yellow-950',
+                    'group relative isolate flex cursor-pointer overflow-auto rounded-3xl bg-[#F4F1C4] text-yellow-950',
                     {
                       'flex max-h-[80vh] w-[calc(2*32px+65ch)] cursor-auto flex-wrap items-start p-8':
                         isSelected
@@ -300,7 +326,7 @@ export default function PortfolioPage() {
                   {!isSelected && (
                     <>
                       <motion.div animate="enter" initial="initial" variants={bentoOverlayVariant}>
-                        <div className="absolute left-1/2 top-1/4 -translate-x-1/2 rounded-lg bg-slate-900/50 px-3 py-1 shadow-sm backdrop-blur-md transition-transform duration-300 group-hover:scale-125">
+                        <div className="absolute left-1/2 top-1/4 -translate-x-1/2 rounded-lg bg-slate-950/60 px-3 py-1 shadow-sm backdrop-blur-md transition-transform duration-300 group-hover:scale-125">
                           <h3 className="text-lg font-semibold text-white">About Me</h3>
                         </div>
 
@@ -426,23 +452,23 @@ export default function PortfolioPage() {
                       front-end
                     </div>
 
-                    <div className="absolute -right-7 top-2/4 rounded-md bg-orange-600 px-3 py-1 shadow-lg">
+                    <div className="absolute -right-7 top-2/4 rounded-md bg-[#ca4714] px-3 py-1 shadow-lg">
                       back-end
                     </div>
                   </div>
 
                   <div className="mt-3 flex flex-col gap-3">
-                    <h3 className="text-3xl font-semibold">My Tech Stack</h3>
+                    <h3 className="text-3xl font-semibold">Tech Stack</h3>
 
                     <p className="text-pretty">
                       I leverage my deep understanding of the JavaScript ecosystem whether I'm building
-                      dynamic user interfaces or crafting robust back-end logic.
+                      dynamic user interfaces or creating robust back-end logic.
                     </p>
                   </div>
                 </div>
 
                 <div className="col-span-5 flex justify-center">
-                  <div className="relative h-[424px] -translate-y-12 overflow-hidden rounded-xl bg-slate-300/70 p-6 shadow-md backdrop-blur-sm">
+                  <div className="relative h-[432px] -translate-y-12 overflow-hidden rounded-xl bg-slate-300/70 p-6 shadow-md backdrop-blur-sm">
                     <div className="flex flex-col gap-3 transition-transform duration-300 ease-out hover:translate-y-[-152px]">
                       <Card className="aspect-square w-[96px] flex-shrink-0 flex-grow-0 bg-slate-800"></Card>
                       <Card className="aspect-square w-[96px] flex-shrink-0 flex-grow-0 bg-slate-800"></Card>
@@ -460,20 +486,25 @@ export default function PortfolioPage() {
             <article className="col-span-9 flex cursor-pointer rounded-3xl bg-[#515161] px-10 py-8 text-white">
               <div className="grid grid-cols-12">
                 <div className="col-span-5 flex flex-col gap-3">
-                  <h3 className="text-3xl font-semibold">I strive to live by my work values.</h3>
+                  <h3 className="text-3xl font-semibold">I strive to live by my work values</h3>
                   {/* Foundation of my work / I strive to live by my work values. */}
                   <p className="text-pretty">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero quibusdam incidunt commodi
-                    rem esse excepturi quod, eos error molestiae. Labore incidunt accusamus porro repellat
-                    distinctio? Non distinctio voluptatibus dolorem facere.
+                    In every project, I champion values that foster innovation, efficiency, and a deep
+                    understanding of user needs. My approach is grounded in clear communication, adaptability,
+                    and a collaborative spirit, ensuring that every solution is not only technically sound but
+                    also aligns with our shared vision for success.
                   </p>
+                </div>
+
+                <div className="col-span-7">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum, dolor!
                 </div>
               </div>
             </article>
 
-            <article className="col-span-3 cursor-pointer rounded-3xl bg-[#7A6060] px-4 py-3 text-white"></article>
+            <article className="col-span-3 cursor-pointer rounded-3xl bg-[#86BBBD] px-4 py-3 text-white"></article>
 
-            <article className="col-span-4 cursor-pointer overflow-hidden rounded-3xl bg-[#B06F45] text-white">
+            <article className="col-span-4 cursor-pointer overflow-hidden rounded-3xl bg-[#7A6061] text-white">
               <div className="space-y-3 px-10 py-8">
                 <h1 className="text-3xl font-semibold">Training Lab</h1>
                 <p className="text-pretty">
@@ -483,25 +514,72 @@ export default function PortfolioPage() {
               </div>
 
               <div className="relative mt-1 h-[320px] w-[280px] rounded-tr-xl border bg-[#E8E8EA] shadow-md">
-                <div className="group absolute right-0 top-[4rem] h-[134px] w-[86px] overflow-hidden bg-red-100 transition-transform duration-300 ease-out hover:-translate-y-6">
+                <div className="group absolute right-0 top-[3rem] h-[calc(152px-32px)] w-[86px] overflow-hidden bg-red-100 transition-transform duration-300 ease-out hover:-translate-y-8">
                   <img
-                    className="absolute bottom-0 h-[159px] w-[102px] bg-cover transition-transform duration-300 ease-out group-hover:translate-y-6"
+                    className="absolute bottom-0 h-[152px] w-[102px] bg-cover transition-transform duration-300 ease-out group-hover:translate-y-6"
                     height={159}
-                    src="https://www.relume.io/__assets/6177739448baa66404ce1d9c/658e3d870f2f680e3eb336fb_Mockup%20Image%202.png"
+                    src="/portfolio/books-right.png"
                     width={102}
                   />
                 </div>
 
-                <div className="absolute -left-[112px] bottom-[72px] h-[111px] w-[258px] overflow-hidden bg-red-100">
-                  <img
-                    className="h-[111px] w-[258px] bg-cover"
-                    src="https://source.unsplash.com/400x300/?beach"
-                  />
+                <div className="absolute -left-[104px] bottom-[72px] h-[calc(185px-32px)] w-[259px] overflow-hidden bg-red-100 transition-transform duration-300 ease-out hover:-translate-y-8">
+                  <img className="h-[185px] w-[259px] bg-cover" src="/portfolio/books-left.png" />
                 </div>
               </div>
             </article>
 
-            <article className="col-span-8 cursor-pointer rounded-3xl bg-[#E8E8EA] px-4 py-3 text-white"></article>
+            <article className="col-span-8 cursor-pointer overflow-hidden rounded-3xl bg-[#F1F1F1]">
+              <motion.div
+                className="relative h-full w-full bg-[url('/portfolio/mountain-mask-backup.svg')] bg-cover bg-left-bottom text-slate-900"
+                initial="initial"
+                whileHover="hover"
+              >
+                <motion.img
+                  className="absolute h-full w-full bg-transparent object-cover object-left-bottom"
+                  src="/portfolio/mountain.png"
+                  transition={{
+                    easings: 'easeOut'
+                  }}
+                  variants={mountainBackgroundVariant}
+                />
+
+                {/* <img
+                  className="absolute left-1/2 top-1/2 z-50 w-full -translate-x-1/2 -translate-y-1/2 px-8"
+                  src="/portfolio/elevate.svg"
+                /> */}
+
+                <motion.div
+                  className="absolute mx-7 my-5 max-w-[35%] space-y-5 rounded-lg p-3"
+                  transition={{
+                    easings: 'easeIn'
+                  }}
+                  variants={paragraphVariant}
+                >
+                  <p className="text-lg font-semibold">
+                    I create digital experiences that take users through captivating journeys, driving
+                    engagement and conversion.
+                  </p>
+
+                  <div className="flex flex-col gap-2.5">
+                    <Button rightSection={<IconMailFilled size={18} />} size="md">
+                      Let's Connect
+                    </Button>
+                    <HashLink className="m-auto text-slate-700 underline" to="#work-experience-title">
+                      Let me view your work first
+                    </HashLink>
+                  </div>
+                </motion.div>
+
+                {/* <div className="absolute bottom-0 right-0 mx-10 my-8 flex max-w-[30%] flex-col items-end gap-3 rounded-xl bg-white/50 p-3 backdrop-blur">
+                  <p className="text-pretty">
+                    Ready to embark on this journey together? Let's discuss how my skills can elevate your
+                    team."
+                  </p>
+                  <Button className="max-w- self-stretch">Click me</Button>
+                </div> */}
+              </motion.div>
+            </article>
 
             {/* <div className="col-span-4 grid grid-rows-2 gap-4">
               <article className="cursor-pointer rounded-3xl bg-[#C9DA8F]"></article>
@@ -510,7 +588,7 @@ export default function PortfolioPage() {
           </section>
         </section>
       </main>
-      <footer></footer>
+      <footer className="full-width content-grid h-[20rem] bg-[#0D4E70]"></footer>
     </FullScreenLayout>
   );
 }

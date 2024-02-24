@@ -341,7 +341,7 @@ export default function PortfolioPage() {
                         </div>
 
                         <div className="absolute bottom-0 right-0 grid h-[96px] w-[96px]  place-content-end justify-self-end overflow-hidden bg-[url('/portfolio/lava-mask.svg')] bg-cover bg-no-repeat">
-                          <ActionIcon className="" radius={'50%'} size={72}>
+                          <ActionIcon className="bg-[#0E7090]" radius={'50%'} size={72}>
                             <IconArrowUpRight
                               className="transition-transform duration-300 group-hover:scale-125"
                               size={36}
@@ -458,11 +458,11 @@ export default function PortfolioPage() {
 
                     {/* <div className="pointer-events-none absolute inset-0 h-full w-full rounded-xl bg-slate-900/30"></div> */}
 
-                    <div className="absolute -left-2 top-1/3 rounded-md bg-rose-600 px-3 py-1 text-white shadow-lg">
+                    <div className="absolute -left-2 top-1/3 rounded-md bg-[#DF1E5A] px-3 py-1 text-white shadow-lg">
                       front-end
                     </div>
 
-                    <div className="absolute -right-7 top-2/4 rounded-md bg-orange-700 px-3 py-1 text-white shadow-lg">
+                    <div className="absolute -right-7 top-2/4 rounded-md bg-[#ECB22E] px-3 py-1 text-slate-900 shadow-lg">
                       back-end
                     </div>
                   </div>

@@ -7,14 +7,22 @@ import { ActionIcon, Button, Card, Overlay, Portal } from '@mantine/core';
 import {
   IconArrowBigRightLineFilled,
   IconArrowUpRight,
+  IconBrandGithub,
   IconBrandGithubFilled,
+  IconBrandLinkedin,
+  IconCircleCheck,
   IconDownload,
-  IconMailFilled
+  IconMail,
+  IconMailFilled,
+  IconMessages,
+  IconPointFilled
 } from '@tabler/icons-react';
 
+import IconBullet from '@/assets/bullet-icon.svg?react';
 import { FullScreenLayout } from '@/components/layout/full-screen-layout';
 import { NavListItem } from '@/components/ui/nav-list-item';
 import { SocialIcon } from '@/components/ui/social-icon';
+import jobDescriptions from '@/data/job-descriptions';
 import { cn } from '@/lib/utils';
 
 import AnimatedCard from '../animation/framer-motion/card';
@@ -76,7 +84,7 @@ export default function PortfolioPage() {
 
   const mountainBackgroundVariant = {
     hover: {
-      clipPath: 'inset(0% 40% 0% 40%)'
+      clipPath: 'inset(0% 0% 0% 45%)'
     },
     initial: {
       clipPath: 'inset(0% 0% 0% 0%)'
@@ -343,7 +351,7 @@ export default function PortfolioPage() {
                       </motion.div>
 
                       <div className="stack-layout relative z-[-1] place-content-stretch overflow-hidden rounded-3xl">
-                        <div className="transition-transform duration-300 group-hover:scale-105">
+                        <div className="transition-all duration-300 group-hover:[filter:brightness(105%)saturate(110%)hue-rotate(5deg)] group-hover:[transform:scale(1.05)perspective(750px)]">
                           <motion.img
                             alt="workspace-illustration"
                             className="min-h-full rounded-3xl object-cover"
@@ -450,11 +458,11 @@ export default function PortfolioPage() {
 
                     {/* <div className="pointer-events-none absolute inset-0 h-full w-full rounded-xl bg-slate-900/30"></div> */}
 
-                    <div className="absolute -left-2 top-1/3 rounded-md bg-rose-600 px-3 py-1 shadow-lg">
+                    <div className="absolute -left-2 top-1/3 rounded-md bg-rose-600 px-3 py-1 text-white shadow-lg">
                       front-end
                     </div>
 
-                    <div className="absolute -right-7 top-2/4 rounded-md bg-[#ca4714] px-3 py-1 shadow-lg">
+                    <div className="absolute -right-7 top-2/4 rounded-md bg-orange-700 px-3 py-1 text-white shadow-lg">
                       back-end
                     </div>
                   </div>
@@ -487,7 +495,7 @@ export default function PortfolioPage() {
             {/* bg-[#515161]  */}
             <article className="col-span-12 flex cursor-pointer rounded-3xl bg-[#515161] px-10 py-8 text-white">
               <div className="grid grid-cols-12">
-                <div className="col-span-5 flex flex-col gap-6">
+                <div className="col-span-5 flex flex-col justify-center gap-6">
                   <h3 className="text-3xl font-semibold">I strive to live by my work values</h3>
                   <p className="text-pretty">
                     In every project, I champion values that foster innovation, efficiency, and a deep
@@ -495,7 +503,14 @@ export default function PortfolioPage() {
                     and a collaborative spirit, ensuring that every solution is not only technically sound but
                     also aligns with our shared vision for success.
                   </p>
-                  <div>asdz</div>
+                  <div className="max-w-[280px] space-y-3">
+                    {[1, 2, 3, 4].map((id) => (
+                      <div className="flex items-center gap-2" key={id}>
+                        <IconBullet />
+                        Efficiency and Optimization
+                      </div>
+                    ))}
+                  </div>
                 </div>
 
                 <div className="col-span-7 m-auto">
@@ -564,9 +579,11 @@ export default function PortfolioPage() {
                   </p>
 
                   <div className="flex flex-col gap-2.5">
-                    <Button size="md">Let's Connect</Button>
+                    <Button leftSection={<IconMessages />} size="md">
+                      Let's Collaborate
+                    </Button>
                     <HashLink className="mx-auto text-slate-700 underline" to="#work-experience-title">
-                      Let me view your work first
+                      I want to view your work
                     </HashLink>
                   </div>
                 </motion.div>
@@ -587,8 +604,116 @@ export default function PortfolioPage() {
             </div> */}
           </section>
         </section>
+
+        <section aria-labelledby="work-experience-title" className="py-[6rem]">
+          <h1 className="mb-[80px] text-center" id="work-experience-title">
+            <span className="relative isolate text-4xl font-bold after:absolute after:bottom-1 after:end-0 after:start-0 after:z-[-1] after:h-2 after:w-full after:scale-110 after:rounded-md after:bg-purple-700/30">
+              Work Experience
+            </span>
+          </h1>
+
+          {jobDescriptions.map((job, idx) => {
+            return (
+              <div className=" grid grid-cols-[1fr_2px_3fr]" key={idx}>
+                <div className="ml-auto pr-6 text-right font-semibold">
+                  <h3 className="text-lg">{job.company}</h3>
+                  <h4 className="text-md text-slate-500">{job.date}</h4>
+                </div>
+                <div className="relative h-full bg-slate-300">
+                  <div className="after absolute left-1/2 top-0 grid aspect-square w-6 -translate-x-1/2 place-items-center rounded-full border-2 border-purple-700 bg-purple-100">
+                    <IconPointFilled className="text-purple-700" height={12} width={12} />
+                  </div>
+                </div>
+                <div className="flex flex-col gap-8 pb-16 pl-6">
+                  <h3 className="text-lg font-semibold">{job.position}</h3>
+                  <p className="prose">{job.description}</p>
+                  <div>
+                    <div className="mb-2 flex items-center gap-2">
+                      <div className="h-1 w-7 rounded bg-[#FF682F]"></div>
+                      <h4 className=" text-lg font-medium text-purple-700">Key achievements</h4>
+                    </div>
+                    <ul className="flex flex-col gap-2 font-normal text-slate-700">
+                      {job.keyAchievements.map((keyAchievement, idx) => (
+                        <li className="flex items-start gap-3 font-medium" key={idx}>
+                          <IconCircleCheck className="text-purple-700" />
+
+                          <span className="prose">{keyAchievement}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </section>
       </main>
-      <footer className="full-width content-grid h-[20rem] bg-[#0D4E70]"></footer>
+
+      <footer className="full-width content-grid relative bg-blue-navy-950 text-white">
+        {/* curve decoration */}
+        <span className="full-width grid bg-white">
+          <svg
+            className="full-width relative col-span-12 col-start-1 row-start-1 -mb-1 h-full max-h-24 w-full self-end md:max-h-36"
+            fill="none"
+            height="111"
+            preserveAspectRatio="none"
+            viewBox="0 0 1001 111"
+            width="1001"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M407.21 15.8956C537.851 42.4389 599.349 76.6302 838.741 93.501C917.226 99.032 967.922 93.2301 1001 81.1469L1001 111H0V21.5267C98.1188 10.501 242.474 -17.575 407.21 15.8956Z"
+              style={{
+                fill: '#0a2540'
+              }}
+            ></path>
+          </svg>
+          <svg
+            className="full-width relative col-span-12 col-start-1 row-start-1 h-full max-h-32 w-full self-end md:max-h-44"
+            fill="none"
+            preserveAspectRatio="none"
+            viewBox="0 0 1003 143"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M1002 114.237C968.911 126.309 918.6 146.592 840.089 141.066C600.613 124.211 539.244 38.2043 408.557 11.6857C243.764 -21.754 98.2857 30.6679 1.00002 67.6339"
+              fill="none"
+              height="100"
+              strokeLinecap="square"
+              strokeMiterlimit="30"
+              strokeWidth="1"
+              style={{
+                stroke: '#41a9ef'
+              }}
+              vectorEffect="non-scaling-stroke"
+              width="100"
+              x="0"
+              y="0"
+            ></path>
+          </svg>
+        </span>
+
+        <div className="mb-12 mt-4 flex">
+          <div className="flex items-center gap-4">
+            <div className="text-xl font-semibold">Denny Dharmawan</div>
+            <div className="h-full w-[1px] bg-white"></div>
+            <div className="text-slate-100">© {new Date().getFullYear()}. All rights reserved.</div>
+          </div>
+          <div className="ml-auto">
+            <div className="flex gap-[18px] text-slate-100">
+              <div className="relative z-10 flex items-center justify-center transition-all after:absolute after:left-1/2 after:top-1/2 after:-z-10 after:h-full after:w-full after:-translate-x-1/2 after:-translate-y-1/2 after:scale-[0] after:rounded-full after:bg-accent-400 after:transition-all hover:text-blue-navy-950 hover:after:scale-[1.4]">
+                <IconBrandLinkedin height={32} width={32} />
+              </div>
+              <div className="relative z-10 flex items-center justify-center transition-all after:absolute after:left-1/2 after:top-1/2 after:-z-10 after:h-full after:w-full after:-translate-x-1/2 after:-translate-y-1/2 after:scale-[0] after:rounded-full after:bg-accent-400 after:transition-all hover:text-blue-navy-950 hover:after:scale-[1.4]">
+                <IconBrandGithub height={32} width={32} />
+              </div>
+              <div className="relative z-10 flex items-center justify-center transition-all after:absolute after:left-1/2 after:top-1/2 after:-z-10 after:h-full after:w-full after:-translate-x-1/2 after:-translate-y-1/2 after:scale-[0] after:rounded-full after:bg-accent-400 after:transition-all hover:text-blue-navy-950 hover:after:scale-[1.4]">
+                <IconMail height={32} width={32} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
     </FullScreenLayout>
   );
 }

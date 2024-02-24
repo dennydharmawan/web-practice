@@ -17,6 +17,8 @@ import { NavListItem } from '@/components/ui/nav-list-item';
 import { SocialIcon } from '@/components/ui/social-icon';
 import { cn } from '@/lib/utils';
 
+import AnimatedCard from '../animation/framer-motion/card';
+
 export default function PortfolioPage() {
   const navbarCollapseThreshold = 80;
   const { scrollY } = useScroll();
@@ -74,10 +76,10 @@ export default function PortfolioPage() {
 
   const mountainBackgroundVariant = {
     hover: {
-      clipPath: 'inset(0 40% 0 40%)'
+      clipPath: 'inset(0% 40% 0% 40%)'
     },
     initial: {
-      clipPath: 'inset(0 0% 0 0%)'
+      clipPath: 'inset(0% 0% 0% 0%)'
     }
   };
 
@@ -482,27 +484,27 @@ export default function PortfolioPage() {
                 </div>
               </div>
             </article>
-
-            <article className="col-span-9 flex cursor-pointer rounded-3xl bg-[#515161] px-10 py-8 text-white">
+            {/* bg-[#515161]  */}
+            <article className="col-span-12 flex cursor-pointer rounded-3xl bg-[#515161] px-10 py-8 text-white">
               <div className="grid grid-cols-12">
-                <div className="col-span-5 flex flex-col gap-3">
+                <div className="col-span-5 flex flex-col gap-6">
                   <h3 className="text-3xl font-semibold">I strive to live by my work values</h3>
-                  {/* Foundation of my work / I strive to live by my work values. */}
                   <p className="text-pretty">
                     In every project, I champion values that foster innovation, efficiency, and a deep
                     understanding of user needs. My approach is grounded in clear communication, adaptability,
                     and a collaborative spirit, ensuring that every solution is not only technically sound but
                     also aligns with our shared vision for success.
                   </p>
+                  <div>asdz</div>
                 </div>
 
-                <div className="col-span-7">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum, dolor!
+                <div className="col-span-7 m-auto">
+                  <AnimatedCard />
                 </div>
               </div>
             </article>
-
-            <article className="col-span-3 cursor-pointer rounded-3xl bg-[#86BBBD] px-4 py-3 text-white"></article>
+            {/*
+            <article className="col-span-2 cursor-pointer rounded-3xl bg-[#86BBBD] px-4 py-3 text-white"></article> */}
 
             <article className="col-span-4 cursor-pointer overflow-hidden rounded-3xl bg-[#7A6061] text-white">
               <div className="space-y-3 px-10 py-8">
@@ -550,7 +552,7 @@ export default function PortfolioPage() {
                 /> */}
 
                 <motion.div
-                  className="absolute mx-7 my-5 max-w-[35%] space-y-5 rounded-lg p-3"
+                  className="absolute mx-7 my-5 max-w-[35%] space-y-6 rounded-lg p-3"
                   transition={{
                     easings: 'easeIn'
                   }}
@@ -562,10 +564,8 @@ export default function PortfolioPage() {
                   </p>
 
                   <div className="flex flex-col gap-2.5">
-                    <Button rightSection={<IconMailFilled size={18} />} size="md">
-                      Let's Connect
-                    </Button>
-                    <HashLink className="m-auto text-slate-700 underline" to="#work-experience-title">
+                    <Button size="md">Let's Connect</Button>
+                    <HashLink className="mx-auto text-slate-700 underline" to="#work-experience-title">
                       Let me view your work first
                     </HashLink>
                   </div>

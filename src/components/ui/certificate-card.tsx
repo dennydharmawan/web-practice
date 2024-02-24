@@ -19,10 +19,10 @@ const CertificateCard = React.forwardRef<
         ref={scope}
         {...props}
         onMouseEnter={() => {
-          animate(scope.current, onMouseEnterAnimation);
+          animate(scope.current, onMouseEnterAnimation, { duration: 0.35, ease: 'easeInOut' });
         }}
         onMouseLeave={() => {
-          animate(scope.current, onMouseLeaveAnimation);
+          animate(scope.current, onMouseLeaveAnimation, { duration: 0.35, ease: 'easeInOut' });
         }}
       />
     </div>

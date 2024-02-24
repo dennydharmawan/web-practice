@@ -256,7 +256,7 @@ export default function PortfolioPage() {
 
             <div className="flex flex-wrap items-start gap-8">
               <div className="justify flex flex-col items-center justify-between self-stretch pl-[48px]">
-                <div className="mt-3 h-[6px] w-[51px] bg-[#3FB8D2]"></div>
+                <div className="mt-3 h-[6px] w-[51px] bg-[#36C5F0]"></div>
 
                 <SocialIcon>
                   <Link target="_blank" to="https://linkedin.com/in/ddharmawan">
@@ -341,7 +341,7 @@ export default function PortfolioPage() {
                         </div>
 
                         <div className="absolute bottom-0 right-0 grid h-[96px] w-[96px]  place-content-end justify-self-end overflow-hidden bg-[url('/portfolio/lava-mask.svg')] bg-cover bg-no-repeat">
-                          <ActionIcon className="bg-[#0E7090]" radius={'50%'} size={72}>
+                          <ActionIcon radius={'50%'} size={72}>
                             <IconArrowUpRight
                               className="transition-transform duration-300 group-hover:scale-125"
                               size={36}

@@ -20,7 +20,13 @@ Prioritize clean code practices to enhance readability, maintainability, and col
 
 
 I focus on producing top-notch and impactful digital solutions
-
+#833AB4 (Primary color)
+#FFD166 (Warm yellow)
+#06D6A0 (Mint green)
+#FF6B6B (Bold red)
+#118AB2 (Deep blue)
+#FF851B (Bright orange)
+#1FAB89 (Teal)
 
 color
 https://www.awwwards.com/inspiration/givingli-interactive-bento-grid-givingli

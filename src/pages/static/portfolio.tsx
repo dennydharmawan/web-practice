@@ -19,6 +19,7 @@ import {
 } from '@tabler/icons-react';
 
 import IconBullet from '@/assets/bullet-icon.svg?react';
+import IconHighlightUnderline from '@/assets/highlight-underline.svg?react';
 import { FullScreenLayout } from '@/components/layout/full-screen-layout';
 import { NavListItem } from '@/components/ui/nav-list-item';
 import { SocialIcon } from '@/components/ui/social-icon';
@@ -84,7 +85,7 @@ export default function PortfolioPage() {
 
   const mountainBackgroundVariant = {
     hover: {
-      clipPath: 'inset(0% 0% 0% 45%)'
+      clipPath: 'inset(0% 50% 0% 50%)'
     },
     initial: {
       clipPath: 'inset(0% 0% 0% 0%)'
@@ -101,7 +102,7 @@ export default function PortfolioPage() {
   };
 
   return (
-    <FullScreenLayout className="relative place-content-start">
+    <FullScreenLayout className="relative place-content-start bg-gray-warm-25">
       <HashLink
         className="fixed left-[8px] top-0 z-[50] translate-y-[-120%] rounded-sm bg-slate-700 px-4 py-3 font-semibold text-white transition-all duration-200 ease-in focus:translate-y-0"
         to="#main-content"
@@ -135,7 +136,7 @@ export default function PortfolioPage() {
                   {!isOverTheFold && (
                     <motion.div
                       animate="enter"
-                      className="text-sm font-semibold leading-tight tracking-wide text-primary-700"
+                      className="text-sm font-semibold leading-tight text-indigo-700"
                       exit="exit"
                       initial="initial"
                       layout
@@ -249,14 +250,15 @@ export default function PortfolioPage() {
           <section aria-labelledby="hero-title" className="space-y-8">
             <div className="flex flex-wrap items-center gap-10">
               <div className="h-[155px] w-[152px] bg-[url('/portfolio/bauhaus-header.svg')] bg-cover" />
-              <h2 className="max-w-[25ch] text-balance text-6xl font-bold tracking-wide" id="hero-title">
+              <h2 className="max-w-[25ch] text-balance text-6xl font-bold tracking-tight" id="hero-title">
                 Building exceptional and impactful web solutions.
               </h2>
             </div>
 
             <div className="flex flex-wrap items-start gap-8">
               <div className="justify flex flex-col items-center justify-between self-stretch pl-[48px]">
-                <div className="mt-3 h-[6px] w-[51px] bg-[#36C5F0]"></div>
+                {/* accent line */}
+                <div className="mt-3 h-[6px] w-[51px] bg-[#3DB8D2]"></div>
 
                 <SocialIcon>
                   <Link target="_blank" to="https://linkedin.com/in/ddharmawan">
@@ -292,10 +294,10 @@ export default function PortfolioPage() {
 
               <div className="space-y-6">
                 <p className="max-w-[60ch] text-pretty text-xl text-slate-600" id="main-content">
-                  I solve business problems with elegant code, creating efficient solutions that not only look
-                  great but also function flawlessly. With a keen eye for detail and a passion for innovation,
-                  I tackle every project with creativity and precision, ensuring that each solution not only
-                  meets but exceeds expectations.
+                  I specialize in creating websites that elevate businesses, delivering not just visually
+                  stunning designs, but also seamless functionality. With meticulous attention to detail and a
+                  drive for innovation, I approach each project with a blend of creativity and precision,
+                  aiming not only to meet but to surpass expectations at every turn.
                 </p>
 
                 <div className="space-x-5">
@@ -336,12 +338,12 @@ export default function PortfolioPage() {
                   {!isSelected && (
                     <>
                       <motion.div animate="enter" initial="initial" variants={bentoOverlayVariant}>
-                        <div className="absolute left-1/2 top-1/4 -translate-x-1/2 rounded-lg bg-slate-950/60 px-3 py-1 shadow-sm backdrop-blur-md transition-transform duration-300 group-hover:scale-125">
+                        <div className="absolute left-1/2 top-1/4 -translate-x-1/2 rounded-lg bg-slate-950/55 px-3 py-1 shadow-sm backdrop-blur-md transition-transform duration-300 group-hover:scale-125">
                           <h3 className="text-lg font-semibold text-white">About Me</h3>
                         </div>
 
                         <div className="absolute bottom-0 right-0 grid h-[96px] w-[96px]  place-content-end justify-self-end overflow-hidden bg-[url('/portfolio/lava-mask.svg')] bg-cover bg-no-repeat">
-                          <ActionIcon radius={'50%'} size={72}>
+                          <ActionIcon className="bg-[#6665DD] text-white" radius={'50%'} size={72}>
                             <IconArrowUpRight
                               className="transition-transform duration-300 group-hover:scale-125"
                               size={36}
@@ -443,7 +445,7 @@ export default function PortfolioPage() {
               </div>
             </div>
 
-            <article className="col-span-6 flex cursor-pointer rounded-3xl bg-[#7158DA] text-white">
+            <article className="col-span-6 flex cursor-pointer rounded-3xl bg-[#2F5E9A] text-white">
               <div className="grid grid-cols-12">
                 <div className="col-span-7 flex flex-col py-8 pl-10 pr-8">
                   <div className="relative">
@@ -496,18 +498,25 @@ export default function PortfolioPage() {
             <article className="col-span-12 flex cursor-pointer rounded-3xl bg-[#515161] px-10 py-8 text-white">
               <div className="grid grid-cols-12">
                 <div className="col-span-5 flex flex-col justify-center gap-6">
-                  <h3 className="text-3xl font-semibold">I strive to live by my work values</h3>
-                  <p className="text-pretty">
-                    In every project, I champion values that foster innovation, efficiency, and a deep
-                    understanding of user needs. My approach is grounded in clear communication, adaptability,
-                    and a collaborative spirit, ensuring that every solution is not only technically sound but
-                    also aligns with our shared vision for success.
-                  </p>
+                  <div className="flex flex-col gap-3">
+                    <h3 className="text-3xl font-semibold">I strive to live by my work values</h3>
+                    <p className="text-pretty">
+                      In every project, I champion values that foster innovation, efficiency, and a deep
+                      understanding of user needs. My approach is grounded in clear communication,
+                      adaptability, and a collaborative spirit, ensuring that every solution is not only
+                      technically sound but also aligns with our shared vision for success.
+                    </p>
+                  </div>
                   <div className="max-w-[280px] space-y-3">
-                    {[1, 2, 3, 4].map((id) => (
-                      <div className="flex items-center gap-2" key={id}>
+                    {[
+                      'Efficiency and Optimization',
+                      'User-Centric Design',
+                      'Reliability and Robustness',
+                      'Innovation and Adaptability'
+                    ].map((label, idx) => (
+                      <div className="flex items-center gap-2" key={idx}>
                         <IconBullet />
-                        Efficiency and Optimization
+                        {label}
                       </div>
                     ))}
                   </div>
@@ -531,7 +540,7 @@ export default function PortfolioPage() {
               </div>
 
               <div className="relative mt-1 h-[320px] w-[280px] rounded-tr-xl border bg-[#E8E8EA] shadow-md">
-                <div className="group absolute right-0 top-[3rem] h-[calc(152px-32px)] w-[86px] overflow-hidden bg-red-100 transition-transform duration-300 ease-out hover:-translate-y-8">
+                <div className="group absolute right-0 top-[3rem] h-[calc(152px-32px)] w-[86px] overflow-hidden transition-transform duration-300 ease-out hover:-translate-y-8">
                   <img
                     className="absolute bottom-0 h-[152px] w-[102px] bg-cover transition-transform duration-300 ease-out group-hover:translate-y-6"
                     height={159}
@@ -540,15 +549,15 @@ export default function PortfolioPage() {
                   />
                 </div>
 
-                <div className="absolute -left-[104px] bottom-[72px] h-[calc(185px-32px)] w-[259px] overflow-hidden bg-red-100 transition-transform duration-300 ease-out hover:-translate-y-8">
+                <div className="absolute -left-[104px] bottom-[72px] h-[calc(185px-32px)] w-[259px] overflow-hidden transition-transform duration-300 ease-out hover:-translate-y-8">
                   <img className="h-[185px] w-[259px] bg-cover" src="/portfolio/books-left.png" />
                 </div>
               </div>
             </article>
 
-            <article className="col-span-8 cursor-pointer overflow-hidden rounded-3xl bg-[#F1F1F1]">
+            <article className="col-span-5 cursor-pointer overflow-hidden rounded-3xl bg-[#F1F1F1]">
               <motion.div
-                className="relative h-full w-full bg-[url('/portfolio/mountain-mask-backup.svg')] bg-cover bg-left-bottom text-slate-900"
+                className="relative flex h-full w-full justify-center bg-[url('/portfolio/mountain-mask-backup.svg')] bg-cover bg-left-bottom text-slate-900"
                 initial="initial"
                 whileHover="hover"
               >
@@ -556,36 +565,30 @@ export default function PortfolioPage() {
                   className="absolute h-full w-full bg-transparent object-cover object-left-bottom"
                   src="/portfolio/mountain.png"
                   transition={{
-                    easings: 'easeOut'
+                    // duration: 0.35,
+                    ease: 'easeOut'
                   }}
                   variants={mountainBackgroundVariant}
                 />
 
-                {/* <img
-                  className="absolute left-1/2 top-1/2 z-50 w-full -translate-x-1/2 -translate-y-1/2 px-8"
-                  src="/portfolio/elevate.svg"
-                /> */}
-
                 <motion.div
-                  className="absolute mx-7 my-5 max-w-[35%] space-y-6 rounded-lg p-3"
-                  transition={{
-                    easings: 'easeIn'
-                  }}
+                  className="absolute mt-8 max-w-[40ch] space-y-6 rounded-lg px-7 py-5"
                   variants={paragraphVariant}
                 >
-                  <p className="text-lg font-semibold">
-                    I create digital experiences that take users through captivating journeys, driving
-                    engagement and conversion.
+                  <p className="text-pretty">
+                    With over 5 years of experience in web development, I've honed my skills in creating
+                    intuitive user inteface, handling complex logic, designing robust system architectures,
+                    and ensuring high-performance and security standards.
                   </p>
-
-                  <div className="flex flex-col gap-2.5">
+                  {/*
+                  <div className="flex flex-col gap-5">
                     <Button leftSection={<IconMessages />} size="md">
                       Let's Collaborate
                     </Button>
-                    <HashLink className="mx-auto text-slate-700 underline" to="#work-experience-title">
+                    <Button component={HashLink} size="md" to="#work-experience-title" variant="outline">
                       I want to view your work
-                    </HashLink>
-                  </div>
+                    </Button>
+                  </div> */}
                 </motion.div>
 
                 {/* <div className="absolute bottom-0 right-0 mx-10 my-8 flex max-w-[30%] flex-col items-end gap-3 rounded-xl bg-white/50 p-3 backdrop-blur">
@@ -598,6 +601,28 @@ export default function PortfolioPage() {
               </motion.div>
             </article>
 
+            <article className="relative col-span-3 cursor-pointer overflow-hidden rounded-3xl">
+              <img className="h-full w-full object-cover" src="/portfolio/building.jpg" />
+
+              <div className="absolute left-0 top-0 w-full px-10 py-8 text-cyan-950">
+                <div className="flex flex-col items-stretch gap-1">
+                  <Button leftSection={<IconMessages />} size="md">
+                    Let's Collaborate
+                  </Button>
+                  <Button
+                    className="mx-auto font-normal text-slate-900 underline [text-underline-offset:4px] hover:bg-[#fabd60]/75 hover:no-underline"
+                    component={HashLink}
+                    to="#work-experience-title"
+                    variant="subtle"
+                  >
+                    I want to view your work
+                  </Button>
+                </div>
+              </div>
+            </article>
+
+            {/* <article className="col-span-2 cursor-pointer overflow-hidden rounded-3xl bg-[#D1D4FF]"></article> */}
+
             {/* <div className="col-span-4 grid grid-rows-2 gap-4">
               <article className="cursor-pointer rounded-3xl bg-[#C9DA8F]"></article>
               <article className="cursor-pointer rounded-3xl bg-[#F682A5]"></article>
@@ -605,9 +630,12 @@ export default function PortfolioPage() {
           </section>
         </section>
 
-        <section aria-labelledby="work-experience-title" className="py-[6rem]">
-          <h1 className="mb-[80px] text-center" id="work-experience-title">
-            <span className="relative isolate text-4xl font-bold after:absolute after:bottom-1 after:end-0 after:start-0 after:z-[-1] after:h-2 after:w-full after:scale-110 after:rounded-md after:bg-purple-700/30">
+        <section
+          aria-labelledby="work-experience-title"
+          className="full-width content-grid bg-blue-light-25 py-[6rem]"
+        >
+          <h1 className="mb-[120px] text-center" id="work-experience-title">
+            <span className="relative isolate text-4xl font-bold uppercase tracking-[0.01em] after:absolute after:bottom-1 after:end-0 after:start-0 after:z-[-1] after:h-2 after:w-full after:scale-110 after:rounded-md after:bg-indigo-700/30">
               Work Experience
             </span>
           </h1>
@@ -620,8 +648,8 @@ export default function PortfolioPage() {
                   <h4 className="text-md text-slate-500">{job.date}</h4>
                 </div>
                 <div className="relative h-full bg-slate-300">
-                  <div className="after absolute left-1/2 top-0 grid aspect-square w-6 -translate-x-1/2 place-items-center rounded-full border-2 border-purple-700 bg-purple-100">
-                    <IconPointFilled className="text-purple-700" height={12} width={12} />
+                  <div className="after absolute left-1/2 top-0 grid aspect-square w-6 -translate-x-1/2 place-items-center rounded-full border-2 border-indigo-600 bg-indigo-100">
+                    <IconPointFilled className="text-indigo-600" height={12} width={12} />
                   </div>
                 </div>
                 <div className="flex flex-col gap-8 pb-16 pl-6">
@@ -630,12 +658,12 @@ export default function PortfolioPage() {
                   <div>
                     <div className="mb-2 flex items-center gap-2">
                       <div className="h-1 w-7 rounded bg-[#FF682F]"></div>
-                      <h4 className=" text-lg font-medium text-purple-700">Key achievements</h4>
+                      <h4 className=" text-lg font-medium text-indigo-600">Key achievements</h4>
                     </div>
                     <ul className="flex flex-col gap-2 font-normal text-slate-700">
                       {job.keyAchievements.map((keyAchievement, idx) => (
                         <li className="flex items-start gap-3 font-medium" key={idx}>
-                          <IconCircleCheck className="text-purple-700" />
+                          <IconCircleCheck className="text-indigo-600" />
 
                           <span className="prose">{keyAchievement}</span>
                         </li>
@@ -647,9 +675,43 @@ export default function PortfolioPage() {
             );
           })}
         </section>
+
+        <section className="content-grid">
+          <div className="grid max-w-screen-xl px-4 py-8 lg:grid-cols-12 lg:gap-8 lg:py-16 xl:gap-0">
+            <div className="mr-auto hidden lg:col-span-5 lg:mt-0 lg:flex">
+              {/* <img
+                alt="teamwork illustration"
+                src="https://ik.imagekit.io/ddharmawan/dennydharmawan_com/tr:w-960/teamwork-illustration.svg"
+              /> */}
+            </div>
+            <div className="place-self-center px-16 lg:col-span-7">
+              <h3 className="mb-8 text-3xl font-bold leading-snug">
+                Let's make a
+                <span className="relative text-indigo-600">
+                  &nbsp;connection&nbsp;
+                  <IconHighlightUnderline className="absolute -bottom-3 left-0 m-auto w-full -scale-x-125 overflow-hidden" />
+                </span>
+                today.
+                {/* <IconStarsDoodle className="inline-block -translate-y-[35%]" /> */}
+              </h3>
+              <p className="mb-8 text-pretty text-lg text-slate-600">
+                It all starts with an email. Get in touch and let’s kick-start something amazing together. Who
+                knows, I may be the missing puzzle that you’re looking for.
+              </p>
+              <Button
+                component={Link}
+                leftSection={<IconMessages />}
+                size="md"
+                to="mailto:contact@dennydharmawan.com"
+              >
+                Start Conversation
+              </Button>
+            </div>
+          </div>
+        </section>
       </main>
 
-      <footer className="full-width content-grid relative bg-blue-navy-950 text-white">
+      <footer className="full-width content-grid relative bg-[#223858] text-white">
         {/* curve decoration */}
         <span className="full-width grid bg-white">
           <svg
@@ -664,7 +726,7 @@ export default function PortfolioPage() {
             <path
               d="M407.21 15.8956C537.851 42.4389 599.349 76.6302 838.741 93.501C917.226 99.032 967.922 93.2301 1001 81.1469L1001 111H0V21.5267C98.1188 10.501 242.474 -17.575 407.21 15.8956Z"
               style={{
-                fill: '#0a2540'
+                fill: '#223858'
               }}
             ></path>
           </svg>

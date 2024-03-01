@@ -17,7 +17,7 @@ const NavListItem = React.forwardRef<HTMLAnchorElement, NavListItemProps>(
           {isHovered && (
             <motion.div
               animate={{ opacity: 0.25 }}
-              className="absolute inset-0 z-[-1] rounded-sm bg-slate-400"
+              className="absolute inset-0 z-[-1] rounded-sm bg-[#fabd60]"
               exit={{ opacity: 0 }}
               initial={{ opacity: 0 }}
               layoutId="link-highlight"
@@ -27,8 +27,8 @@ const NavListItem = React.forwardRef<HTMLAnchorElement, NavListItemProps>(
 
         <NavLink
           className={cn(
-            'block border-b border-slate-100 px-3 py-3 tracking-wide text-slate-700 transition-colors lg:border-0 lg:p-0 lg:hover:bg-transparent lg:hover:text-primary-700',
-            { 'text-primary-700': isAnchorActive },
+            'block border-b border-slate-100 px-3 py-3 tracking-wide text-slate-700 transition-colors lg:border-0 lg:p-0 lg:hover:bg-transparent',
+            { 'font-bold text-indigo-700': isAnchorActive },
             className
           )}
           ref={ref}

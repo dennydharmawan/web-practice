@@ -28,6 +28,15 @@ I focus on producing top-notch and impactful digital solutions
 #FF851B (Bright orange)
 #1FAB89 (Teal)
 
+
+#3FB8D2 (Primary color)
+#833AB4 (Secondary color)
+#FF6B6B (Bold red)
+#FFD166 (Warm yellow)
+#06D6A0 (Mint green)
+#FF851B (Bright orange)
+#1FAB89 (Teal)
+
 color
 https://www.awwwards.com/inspiration/givingli-interactive-bento-grid-givingli
 
@@ -133,3 +142,13 @@ CTA for training lab
 https://www.wallpaperflare.com/monument-architecture-building-indonesia-jakarta-pusat-wallpaper-gneabhttps://www.wallpaperflare.com/monument-architecture-building-indonesia-jakarta-pusat-wallpaper-gneab
 
 
+
+Certainly! Here's a summary of your full-stack principles into four key points:
+
+Efficiency and Optimization: Develop solutions that streamline processes and enhance overall system efficiency. Optimize code for performance to ensure a smooth user experience.
+
+User-Centric Design: Keep end-users in mind when designing and developing features. Craft solutions that address real user needs and pain points.
+
+Reliability and Robustness: Build dependable and resilient systems, minimizing downtime and errors. Prioritize reliability in both frontend and backend components.
+
+Innovation and Adaptability: Integrate innovative technologies when they add tangible value to the project. Be open to adapting and learning new technologies that align with project requirements.

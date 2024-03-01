@@ -44,7 +44,7 @@ export default function AnimatedCard() {
         whileHover="hover"
       >
         <CertificateCard
-          className="to-lime-200 absolute left-0 top-0 z-40 flex h-[220px] w-[320px] justify-between rounded-2xl bg-[#56C6E9]/80 p-5 text-lg text-black/[0.8] backdrop-blur-xl"
+          className="to-lime-200 absolute left-0 top-0 z-40 flex h-[220px] w-[320px] justify-between rounded-2xl bg-[#18e0f8]/80 p-5 text-lg text-black/[0.8] backdrop-blur-xl"
           initial={{ x: 0, y: 0 }}
           onMouseEnterAnimation={{ translateY: -30 }}
           onMouseLeaveAnimation={{ translateY: 0 }}

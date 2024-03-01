@@ -17,6 +17,9 @@ export default {
       ...colors
     },
     extend: {
+      fontFamily: {
+        inter: ['Inter', 'Roboto', 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', 'Arial', 'sans-serif']
+      },
       screens: {
         xs: '320px'
       },

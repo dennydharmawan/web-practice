@@ -57,7 +57,7 @@ export default function PortfolioPage() {
   const navVariant = {
     compacted: {
       backdropFilter: 'blur(4px)',
-      backgroundColor: 'rgba(255, 255, 255, 0.75)',
+      backgroundColor: 'rgba(255, 255, 255, 0.85)',
       boxShadow: '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)'
     },
     expanded: {
@@ -609,13 +609,18 @@ export default function PortfolioPage() {
                   <Button leftSection={<IconMessages />} size="md">
                     Let's Collaborate
                   </Button>
+
                   <Button
-                    className="mx-auto font-normal text-slate-900 underline [text-underline-offset:4px] hover:bg-[#fabd60]/75 hover:no-underline"
+                    className="group mx-auto flex !flex-col gap-1 font-normal text-slate-900 transition-colors duration-300 hover:bg-[#fabd60]/75"
+                    classNames={{
+                      label: 'flex flex-col justify-center gap-[1px]'
+                    }}
                     component={HashLink}
-                    to="#work-experience-title"
+                    to="#projects-title"
                     variant="subtle"
                   >
-                    I want to view your work
+                    <div>I want to view your work</div>
+                    <div className="h-[1px] w-full bg-slate-900 transition-transform duration-300 group-hover:scale-x-0"></div>
                   </Button>
                 </div>
               </div>

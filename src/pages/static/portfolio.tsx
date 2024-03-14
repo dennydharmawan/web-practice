@@ -247,7 +247,7 @@ export default function PortfolioPage() {
 
           <div className="mt-[calc(132px+64px)]" id="fixed-nav-spacer" />
 
-          <section aria-labelledby="hero-title" className="space-y-8">
+          <section aria-labelledby="hero-title" className="space-y-10">
             <div className="flex flex-wrap items-center gap-10">
               <div className="h-[155px] w-[152px] bg-[url('/portfolio/bauhaus-header.svg')] bg-cover" />
               <h2 className="max-w-[25ch] text-balance text-6xl font-bold tracking-tight" id="hero-title">
@@ -258,7 +258,7 @@ export default function PortfolioPage() {
             <div className="flex flex-wrap items-start gap-8">
               <div className="justify flex flex-col items-center justify-between self-stretch pl-[48px]">
                 {/* accent line */}
-                <div className="mt-3 h-[6px] w-[51px] bg-[#3DB8D2]"></div>
+                <div className="mb-2 mt-3 h-[6px] w-[51px] bg-[#3DB8D2]"></div>
 
                 <SocialIcon>
                   <Link target="_blank" to="https://linkedin.com/in/ddharmawan">
@@ -300,7 +300,7 @@ export default function PortfolioPage() {
                   aiming not only to meet but to surpass expectations at every turn.
                 </p>
 
-                <div className="space-x-5">
+                <div className="space-x-6">
                   <Button rightSection={<IconArrowBigRightLineFilled />} size="lg">
                     Explore My Work
                   </Button>
@@ -343,7 +343,7 @@ export default function PortfolioPage() {
                         </div>
 
                         <div className="absolute bottom-0 right-0 grid h-[96px] w-[96px]  place-content-end justify-self-end overflow-hidden bg-[url('/portfolio/lava-mask.svg')] bg-cover bg-no-repeat">
-                          <ActionIcon className="bg-[#6665DD] text-white" radius={'50%'} size={72}>
+                          <ActionIcon className="bg-[#2F5E9A] text-white" radius={'50%'} size={72}>
                             <IconArrowUpRight
                               className="transition-transform duration-300 group-hover:scale-125"
                               size={36}
@@ -445,7 +445,7 @@ export default function PortfolioPage() {
               </div>
             </div>
 
-            <article className="col-span-6 flex cursor-pointer rounded-3xl bg-[#2F5E9A] text-white">
+            <article className="col-span-6 flex cursor-pointer rounded-3xl bg-[#4F5BB3] text-white">
               <div className="grid grid-cols-12">
                 <div className="col-span-7 flex flex-col py-8 pl-10 pr-8">
                   <div className="relative">
@@ -534,8 +534,8 @@ export default function PortfolioPage() {
               <div className="space-y-3 px-10 py-8">
                 <h1 className="text-3xl font-semibold">Training Lab</h1>
                 <p className="text-pretty">
-                  Embracing personal growth, I continually challenge myself with small projects showcased on
-                  my training lab. Explore it to witness my skills in action.
+                  Embracing personal growth, I continually challenge myself with mini projects showcased on my
+                  training lab. Explore it to witness my skills in action.
                 </p>
               </div>
 
@@ -577,8 +577,8 @@ export default function PortfolioPage() {
                 >
                   <p className="text-pretty">
                     With over 5 years of experience in web development, I've honed my skills in creating
-                    intuitive user inteface, handling complex logic, designing robust system architectures,
-                    and ensuring high-performance and security standards.
+                    intuitive user interface, developing APIs, designing robust system architectures, and
+                    ensuring high-performance and security standards.
                   </p>
                   {/*
                   <div className="flex flex-col gap-5">
@@ -611,7 +611,7 @@ export default function PortfolioPage() {
                   </Button>
 
                   <Button
-                    className="group mx-auto flex !flex-col gap-1 font-normal text-slate-900 transition-colors duration-300 hover:bg-[#fabd60]/75"
+                    className="group mx-auto flex !flex-col gap-1 text-slate-900 transition-colors duration-300 hover:bg-[#fabd60]/75"
                     classNames={{
                       label: 'flex flex-col justify-center gap-[1px]'
                     }}
@@ -640,7 +640,7 @@ export default function PortfolioPage() {
           className="full-width content-grid bg-blue-light-25 py-[6rem]"
         >
           <h1 className="mb-[120px] text-center" id="work-experience-title">
-            <span className="relative isolate text-4xl font-bold uppercase tracking-[0.01em] after:absolute after:bottom-1 after:end-0 after:start-0 after:z-[-1] after:h-2 after:w-full after:scale-110 after:rounded-md after:bg-indigo-700/30">
+            <span className="tracking-[0.01 em] relative isolate text-4xl font-bold  uppercase after:absolute after:bottom-1 after:end-0 after:start-0 after:z-[-1] after:h-2 after:w-full after:scale-110 after:rounded-md after:bg-indigo-700/30">
               Work Experience
             </span>
           </h1>
@@ -684,16 +684,16 @@ export default function PortfolioPage() {
         <section className="content-grid">
           <div className="grid max-w-screen-xl px-4 py-8 lg:grid-cols-12 lg:gap-8 lg:py-16 xl:gap-0">
             <div className="mr-auto hidden lg:col-span-5 lg:mt-0 lg:flex">
-              {/* <img
+              <img
                 alt="teamwork illustration"
                 src="https://ik.imagekit.io/ddharmawan/dennydharmawan_com/tr:w-960/teamwork-illustration.svg"
-              /> */}
+              />
             </div>
             <div className="place-self-center px-16 lg:col-span-7">
               <h3 className="mb-8 text-3xl font-bold leading-snug">
-                Let's make a
+                Let's
                 <span className="relative text-indigo-600">
-                  &nbsp;connection&nbsp;
+                  &nbsp;collaborate&nbsp;
                   <IconHighlightUnderline className="absolute -bottom-3 left-0 m-auto w-full -scale-x-125 overflow-hidden" />
                 </span>
                 today.
@@ -706,7 +706,7 @@ export default function PortfolioPage() {
               <Button
                 component={Link}
                 leftSection={<IconMessages />}
-                size="md"
+                size="lg"
                 to="mailto:contact@dennydharmawan.com"
               >
                 Start Conversation
@@ -760,6 +760,7 @@ export default function PortfolioPage() {
           </svg>
         </span>
 
+        {/* Easter Egg/Interactive Animation, Navigations, Links */}
         <div className="mb-12 mt-4 flex">
           <div className="flex items-center gap-4">
             <div className="text-xl font-semibold">Denny Dharmawan</div>

@@ -1,18 +1,18 @@
 import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 import { FullScreenLayout } from '@/components/layout/full-screen-layout';
 
 export default function CardStackScrolling() {
   const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    offset: ['start start', 'end start'],
-    target: ref
-  });
+  // const { scrollYProgress } = useScroll({
+  //   offset: ['start start', 'end start'],
+  //   target: ref
+  // });
 
-  const rotate = useTransform(scrollYProgress, [0.1, 0.12, 0.3], [-28, -28, 0]);
-  const textTransform = useTransform(scrollYProgress, [0, 0.3], [0, 100]);
-  const textOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
+  // const rotate = useTransform(scrollYProgress, [0.1, 0.12, 0.3], [-28, -28, 0]);
+  // const textTransform = useTransform(scrollYProgress, [0, 0.3], [0, 100]);
+  // const textOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
 
   return (
     <FullScreenLayout>

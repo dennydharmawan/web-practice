@@ -136,7 +136,7 @@ export default function PortfolioPage() {
                   {!isOverTheFold && (
                     <motion.div
                       animate="enter"
-                      className="text-sm font-semibold leading-tight text-indigo-700"
+                      className="text-sm font-semibold leading-tight text-slate-500"
                       exit="exit"
                       initial="initial"
                       layout
@@ -245,20 +245,23 @@ export default function PortfolioPage() {
         <section aria-labelledby="hero-title" className="relative">
           <div className="absolute right-0 top-0 h-[199px] w-[228px]  bg-[url('/portfolio/bauhaus-corner.svg')] bg-cover" />
 
-          <div className="mt-[calc(132px+64px)]" id="fixed-nav-spacer" />
+          <div className="mt-[calc(148px+64px)]" id="fixed-nav-spacer" />
 
-          <section aria-labelledby="hero-title" className="space-y-10">
+          <section
+            aria-labelledby="hero-title"
+            className="flex max-h-[520px] min-h-[calc(90vh-2*148px-64px)] flex-col items-center justify-center space-y-10"
+          >
             <div className="flex flex-wrap items-center gap-10">
               <div className="h-[155px] w-[152px] bg-[url('/portfolio/bauhaus-header.svg')] bg-cover" />
-              <h2 className="max-w-[25ch] text-balance text-6xl font-bold tracking-tight" id="hero-title">
+              <h2 className="max-w-[20ch] text-balance text-6xl font-bold tracking-tight" id="hero-title">
                 Building exceptional and impactful web solutions.
               </h2>
             </div>
 
             <div className="flex flex-wrap items-start gap-8">
-              <div className="justify flex flex-col items-center justify-between self-stretch pl-[48px]">
+              <div className="ml-[-38px] flex flex-col items-center justify-between self-stretch">
                 {/* accent line */}
-                <div className="mb-2 mt-3 h-[6px] w-[51px] bg-[#3DB8D2]"></div>
+                <div className="mb-2 mt-3 h-[6px] w-[44px] bg-[#3DB8D2]"></div>
 
                 <SocialIcon>
                   <Link target="_blank" to="https://linkedin.com/in/ddharmawan">
@@ -294,10 +297,10 @@ export default function PortfolioPage() {
 
               <div className="space-y-6">
                 <p className="max-w-[60ch] text-pretty text-xl text-slate-600" id="main-content">
-                  I specialize in creating websites that elevate businesses, delivering not just visually
-                  stunning designs, but also seamless functionality. With meticulous attention to detail and a
-                  drive for innovation, I approach each project with a blend of creativity and precision,
-                  aiming not only to meet but to surpass expectations at every turn.
+                  I specialize in creating web solutions that empower businesses, ensuring not only flawless
+                  functionality but also prioritizing high performance and maintainability. With meticulous
+                  attention to detail and a drive for innovation, I approach each project with a blend of
+                  creativity and precision, aiming not only to meet but to surpass expectations at every turn.
                 </p>
 
                 <div className="space-x-6">
@@ -313,7 +316,7 @@ export default function PortfolioPage() {
           </section>
 
           {/* lighten('var(--mantine-color-gray-4)', 0.74); */}
-          <section className="grid grid-cols-12 grid-rows-[repeat(3,432px)] gap-4 py-[132px]">
+          <section className="grid grid-cols-12 grid-rows-[repeat(3,432px)] gap-4 py-[148px]">
             <div className="col-span-6 flex">
               <div
                 className={cn('z-40 flex', {
@@ -339,7 +342,7 @@ export default function PortfolioPage() {
                     <>
                       <motion.div animate="enter" initial="initial" variants={bentoOverlayVariant}>
                         <div className="absolute left-1/2 top-1/4 -translate-x-1/2 rounded-lg bg-slate-950/55 px-3 py-1 shadow-sm backdrop-blur-md transition-transform duration-300 group-hover:scale-125">
-                          <h3 className="text-lg font-semibold text-white">About Me</h3>
+                          <h3 className="text-3xl font-semibold text-white">My Story</h3>
                         </div>
 
                         <div className="absolute bottom-0 right-0 grid h-[96px] w-[96px]  place-content-end justify-self-end overflow-hidden bg-[url('/portfolio/lava-mask.svg')] bg-cover bg-no-repeat">
@@ -499,7 +502,7 @@ export default function PortfolioPage() {
               <div className="grid grid-cols-12">
                 <div className="col-span-5 flex flex-col justify-center gap-6">
                   <div className="flex flex-col gap-3">
-                    <h3 className="text-3xl font-semibold">I strive to live by my work values</h3>
+                    <h3 className="text-3xl font-semibold">I strive to live by my work values.</h3>
                     <p className="text-pretty">
                       In every project, I champion values that foster innovation, efficiency, and a deep
                       understanding of user needs. My approach is grounded in clear communication,
@@ -572,32 +575,19 @@ export default function PortfolioPage() {
                 />
 
                 <motion.div
-                  className="absolute mt-8 max-w-[40ch] space-y-6 rounded-lg px-7 py-5"
+                  className="absolute mt-8 max-w-[40ch] space-y-3 rounded-lg px-7 py-5"
                   variants={paragraphVariant}
                 >
                   <p className="text-pretty">
-                    With over 5 years of experience in web development, I've honed my skills in creating
-                    intuitive user interface, developing APIs, designing robust system architectures, and
-                    ensuring high-performance and security standards.
+                    Tired of sifting through a sea of subpar software engineers, enduring endless project
+                    delays, and grappling with the consequences of shoddy code? Say goodbye to the uncertainty
+                    and frustration now.
                   </p>
-                  {/*
-                  <div className="flex flex-col gap-5">
-                    <Button leftSection={<IconMessages />} size="md">
-                      Let's Collaborate
-                    </Button>
-                    <Button component={HashLink} size="md" to="#work-experience-title" variant="outline">
-                      I want to view your work
-                    </Button>
-                  </div> */}
+                  <h3 className="text-xl font-semibold">
+                    A Professional, Problem Solver, and Team Player:{' '}
+                    <span className="text-yellow-700">All in One Expert.</span>
+                  </h3>
                 </motion.div>
-
-                {/* <div className="absolute bottom-0 right-0 mx-10 my-8 flex max-w-[30%] flex-col items-end gap-3 rounded-xl bg-white/50 p-3 backdrop-blur">
-                  <p className="text-pretty">
-                    Ready to embark on this journey together? Let's discuss how my skills can elevate your
-                    team."
-                  </p>
-                  <Button className="max-w- self-stretch">Click me</Button>
-                </div> */}
               </motion.div>
             </article>
 
@@ -611,7 +601,7 @@ export default function PortfolioPage() {
                   </Button>
 
                   <Button
-                    className="group mx-auto flex !flex-col gap-1 text-slate-900 transition-colors duration-300 hover:bg-[#fabd60]/75"
+                    className="group mx-auto flex !flex-col gap-1 text-slate-700 transition-colors duration-300 hover:bg-[#fabd60]/75"
                     classNames={{
                       label: 'flex flex-col justify-center gap-[1px]'
                     }}
@@ -620,7 +610,7 @@ export default function PortfolioPage() {
                     variant="subtle"
                   >
                     <div>I want to view your work</div>
-                    <div className="h-[1px] w-full bg-slate-900 transition-transform duration-300 group-hover:scale-x-0"></div>
+                    <div className="h-[1px] w-full bg-current transition-transform duration-300 group-hover:scale-x-0"></div>
                   </Button>
                 </div>
               </div>
@@ -716,7 +706,7 @@ export default function PortfolioPage() {
         </section>
       </main>
 
-      <footer className="full-width content-grid relative bg-[#223858] text-white">
+      <footer className="full-width content-grid relative bg-[#0b2846] text-white">
         {/* curve decoration */}
         <span className="full-width grid bg-white">
           <svg
@@ -731,7 +721,7 @@ export default function PortfolioPage() {
             <path
               d="M407.21 15.8956C537.851 42.4389 599.349 76.6302 838.741 93.501C917.226 99.032 967.922 93.2301 1001 81.1469L1001 111H0V21.5267C98.1188 10.501 242.474 -17.575 407.21 15.8956Z"
               style={{
-                fill: '#223858'
+                fill: '#0b2846'
               }}
             ></path>
           </svg>

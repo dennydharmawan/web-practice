@@ -13,7 +13,7 @@ import { mantineColors } from '@/lib/mantine';
 const theme = createTheme({
   colors: mantineColors,
   primaryColor: 'primary',
-  primaryShade: 6
+  primaryShade: 7
 });
 
 ReactDOM.createRoot(document.getElementById('root')!).render(

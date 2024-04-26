@@ -240,7 +240,7 @@ export default function IndexPage() {
               </div>
             </div>
 
-            <div className="flex flex-col gap-3">
+            <div className="mt-6 flex flex-col gap-3">
               <h3 className="text-balance text-2xl font-semibold">Thanks for looking around.</h3>
               <p className="max-w-[60ch] text-gray-blue-300">
                 This website is built with modern web technologies. Explore the source code on{' '}
@@ -268,7 +268,7 @@ export default function IndexPage() {
               </div>
             </div>
 
-            <div>
+            <div className="mt-6">
               <h2 className="relative mb-6 text-sm font-semibold uppercase text-white before:absolute before:-bottom-[10px] before:left-0 before:h-[3px] before:w-[15px] before:bg-secondary after:absolute after:-bottom-[10px] after:left-[25px] after:h-[3px] after:w-[40px] after:bg-secondary">
                 Resources
               </h2>
@@ -286,7 +286,7 @@ export default function IndexPage() {
               </ul>
             </div>
 
-            <div className="space-y-8">
+            <div className="mt-6 space-y-8">
               <div>
                 <h2 className="text-White relative mb-6 text-sm font-semibold uppercase before:absolute before:-bottom-[10px] before:left-0 before:h-[3px] before:w-[15px] before:bg-secondary after:absolute after:-bottom-[10px] after:left-[25px] after:h-[3px] after:w-[40px] after:bg-secondary">
                   Contact Me
